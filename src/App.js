@@ -8,14 +8,14 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 
-import '../styles/main/main.scss';
+import './styles/main/main.scss';
 
 function App() {
   return (
-    <Container>
+    <Container fluid>
       <Header />
         <Routes>
-          <Route />
+          <Route path='/' element={<HomePage />}/>
           <Route />
           <Route />
           <Route />

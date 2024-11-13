@@ -15,11 +15,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <CartContext>
         <Router>
           <App />
         </Router>
-      </CartContext>
     </Provider>
   </React.StrictMode>
 );

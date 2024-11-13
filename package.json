@@ -19,6 +19,7 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.4",
     "redux-logger": "^3.0.6",
+    "sass": "^1.80.7",
     "sonoratires": "file:",
     "web-vitals": "^2.1.4"
   },
