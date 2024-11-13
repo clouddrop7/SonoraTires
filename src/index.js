@@ -7,6 +7,7 @@ import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
 import { HashRouter as Router } from 'react-router-dom';
 import App from './App';
+import CartContext from './context/CartContext';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -14,9 +15,11 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
+      <CartContext>
+        <Router>
+          <App />
+        </Router>
+      </CartContext>
     </Provider>
   </React.StrictMode>
 );
