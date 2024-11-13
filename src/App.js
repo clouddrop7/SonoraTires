@@ -4,9 +4,7 @@ import {useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Container } from 'react-bootstrap';
-import Header from '../components/Header.js';
-import Footer from '../componentsFooter.js';
-import HomePage from '../pages/HomePage.js';
+
 
 import '../styles/main/main.scss';
 
