@@ -1,0 +1,81 @@
+@use 'sass:math';
+@use 'sass:color';
+@use '../variables/colors.scss' as colors;
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+// Font Families
+$defaultFont: 'Source Serif 4', serif;
+$Title: 'Russo One', sans-serif;
+
+// Font Theme Map
+
+$font-themes: (
+    default: (
+        font-family: $defaultFont,
+        font-weight: 400,
+        line-height: 166.667%,
+        color: colors.colorTheme(black),
+    ),
+
+    title: (
+        font-family: $Title,
+        font-weight: 700,
+        letter-spacing: 1.286px,
+    ),
+
+    subTitle: (
+        font-family: $defaultFont,
+        font-weight: 500,
+        line-height: 166.667%,
+        letter-spacing: 0.03125em,
+    )
+);
+
+@mixin font-theme($theme-name) {
+    $theme: map-get($font-themes, $theme-name);
+  
+    @if $theme {
+      font-family: map-get($theme, font-family);
+      font-weight: map-get($theme, font-weight);
+      line-height: map-get($theme, line-height);
+      letter-spacing: map-get($theme, letter-spacing);
+      color: map-get($theme, color);
+    } @else {
+      @error "No font theme found for `#{$theme-name}`";
+    }
+  }
+
+// Responsive font size functions 
+
+$title-font-sizes: (
+  xs: 2rem, 
+  sm: 2.5rem, // Changed to rem
+  lg: 4rem,   // Changed to rem
+);
+
+@function font-title($breakpoint) {
+  @return map-get($font-title, $breakpoint);
+}
+
+$default-font-size: (
+    xs: 0.9375rem,
+    md: 1.125rem,
+);
+
+@function default-font-size($breakpoint) {
+    @return map-get($default-font-size, $breakpoint);
+}
+
+$sub-title-font: (
+    xs:1.75rem,
+    md:2.5rem,
+);
+
+@function sub-title($breakpoint) {
+    @return map-get($sub-title-font, $breakpoint);
+}
+
+$font-title: (
+    xs:2.25rem,
+    md: 3.5rem,
+);

@@ -1,0 +1,67 @@
+// Import necessary files
+@use '../reset/reset.scss'; // Import the reset to clear default margins/paddings
+@use '../variables/fonts.scss' as font;
+@use '../variables/colors.scss';
+@use '../variables/utils.scss' as gutters;
+
+
+body {
+    @include font.font-theme(default);
+    font-size: font.default-font-size(xs);
+    margin-left: gutters.gutter(sm);  
+    margin-right: gutters.gutter(sm);
+
+    @media (min-width: 768px) {
+        margin-left: gutters.gutter(md);  
+        margin-right: gutters.gutter(md); 
+        font-size: font.default-font-size(md);
+    }
+
+  @media (min-width: 992px) {
+    margin-left: gutters.gutter(lg);  
+    margin-right: gutters.gutter(lg); 
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: gutters.gutter(xl);  
+    margin-right: gutters.gutter(xl); 
+  }
+
+  h1 {
+    font-size: font.font-title(sm);
+
+    @media (min-width:768px) {
+        font-size: font.font-title(md);
+    }
+  }
+
+  h2 {
+    font-size: font.sub-title(sm);
+
+    @media (min-width:768px) {
+        font-size: font.sub-title(md);
+    }
+  }
+}
+
+
+@mixin apply-gutter($breakpoint) {
+  margin-left: gutters.gutter($breakpoint);
+  margin-right: gutters.gutter($breakpoint);
+}
+
+.container-fluid {
+   margin: 0;
+   padding: 0;
+
+   .navbar {
+    padding: 0;
+   }
+
+   .container {
+    margin: 0;
+    padding: 0;
+   }
+  }
+  
+
