@@ -1,3 +1,5 @@
+@use '../variables/colors.scss' as colors;
+
 $grid-gutter-widths: (
     sm: 1rem,
     md: 1.5rem,
@@ -8,4 +10,66 @@ $grid-gutter-widths: (
 
 @function gutter($breakpoint) {
     @return map-get($grid-gutter-widths, $breakpoint);
+}
+
+
+@mixin link-hover-style( $underline-offset: 0.15em, 
+    $underline-color: colors.colorTheme(red),
+    $link-color: colors.colorTheme(black),
+    $hover-bg-color: colors.colorTheme(black),
+    $hover-color: colors.colorTheme(yellow),
+    $border-radius: 0.5em
+) {
+    text-transform: uppercase;
+    text-align: start;
+    padding: 0.875rem 1rem;
+    width: 100%;
+    color: $link-color;
+    background-color: transparent;
+    border-radius: $border-radius;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    margin-bottom: 0;
+
+    &:hover {
+        color: $hover-color;
+        background-color: $hover-bg-color;
+        border-bottom: 2px solid $underline-color;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        background-color: $hover-bg-color;
+        color: $hover-color;
+    }
+}
+
+@mixin button-style(
+    $underline-color: colors.colorTheme(red),
+    $link-color: colors.colorTheme(black),
+    $hover-bg-color: colors.colorTheme(black),
+    $hover-color: colors.colorTheme(yellow),
+    $border-radius: 0.5em
+) {
+    padding: 0.875rem 1rem;
+    background-color: colors.colorTheme(yellow);
+    color: colors.colorTheme(red);
+    text-align: center;
+    border: 1px solid colors.colorTheme(black);
+
+    &:hover {
+        color: colors.colorTheme(yellow);
+        background-color: colors.colorTheme(red);
+        border-bottom: 2px solid $underline-color;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        background-color: $hover-bg-color;
+        color: $hover-color;
+    }
 }
