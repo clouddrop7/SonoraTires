@@ -1,0 +1,56 @@
+@use '../../styles/variables/colors.scss' as colors;
+
+.card-container {
+    display: flex;
+    max-width: 12rem;
+    max-height: 12rem;
+    overflow: hidden;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 0;
+    .card-front {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-back {
+        position: absolute;
+        backface-visibility: hidden;
+    }
+
+    .icon-image {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.tool-tip {
+    border: 1px solid #ccc; 
+    padding: 10px;
+  
+    & .tooltip-inner { 
+      background-color: colors.colorTheme(yellow);
+      color: colors.colorTheme(black);
+    }
+  
+    & .arrow::before {
+      border-top-color: #f0f0f0; 
+    }
+  }
+
+.service-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: center;
+  border: 2px solid colors.colorTheme(red);
+  padding: 3rem;
+  .service-info-item {
+    display: flex;
+    max-width: 6rem;
+    border: none;
+    color: colors.colorTheme(black);
+  }
+}
+  
+  

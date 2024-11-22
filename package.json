@@ -18,6 +18,7 @@
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.4",
+    "reactstrap": "^9.2.3",
     "redux-logger": "^3.0.6",
     "sass": "^1.80.7",
     "sonoratires": "file:",

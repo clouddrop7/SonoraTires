@@ -66,16 +66,20 @@ $default-font-size: (
     @return map-get($default-font-size, $breakpoint);
 }
 
-$sub-title-font: (
-    xs:1.75rem,
-    md:2.5rem,
+$subTitle: (
+    xs: 1.125rem,
+    md: 1.25rem,  // Add the 'md' breakpoint here
 );
 
-@function sub-title($breakpoint) {
-    @return map-get($sub-title-font, $breakpoint);
+@function responsive-sub-title($breakpoint) {
+    @return map-get($subTitle, $breakpoint);
 }
 
 $font-title: (
     xs:2.25rem,
     md: 3.5rem,
 );
+
+@function responsive-font-title($breakpoint) {
+  @return map-get($font-title, $breakpoint);
+}

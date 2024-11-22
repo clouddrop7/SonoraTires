@@ -1,35 +1,23 @@
-// Import necessary files
-@use '../reset/reset.scss'; // Import the reset to clear default margins/paddings
 @use '../variables/fonts.scss' as font;
 @use '../variables/colors.scss' as colors;
-@use '../variables/utils.scss' as gutters;
 @use '../variables/utils.scss' as util;
 
 // Body styles
 body {
     @include font.font-theme(default);
     font-size: font.default-font-size(xs);
-    margin-left: gutters.gutter(sm);  
-    margin-right: gutters.gutter(sm);
 
     @media (min-width: 768px) {
-        margin-left: gutters.gutter(md);  
-        margin-right: gutters.gutter(md); 
         font-size: font.default-font-size(md);
     }
 
-    @media (min-width: 992px) {
-        margin-left: gutters.gutter(lg);  
-        margin-right: gutters.gutter(lg); 
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
-
-    @media (min-width: 1200px) {
-        margin-left: gutters.gutter(xl);  
-        margin-right: gutters.gutter(xl); 
-    }
-
     h1 {
-        font-size: font.font-title(sm);
+        font-size: font.responsive-font-title(xs);
 
         @media (min-width: 768px) {
             font-size: font.font-title(md);
@@ -37,27 +25,16 @@ body {
     }
 
     h2 {
-        font-size: font.sub-title(sm);
-
+        @include font.font-theme(subTitle); 
+        font-size: font.responsive-sub-title(xs); // Call the function correctly
+    
         @media (min-width: 768px) {
-            font-size: font.sub-title(md);
+            font-size: font.responsive-sub-title(md);
         }
     }
 }
 
-// Container styles
-.container-fluid {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    max-width: 90rem;
-    margin: 0 auto;
-    .container {
-        margin: 0;
-        padding: 0;
-    }
-}
+
 
 // Navbar styles
 .navbar {
@@ -66,6 +43,10 @@ body {
     @media (min-width: 992px) {
         padding: 0;
         margin-top: 1rem;
+    }
+
+    .container {
+        padding: 0 !important;
     }
 
     .navbar-nav {
