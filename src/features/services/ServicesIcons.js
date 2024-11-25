@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card, CardImg } from "reactstrap";
 import { useSpring, animated } from "@react-spring/web";
 import { Tooltip} from 'reactstrap';
@@ -7,11 +7,11 @@ import icons from '../../db.json';
 
 const ServicesIcons = () => {
     const [iconData] = useState(icons.icons);
-    const [flipped, setFlipped] = useState(false);
-    const [openToolTip, setOpenToolTip] = useState(false);
+    const [flipped, setFlipped] = useState({});
+    const [openToolTip, setOpenToolTip] = useState({});
 
     const flipAnimation = useSpring({
-        transform: `rotateY(${flipped ? 180 : 0}deg)`,
+        transform: `rotateY(180deg)`,
         config: { mass: 0.3, tension: 900, fricition: 80}
     });
 

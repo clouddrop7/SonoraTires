@@ -1,13 +1,26 @@
-@use '../../styles/variables/colors.scss' as colors;
+@use '../variables/fonts.scss' as font;
+@use '../variables/colors.scss' as colors;
+@use '../variables/utils.scss' as util;
 
 .card-container {
     display: flex;
-    max-width: 12rem;
-    max-height: 12rem;
+    max-width: 4rem;
+    max-height: 4rem;
     overflow: hidden;
     flex-wrap: wrap;
     position: relative;
     padding: 0;
+
+    @media(min-width:576px) {
+      max-width: 6rem;
+      max-height: 6rem;
+    }
+
+    @media(min-width:768px) {
+      max-width: 8rem;
+      max-height: 8rem;
+    }
+
     .card-front {
         width: 100%;
         height: 100%;
@@ -38,19 +51,144 @@
     }
   }
 
-.service-info {
-  display: flex;
-  flex-wrap: wrap;
-  align-items:center;
-  justify-content: center;
-  border: 2px solid colors.colorTheme(red);
-  padding: 3rem;
-  .service-info-item {
+  .service-info-container {
     display: flex;
-    max-width: 6rem;
-    border: none;
-    color: colors.colorTheme(black);
+    flex-direction: column;
+    background-color: colors.colorTheme(yellow);
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    align-items: center;
+
+    .service-info-title {
+      font-size: 1.125rem;
+      line-height: 1;
+      padding: 1rem 0;
+      max-width: 52%;
+      margin: 0;
+      letter-spacing: 0.3rem;
+      @media (min-width: 576px) {
+        max-width: 51%;
+      }
+
+      @media (min-width: 768px) {
+        max-width: 41%;
+        font-size: 1.25rem;
+        line-height: 1.2;
+      }
+    }
+
+    .service-info {
+      padding: 2rem;
+      margin: 0;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      list-style-type: none;
+      position: relative;
+      .service-info-item {
+        margin: 0;
+        padding: 0.5rem 0 0.5rem 1.5rem;
+        text-align: center;
+        position: relative;
+        font-size: 0.875rem;
+        font-weight: 500;
+        list-style-position: inside;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        width: 45%;
+
+        .service-name {
+          cursor: pointer;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          &:hover {
+            color: colors.colorTheme(red);
+          }
+        }
+
+        @media (min-width: 576px) {
+          width: 35%;
+          font-size: 0.875rem;
+        }
+        @media (min-width: 768px) {
+          width: 30%;
+          font-size: 1rem;
+        }
+
+        @media (min-width: 992px) {
+          font-size: 1.125rem;
+        }
+      }
+    }
+}
+
+.anime-service-card {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  overflow-y: hidden;
+}
+
+.service-card {
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: colors.colorTheme(black);
+  color: colors.colorTheme(white);
+
+  @media (min-width: 768px) {
+    padding: 1rem;
+  }
+  .close-btn {
+    align-self: end;
+    color: colors.colorTheme(white);
+    background-color: colors.colorTheme(white);
+  }
+
+  .service-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.05rem;
+    color: colors.colorTheme(white);
+    @media(min-width: 768px) {
+      text-align: start;
+    }
+  }
+  .service-body {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 1rem;
+    padding: 0;
+    overflow: hidden;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .service-text {
+      line-height: 1.2;
+      letter-spacing: 0.05rem;
+
+      @media (min-width: 992px) {
+        max-width: 40%;
+      }
+    }
+    .service-btn {
+      @include util.call-action;
+      width: 100%;
+    }
   }
 }
-  
-  

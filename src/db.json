@@ -35,7 +35,9 @@
         {
             "id": 0,
             "name" : "Tire Balancing",
-            "info": "",
+            "factone": "Noticeable vibrations while driving could mean your tires are out of balance. Don't ignore this sign – get them checked!",
+            "facttwo": "To balance a tire, a technician adds small weights to the wheel, offsetting any unevenness.",
+            "factthree": "Regular balancing extends tire life, which saves you money in the long run by preventing premature wear and tear.",
             "price": "",
             "available":"",
             "brand": "",
@@ -45,7 +47,9 @@
         {
             "id": 1,
             "name" : "Tire Repair",
-            "info": "",
+            "factone": "A tire with a puncture might be repairable, but it depends on the angle of the hole and how much tread is left. Steeper angles or low tread can make repairs unsafe.",
+            "facttwo": "Fixing tires is dependant on the angle and the tread depth.",
+            "factthree":"The penny test, cracks or bulges, and sidewall punctures are all signs that it's time to replace your tires.",
             "price": "",
             "available":"",
             "brand": "",
@@ -55,7 +59,9 @@
         {
             "id": 2,
             "name" : "Tire Pressure",
-            "info": "",
+            "factone": "Tire pressure changes with temperature, dropping roughly 1 PSI for every 10 degrees Fahrenheit decrease. This can affect your car's handling and fuel economy." ,
+            "facttwo": "Your car has a specific recommended tire pressure, which is usually listed on a sticker on the driver's side doorjamb. Be sure to check it regularly",
+            "factthree": "It is recommended to have a spare tire in case of a flat.",
             "price": "",
             "available":"",
             "brand": "",
@@ -65,7 +71,9 @@
         {
             "id": 3,
             "name" : "Nitrogen",
-            "info": "",
+            "factone": "Nitrogen in tires helps maintain more stable pressure by reducing pressure loss and minimizing fluctuations due to temperature changes.",
+            "facttwo": "While nitrogen can help extend tire life, it's important to remember that regular tire maintenance, like rotations and alignments, is still crucial.",
+            "factthree": "Consider using nitrogen in your tires for improved fuel efficiency and longer tire life, especially if you frequently drive long distances or in varying temperatures.",
             "price": "",
             "available":"",
             "brand": "",
@@ -75,7 +83,9 @@
         {
             "id": 4,
             "name" : "Wheel alignment",
-            "info": "",
+            "factone": "Proper wheel alignment ensures your car tracks straight and your tires wear evenly, preventing premature wear and tear.",
+            "facttwo": "If your car pulls to one side or your tires show uneven wear patterns, it's a sign you might need an alignment.",
+            "factthree": "Regular alignments can save you money in the long run by extending the life of your tires and improving fuel efficiency.",
             "price": "",
             "available":"",
             "brand": "",
@@ -85,7 +95,9 @@
         {
             "id": 5,
             "name" : "Tire Rotation",
-            "info": "",
+            "factone": "Rotating your tires regularly helps ensure they wear evenly, extending their lifespan and improving your car's handling.",
+            "facttwo": "Most manufacturers recommend rotating your tires every 5,000 to 8,000 miles, but check your owner's manual for specific recommendations.",
+            "factthree": "Don't forget to check your tire pressure and inspect your tires for any signs of damage when you rotate them.",
             "price": "",
             "available":"",
             "brand": "",
@@ -97,7 +109,9 @@
         {
           "id": 0,
             "name" : "Suspension",
-            "info": "",
+            "factone": "Your car's suspension system ensures a smooth ride and helps maintain control by absorbing bumps and keeping your tires in contact with the road.",
+            "facttwo": "Worn suspension components can affect your car's handling, braking, and overall safety. If you notice excessive bouncing, swaying, or unusual noises, it's time for an inspection.",
+            "factthree": "Regularly inspect your suspension system for signs of wear and tear, such as leaking shocks or worn-out bushings, to ensure a safe and comfortable ride.",
             "price": "",
             "available":"",
             "brand": "",
@@ -109,7 +123,9 @@
         {
            "id": 1,
             "name" : "Battery Replacement",
-            "info": "",
+            "factone": "Car batteries typically last 3 to 5 years, but extreme temperatures and driving habits can affect their lifespan.",
+            "facttwo": "If your car struggles to start or your lights seem dim, it might be time for a battery check and possible replacement.",
+            "factthree": "Regular battery maintenance, such as cleaning terminals and checking the electrolyte level, can help prolong its life.",
             "price": "",
             "available":"",
             "brand": "",
@@ -119,7 +135,9 @@
         {
             "id": 2,
              "name" : "Alternator Check",
-             "info": "",
+             "factone": "The alternator is responsible for charging your car's battery and powering the electrical system while the engine is running.",
+            "facttwo": "A failing alternator can lead to a dead battery and other electrical problems. If your battery warning light is on, have your alternator checked.",
+            "factthree": "Regularly inspecting your alternator belt for wear and tear can help prevent unexpected breakdowns.",
              "price": "",
              "available":"",
              "brand": "",
@@ -128,109 +146,129 @@
          },
          {
             "id": 3,
-             "name" : "Starter Testing",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": ""   
-         }
-    ],
-    "brakes" : [
-        {
+            "name": "Starter Testing",
+            "factone": "The starter motor is responsible for cranking your engine to get it started.",
+            "facttwo": "If you hear a clicking sound when you turn the key, or your engine doesn't crank at all, your starter might be failing.",
+            "factthree": "Regularly checking your battery connections and ensuring your engine is properly tuned can help prevent starter problems.",
+            "price": "$39.99", 
+            "brand": "N/A",
+            "quantity": 0,
+            "addIn": "Includes visual inspection", 
+            "available": true
+          }
+        ],
+        "brakes": [
+          {
             "id": 0,
-             "name" : "Brake Check",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": "" 
-        },
-        {
+            "name": "Brake Check",
+            "factone": "Your brakes are one of the most important safety features on your car. Regular inspections are crucial for safe driving.",
+            "facttwo": "If you hear squealing or grinding noises, feel vibrations when braking, or notice your car pulling to one side, have your brakes checked immediately.",
+            "factthree": "Brake fluid flushes and regular pad/rotor replacements are essential for maintaining optimal braking performance.",
+            "price": "$59.99", 
+            "brand": "N/A",
+            "quantity": 0,
+            "addIn": "Includes brake fluid check", 
+            "available": true
+          },
+          {
             "id": 1,
-             "name" : "Rotor Replacement",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": "" 
-        },
-        {
+            "name": "Rotor Replacement",
+            "factone": "Brake rotors are metal discs that the brake pads clamp down on to stop your car.",
+            "facttwo": "Worn or warped rotors can reduce braking efficiency and cause vibrations. If your rotors are damaged, it's important to replace them promptly.",
+            "factthree": "High-quality rotors and proper installation can ensure smooth and reliable braking performance.",
+            "price": "Varies", 
+            "brand": "Brembo, Wagner",
+            "quantity": 0,
+            "addIn": "Includes new brake pads", 
+            "available": true
+          },
+          {
             "id": 2,
-             "name" : "Rotor Resurfacing",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": "" 
-        }
-    ],
-    "mufflers": [
-        {
+            "name": "Rotor Resurfacing",
+            "factone": "In some cases, slightly worn or warped rotors can be resurfaced instead of replaced, saving you money.",
+            "facttwo": "Resurfacing involves removing a thin layer of metal from the rotor to create a smooth surface for the brake pads.",
+            "factthree": "However, rotors can only be resurfaced a limited number of times before they need to be replaced.",
+            "price": "$49.99 per rotor", 
+            "brand": "N/A",
+            "quantity": 0,
+            "addIn": "Inspection included", 
+            "available": true 
+          }
+        ],
+        "mufflers": [
+          {
             "id": 3,
-             "name" : "Muffler Installation",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": "" 
-        },
-        {
+            "name": "Muffler Installation",
+            "factone": "A properly functioning muffler reduces engine noise and directs exhaust fumes away from the vehicle.",
+            "facttwo": "If your muffler is damaged or rusted, it can lead to excessive noise and potentially harmful exhaust leaks.",
+            "factthree": "Choose a high-quality muffler and have it installed by a professional for optimal performance and longevity.",
+            "price": "Varies", 
+            "brand": "Magnaflow, Flowmaster",
+            "quantity": 0,
+            "addIn": "Includes exhaust system inspection", 
+            "available": true
+          },
+          {
             "id": 4,
-             "name" : "Exhaust Manifolds",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": "" 
-        },
-        {
+            "name": "Exhaust Manifolds",
+            "factone": "The exhaust manifold collects exhaust gases from the engine cylinders and directs them to the exhaust pipe.",
+            "facttwo": "Cracked or leaking exhaust manifolds can reduce engine performance and create harmful fumes.",
+            "factthree": "Regularly inspect your exhaust manifold for signs of damage, such as cracks or rust, to ensure proper engine function.",
+            "price": "Varies", 
+            "brand": "Dorman, Walker",
+            "quantity": 0,
+            "addIn": "Includes gasket replacement", 
+            "available": true
+          },
+          {
             "id": 5,
-             "name" : "Catalytic Converters",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": "" 
-        }
-    ],
-    "other" : [
-        {
+            "name": "Catalytic Converters",
+            "factone": "The catalytic converter reduces harmful emissions from your car's exhaust system.",
+            "facttwo": "A failing catalytic converter can trigger your check engine light and reduce your car's performance.",
+            "factthree": "Regular engine maintenance and using the correct fuel can help prolong the life of your catalytic converter.",
+            "price": "Varies", 
+            "brand": "Magnaflow, Walker", 
+            "quantity": 0,
+            "addIn": "Includes emissions system check", 
+            "available": true
+          }
+        ],
+        "other": [
+          {
             "id": 0,
-             "name" : "TPMS Diagnostics",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": "" 
-        },
-        {
+            "name": "TPMS Diagnostics",
+            "factone": "The TPMS (Tire Pressure Monitoring System) alerts you when your tire pressure is low, helping prevent accidents and improve fuel efficiency.",
+            "facttwo": "If your TPMS warning light is on, it's important to have your tire pressure checked and the system diagnosed for any faults.",
+            "factthree": "Regularly checking your tire pressure and ensuring your TPMS sensors are functioning correctly can contribute to a safer and more efficient driving experience.",
+            "price": "$49.99", 
+            "brand": "N/A",
+            "quantity": 0,
+            "addIn": "Includes sensor check", 
+            "available": true
+          },
+          {
             "id": 1,
-             "name" : "Shocks and Struts",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": "" 
-        },
-        {
+            "name": "Shocks and Struts",
+            "factone": "Shocks and struts are essential components of your suspension system, helping control your car's movement and absorb impacts.",
+            "facttwo": "Worn shocks or struts can affect your car's handling, braking, and ride comfort. If you experience excessive bouncing or swaying, have them inspected.",
+            "factthree": "Replacing worn shocks and struts can improve your car's safety and provide a smoother, more controlled ride.",
+            "price": "Varies", 
+            "brand": "Monroe, KYB", 
+            "quantity": 0,
+            "addIn": "Includes inspection and alignment check", 
+            "available": true 
+          },
+          {
             "id": 2,
-             "name" : "AC Repair and Refill",
-             "info": "",
-             "price": "",
-             "available":"",
-             "brand": "",
-             "quantity":0,
-             "addIn": "" 
-        }
+            "name": "AC Repair and Refill",
+            "factone": "A properly functioning AC system keeps you cool and comfortable, especially during hot weather.",
+            "facttwo": "If your AC isn't blowing cold air or is making strange noises, it might need a refrigerant refill or repair.",
+            "factthree": "Regular AC maintenance, including inspections and recharges, can help prevent costly repairs and ensure optimal performance.",
+            "price": "Varies", 
+            "brand": "N/A",
+            "quantity": 0,
+            "addIn": "Includes leak check", 
+            "available": true
+          }
     ]
 }

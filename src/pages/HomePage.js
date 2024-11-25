@@ -24,8 +24,6 @@ const HomePage = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [services] = useState(service.services);
 
-    console.log(services);
-
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
@@ -40,7 +38,7 @@ const HomePage = () => {
         <Container className='homepage-container'>
             <Card className='hero-card'>
                 <CardImg 
-                    al='tires with red tire marks on ground'
+                    alt='tires with red tire marks on ground'
                     src={
                         windowWidth <= 576
                         ? heroImageSmall :
@@ -55,7 +53,7 @@ const HomePage = () => {
                         Sonora Tires
                     </CardTitle>
                     <CardBody className='h2 hero-text'>
-                        Family owned and operated for over 30 +years.
+                        Family owned and operated for over 30 years.
                     </CardBody>
                 </CardImgOverlay>
             </Card>
@@ -75,8 +73,15 @@ const HomePage = () => {
                     </p>
                 </Col>
                 <Row className='services-container'>
-                    <ServicesIcons />
-                    <ServiceInfo />
+                    <Col className='services-icon-col'>
+                        <h3 className='service-title'>Professional Tire Services ...and more!</h3>
+                        <div className='service-icon-container'>
+                            <ServicesIcons />
+                        </div>
+                    </Col>
+                    <Col className='services-info-col'>
+                        <ServiceInfo />
+                    </Col>
                 </Row>
                     
             </Row>
