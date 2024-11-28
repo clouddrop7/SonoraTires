@@ -1,4 +1,4 @@
-import { Card,  Button, CloseButton } from 'react-bootstrap';
+import { Card,  Button, CloseButton, Col } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import '../../styles/services/service.scss';
 
@@ -34,11 +34,13 @@ const ServiceCard = ({name, factone, facttwo, factthree, typeOfService, closeCar
         <Card className='service-card'>
              <CloseButton variant='black' onClick={closeCard} className='close-btn' />
             <Card.Title className='h3 service-title' >{name}</Card.Title>
-                <Card.Body className='service-body'>
-                    <Card.Text className='service-text' >{factone}</Card.Text>
-                    <Card.Text className='service-text' >{facttwo}</Card.Text>
+                <Card.Body className='row service-body'>
+                    <Card.Text  className='service-text' >{factone}</Card.Text>
+                    <Card.Text  className='service-text' >{facttwo}</Card.Text> 
                     <Card.Text className='service-text' >{factthree}</Card.Text>
+                    <Col className='btn-col'>
                         <Button className='service-btn'>{buttonText}</Button>
+                    </Col>
                 </Card.Body>
         </Card>
     )

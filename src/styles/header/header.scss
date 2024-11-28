@@ -1,0 +1,68 @@
+@use '../variables/utils.scss' as util;
+
+// Navigation Styles
+
+
+.container {
+    .navbar-toggler {
+        @include util.margin(top,(top,bottom));
+    }
+}
+
+.offcanvas { 
+    padding: 0 util.gutter(sm);
+    .offcanvas-header {
+        @include util.flex-container(row,wrap,start, center);
+        @include util.margin(top, top);
+        @include util.gap(sm);
+        text-transform: uppercase;
+
+        .tire-icon {  
+            max-width: 100px;
+            max-height: 100px;
+            @media (min-width: 992px) {
+                display: block; 
+            }
+        }
+
+        .btn-close {
+            @include util.margin(left, auto);
+            padding: util.gutter(xs);
+        }
+    }
+
+    .offcanvas-body { 
+        .navbar-nav {
+            @include util.flex-container();
+            @include util.gap(sm);
+            .navbar-brand {
+                display: none;
+                text-transform: uppercase;
+                .tire-image {
+                    max-width: 200px;
+                    max-height: 200px;
+                }
+            }
+
+            .nav-link-group {
+                @include util.flex-container();
+                @include util.gap(sm);
+            }
+
+            .nav-link {
+                @include util.link-hover-style();
+            }
+
+            .info {
+                @include util.flex-container();
+                @include util.gap(sm);
+            }
+
+            .contact-btn {  
+                @include util.button-style();
+                padding: 0.875rem 1rem;
+                flex: 1; 
+            }
+        }
+    }
+}

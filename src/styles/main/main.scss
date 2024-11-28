@@ -1,6 +1,7 @@
 @use '../variables/fonts.scss' as font;
 @use '../variables/colors.scss' as colors;
 @use '../variables/utils.scss' as util;
+@import '../reset/reset.scss';
 
 // Body styles
 body {
@@ -12,143 +13,76 @@ body {
     }
 
     .container-fluid {
-        display: flex;
-        flex-direction: column;
+        @include util.flex-container();
         overflow: hidden;
+        padding: 0 util.gutter(sm);
+        padding: 0 util.gutter(sm);
     }
+
+    .container, 
+    .card, 
+    .card-body, 
+    .card-text,
+    .card-img-overlay,
+    .offcanvas-header,
+    .offcanvas-body,
+    .navbar, 
+    .navbar-nav,
+    .row,
+    .col,
+    .nav-link,
+    .link,
+    .btn,
+    .navbar-brand  {
+        padding: util.containerGutter(default);
+    }
+
+    .card-title, 
+    .navbar-nav, 
+    .container,
+    .navbar-brand,
+    .card-body {
+        @include util.margin(default);
+    }
+    
     h1 {
         font-size: font.responsive-font-title(xs);
-
         @media (min-width: 768px) {
             font-size: font.font-title(md);
         }
-        margin: 0;
     }
 
     h2 {
         @include font.font-theme(subTitle); 
-        font-size: font.responsive-sub-title(xs); // Call the function correctly
-    
+        font-size: font.responsive-sub-title(xs);
+
+        @media (min-width: 576px) {
+            font-size: font.responsive-sub-title(sm);
+        }
+
         @media (min-width: 768px) {
             font-size: font.responsive-sub-title(md);
         }
-
-        @media (min-width: 992px) {
-            font-size: font.responsive-sub-title(lg);
-        }
-        margin: 0;
     }
 
-    .h3 {
+    h3 {
         @include font.font-theme(default);
-        font-size: font.responsive-font-h3(xs);
-      
+        font-size: font.responsive-fonth3(xs);
+        
         @media (min-width: 768px) {
-          font-size: font.responsive-font-h3(md);
+            font-size: font.responsive-fonth3(md);
         }
-      
-        @media (min-width: 992px) {
-          font-size: font.responsive-font-h3(lg);
-        }
-      
-        margin: 0;
       }
 
-    p {
-        margin: 0;
-    }
+      h1,h2,h3,h4,h5, p {
+        @include util.text-align(center);
+
+        @media (min-width: 768px) {
+            @include util.text-align(start);
+        }
+      }
 }
 
-//Navigation styles
-@media (min-width: 992px) {
-    .navbar {
-        justify-content: center;
-        .container {
-            margin: 0;
-            padding: 0;
-        }
-    }
-}
-
-.offcanvas { 
-    .offcanvas-header {
-        text-transform: uppercase;
-        .tire-icon {  
-            max-width: 100px;
-            max-height: 100px;
-            @media (min-width: 992px) {
-                display: block; 
-            }
-        }
-    }
-
-    .offcanvas-body {
-        .navbar-nav {
-            flex-direction: column; 
-            align-items: flex-start;
-            padding: 0;
-
-            @media(min-width: 992px) {
-                flex-direction: row;
-                align-items: center;
-                width: 100%;
-                padding: 0 1rem;
-                .container {
-                    padding: 0 !important;
-                }
-                .nav-link-group, .info {
-                    display: flex;
-                    align-items: center;
-
-                    @media (min-width: 1200px) {
-                        gap: 1rem;
-                    }
-                }
-
-                .nav-link-group {
-                    margin: 0 auto;
-                }
-
-                .info {
-                    align-items: center;
-                }
 
 
-            }
-            .navbar-brand {
-                display: none;
-                text-transform: uppercase;
-                @media (min-width: 992px) {
-                    display: flex;
-                    align-items: center;
-                    margin: 0;
-                }
 
-                .tire-image {
-                    max-width: 200px;
-                    max-height: 200px;
-                }
-            }
-
-            .nav-link {
-                @include util.link-hover-style();
-            }
-
-            .contact-btn { 
-                flex: 1;  
-                min-width: 150px; 
-                @include util.button-style();
-                font-weight: 700;
-                margin-left: 0.5rem;
-
-                @media(min-width: 992px) {
-                    margin-left: 1rem;
-                }
-
-                @media (min-width: 1200px) {
-                    margin: 0;
-                }
-            }
-        }
-    }
-}

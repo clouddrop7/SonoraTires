@@ -2,6 +2,7 @@ import { Container, Navbar, Nav, Offcanvas, Image, Button } from 'react-bootstra
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import sonoraIcon from '../app/assets/images/sonoraIcon.png';
+import '../styles/header/header.scss';
 
 const Header = () => {
     const [show, setShow] = useState(false);

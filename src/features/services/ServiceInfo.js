@@ -67,9 +67,9 @@ const ServiceInfo = () => {
     return (
         <Container className='service-info-container'>
             <h3 className='service-info-title'>Facts and Guidance for Top of the Line Car and Tire Care!</h3>
-            <Row as='ul' className='row-cols-xs-7 service-info g-4 m-0'>
+            <Row as='ul' className='service-info'>
                 {allServices.map(({id, name}) => (
-                    <Col key={uuidv4()} as='li' xs={5} sm={3} md={8} className='service-info-item'>
+                    <Col key={uuidv4()} as='li' xs={5} sm={3} className='service-info-item'>
                         <div className='service-name' onClick={() => handleClick(name)}>
                             {name}
                         </div>
