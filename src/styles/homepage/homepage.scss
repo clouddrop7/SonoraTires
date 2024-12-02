@@ -101,6 +101,14 @@
       @media (min-width: 1200px) {
         max-width: 55%;
       }
+
+      @media (min-width: 1600px) {
+        max-width: 50%;
+      }
+
+      @media (min-width: 1600px) {
+        max-width: 45%;
+      }
     }
   }
 
@@ -181,6 +189,10 @@
 
       @media (min-width: 1400px) {
         max-width: 35%;
+      }
+
+      @media (min-width: 1800px) {
+        max-width: 30%;
       }
     }
 
