@@ -1,0 +1,8 @@
+{
+  "short_name": "Sonora Tires Inc.",
+  "name": "Sonora Tires Inc.",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/sonoratires/static/css/main.7401dfdb.css",
+    "main.js": "/sonoratires/static/js/main.f5a19101.js",
+    "static/media/hero-imagexl.png": "/sonoratires/static/media/hero-imagexl.ed2bf366b6440bd45c9b.png",
+    "static/media/hero-image.png": "/sonoratires/static/media/hero-image.25c019704f6043303ada.png",
+    "static/media/hero-image-large.png": "/sonoratires/static/media/hero-image-large.5f30b56cee0e6b449c80.png",
+    "static/media/sonoraIcon.png": "/sonoratires/static/media/sonoraIcon.e388059e0970c3a8b99b.png",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/sonoratires/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/hero-image-medium.png": "/sonoratires/static/media/hero-image-medium.c1649d53b014d03e1c3d.png",
+    "static/media/hero-image-mobile.png": "/sonoratires/static/media/hero-image-mobile.b03a580a768df3f6645c.png",
+    "static/media/fontawesome-webfont.eot": "/sonoratires/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/sonoratires/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/sonoratires/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/sonoratires/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "index.html": "/sonoratires/index.html",
+    "main.7401dfdb.css.map": "/sonoratires/static/css/main.7401dfdb.css.map",
+    "main.f5a19101.js.map": "/sonoratires/static/js/main.f5a19101.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7401dfdb.css",
+    "static/js/main.f5a19101.js"
+  ]
+}
