@@ -2,22 +2,80 @@
 
 // Navigation Styles
 
+.navbar {
+    width: 100%;
+    @include util.margin(xs,top);
+    padding: util.gutter(default);
 
-.container {
-    .navbar-toggler {
-        @include util.margin(top,(top,bottom));
+    @media (min-width: 576px) {
+        @include util.flex-container(row, wrap,center,center);
+    }
+
+    .container {
+        flex-direction: row;
+        padding: 0 util.gutter(xs);
+
+        @media (min-width: 576px) {
+            padding: util.gutter(default);
+        }
+
+        @media (min-width: 992px) {
+            padding: 0 util.gutter(sm);
+        }
+
+        .navbar-brand {
+            @include util.flex-container(column,wrap,center,center);
+            text-transform: uppercase;
+
+            .brand {
+                line-height: 1;
+                @media (min-width: 768px) {
+                    font-size: 1.5rem;
+                    align-self: center;
+                }
+            }
+
+            @media (min-width: 992px) {
+                @include util.gap(default);
+            }
+
+            @media (min-width: 1200px) {
+                @include util.flex-container(row,wrap,center,center);
+            }
+        
+            .tire-image {
+                max-width: 100px;
+                max-height: 100px;
+
+                @media (min-width: 768px) {
+                    max-width: 150px;
+                    max-height: 150px;
+                }
+
+                @media (min-width: 1200px) {
+                    max-width: 200px;
+                    max-height: 200px;
+                }
+            }
+        }
     }
 }
 
 .offcanvas { 
-    padding: 0 util.gutter(sm);
+    padding: 0 util.gutter(xs);
+    @include util.gap(xs);
+
+    @media (min-width: 992px) {
+        padding: util.gutter(default);
+    }
+
     .offcanvas-header {
         @include util.flex-container(row,wrap,start, center);
         @include util.margin(top, top);
         @include util.gap(sm);
         text-transform: uppercase;
 
-        .tire-icon {  
+        .tire-icon { 
             max-width: 100px;
             max-height: 100px;
             @media (min-width: 992px) {
@@ -32,21 +90,36 @@
     }
 
     .offcanvas-body { 
+        @media (min-width: 992px) {
+            justify-content: center;
+        }
+    
         .navbar-nav {
+
             @include util.flex-container();
             @include util.gap(sm);
-            .navbar-brand {
-                display: none;
-                text-transform: uppercase;
-                .tire-image {
-                    max-width: 200px;
-                    max-height: 200px;
-                }
+
+            @media (min-width: 992px) {
+                @include util.flex-container(row, nowrap,space-between,center);
+                @include util.gap(default);
+                padding-left: util.gutter(xs);
             }
 
             .nav-link-group {
                 @include util.flex-container();
+                @include util.gap(xs);
+
+                @media (min-width: 992px) {
+                @include util.flex-container(row, nowrap, center, center);
+                @include util.gap(xs);
+                }
+
+                @media (min-width: 1200px) {
+                @include util.gap(default);
                 @include util.gap(sm);
+                width: 100%;
+                margin: 0 auto;
+                }
             }
 
             .nav-link {
@@ -56,13 +129,24 @@
             .info {
                 @include util.flex-container();
                 @include util.gap(sm);
+
+                @media (min-width: 992px) {
+                    @include util.flex-container(row, nowrap,center,center);
+                    @include util.gap(xs);
+                }
+
+                @media (min-width: 1200px) {
+                    margin-left: auto;
+                    align-items: center;
+                    @include util.gap(sm);
+                }
             }
 
-            .contact-btn {  
+            .contact-btn { 
                 @include util.button-style();
-                padding: 0.875rem 1rem;
-                flex: 1; 
             }
         }
     }
 }
+
+

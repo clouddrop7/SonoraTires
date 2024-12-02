@@ -16,6 +16,10 @@ const Header = () => {
                     onClick={handleShow}
                     aria-controls="offcanvasNavbar-expand-lg"
                 />
+                <Navbar.Brand href="#home" className="navbar-brand">
+                    <Image className='tire-image' src={sonoraIcon} alt='Sonora Tires logo' />
+                        <span className='brand'>tires inc.</span>
+                </Navbar.Brand>
                 <Navbar.Offcanvas
                     id="offcanvasNavbar-expand-md"
                     aria-labelledby="offcanvasnavbar-expand-lg"
@@ -29,11 +33,6 @@ const Header = () => {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Navbar className="navbar-nav"> 
-                            <Navbar.Brand href="#home" className="navbar-brand">
-                                <Image className='tire-image' src={sonoraIcon} alt='Sonora Tires logo' />
-                                <span className='brand'>tires inc.</span>
-                            </Navbar.Brand>
-
                             <div className="nav-link-group"> 
                                 <Nav.Link as={Link} to="/tires" className="link" onClick={handleClose}>
                                     tires

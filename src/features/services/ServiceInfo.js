@@ -66,16 +66,21 @@ const ServiceInfo = () => {
     
     return (
         <Container className='service-info-container'>
-            <h3 className='service-info-title'>Facts and Guidance for Top of the Line Car and Tire Care!</h3>
+            <h3 className='h3 service-info-title'>
+                Facts and Guidance <br/>
+                For Top of the Line <br />
+                Car and Tire Care!
+            </h3>
             <Row as='ul' className='service-info'>
                 {allServices.map(({id, name}) => (
-                    <Col key={uuidv4()} as='li' xs={5} sm={3} className='service-info-item'>
+                    <Col key={uuidv4()} as='li' xs={5} sm={3} lg={4} xl={6}  className='service-info-item'>
                         <div className='service-name' onClick={() => handleClick(name)}>
                             {name}
                         </div>
                     </Col>
                 ))}
-                {
+            </Row>
+            {
                     selectedCard && (
                         <animated.div className='anime-service-card' style={cardAnimation}>
                             <ServiceCard 
@@ -90,7 +95,6 @@ const ServiceInfo = () => {
                         </animated.div>
                     )
                 }
-            </Row>
         </Container>
     )
 }

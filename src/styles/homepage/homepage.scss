@@ -2,109 +2,215 @@
 @use '../variables/fonts.scss' as font;
 @use '../variables/utils.scss' as util;
 
-
-.homepage-Container, 
+.homepage-container, 
 .card-img-overlay,
 .services-container,
 .services-icon-col,
-.hero-mission,
-.service-icon-container {
-    @include util.flex-container();
+.service-icon-container { 
+  @include util.flex-container(column, wrap, center,center);
+  @include util.gap(xs);
+  width: 100%;
+  
+  @media (min-width: 576px) {
     @include util.gap(sm);
+  }
 
+  @media (min-width: 768px) {
+    @include util.flex-container(column,wrap,start,start);
+  }
+
+  @media (min-width: 1200px) {
+    @include util.gap(md);
+  }
 }
 
+
 @media (min-width: 768px) {
-    .hero-mission,
-    .services-container,
-    .services-icon-col {
-        @include util.gap(md);
-    }
+  .hero-mission,
+  .services-container,
+  .services-icon-col {
+    @include util.gap(md);
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-mission,
+  .services-container,
+  .services-icon-col {
+    @include util.gap(lg);
+  }
 }
 
 .homepage-container {
-    .hero-card {
-        .card-img-overlay {
-            padding: util.gutter(sm);
-            background-color: rgba(0,0,0,0.3);
-        }
-
-        .hero-title {
-            @include font.font-theme(title);
-            text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
-
-            @media (min-width: 768px) {
-                font-size: font.responsive-font-title(md);
-            }
-
-            @media (min-width: 992px) {
-                font-size: 3.5rem;
-            }
-        }
-
-        .hero-text {
-            @include font.font-theme(subTitle); 
-            font-size: font.responsive-sub-title(xs);
-            text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
-            color: colors.colorTheme(white);
-            max-width: 90%;
-            
-            @media (min-width:576px) {
-                font-size: font.responsive-sub-title(sm);
-                max-width: 55%;
-            }
-
-            @media (min-width: 768px) {
-                font-size: font.responsive-sub-title(md);
-                max-width: 50%;
-            }
-        }
+  width: 100%;
+  max-width: 100%;
+  .hero-card {
+    border-radius: 0;
+    width: 100%;
+    .hero-image {
+      border-radius: 0;
     }
 
-    .hero-mission {
-        @include util.flex-container(column,wrap,center,center);
-        @include util.margin(top, top);
+    .card-img-overlay {
+      padding: util.gutter(xs);
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 0;
 
-        @media (min-width: 768px) {
-            .mission-title-col {
-                padding-left: util.gutter(lg);
-            }
-        }
+      @media (min-width: 576px) {
+        padding: util.gutter(sm);
+        @include util.gap(sm);
+      }
+      @media (min-width: 992px) {
+        padding: util.gutter(sm);
+      }
 
-        .mission-statement {
-            padding: 0 util.gutter(lg);
-        }
+      @media (min-width: 1200px) {
+        padding: util.gutter(md);
+        @include util.gap(md);
+      }
     }
+
+    .hero-title {
+      @include font.font-theme(title);
+      text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .hero-text {
+      text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+      color: colors.colorTheme(white);
+      max-width: 95%;
+
+      @media (min-width: 480px) {
+        max-width: 70%;
+      }
+      
+      @media (min-width:576px) {
+        max-width: 75%;
+      }
+
+      @media (min-width: 768px) {
+        max-width: 65%;
+      }
+
+      @media (min-width: 992px) {
+        line-height: 103.571%;
+        letter-spacing: 0.125rem;
+        max-width: 70%;
+      }
+
+      @media (min-width: 1200px) {
+        max-width: 55%;
+      }
+    }
+  }
+
+  .hero-mission {
+    align-self: center;
+    
+    @media (min-width: 768px) {
+      .mission-title-col {
+        padding-left: util.gutter(sm);
+      }
+    }
+
+    @media (min-width: 992px) {
+      @include util.margin(lg, top);
+    }
+
+    @media (min-width: 1200px) {
+      .mission-title-col {
+        padding-left: util.gutter(md);
+      }
+
+      @include util.gap(default);
+
+    }
+
+    .mission-statement {
+      padding: 0 util.gutter(sm);
+
+      @media (min-width: 1200px) {
+        padding: 0 util.gutter(md);
+      }
+    }
+  }
 }
 
 .services-container {
-    .services-icon-col {
-        .service-title {
-            color: colors.colorTheme(red);
-            line-height: 1.2;
-            letter-spacing: 0.3rem;
-            max-width: 55%;
-            @include util.margin(auto);
-
-            @media (min-width:576px) {
-                max-width: 35%;
-            }
-
-            @media (min-width:768px) {
-                max-width: 55%;
-                @include util.margin(default);
-                padding-left: util.gutter(lg);
-            }
-        }
-        .service-icon-container {
-            @include util.flex-container(row,wrap,center,center);
-            width: 100%;
-
-            @media (min-width: 768px) {
-                @include util.flex-container(row, wrap, space-around,center);
-            }
-        }
+  align-self: center;
+  .services-icon-col {
+    @media (min-width: 1200px) {
+      @include util.flex-container(row-reverse,wrap, space-between,center);
+      @include util.gap(default);
+      padding: 0 util.gutter(md);
     }
+
+    @media (min-width: 1400px) {
+      @include util.flex-container(row-reverse,wrap,start,center);
+      @include util.gap(default);
+      padding: 0 0 0 util.gutter(md);
+    }
+
+    .service-title {
+      color: colors.colorTheme(red);
+      line-height: 1.2;
+      letter-spacing: 0.3rem;
+      max-width: 60%;
+      
+      @media (min-width:480px) {
+        max-width: 45%;
+      }
+
+      @media (min-width:576px) {
+        max-width: 35%;
+      }
+
+      @media (min-width:768px) {
+        max-width: 55%;
+        padding-left: util.gutter(sm);
+      }
+
+      @media (min-width:992px) {
+        max-width: 45%;
+        padding-left: util.gutter(sm);
+      }
+
+      @media (min-width: 1200px) {
+       padding: util.gutter(default); 
+      }
+
+      @media (min-width: 1400px) {
+        max-width: 35%;
+      }
+    }
+
+    .service-icon-container {
+      @include util.flex-container(row,nowrap,center,center);
+      @media (min-width: 576px) {
+        @include util.flex-container(row,wrap,space-around,center);
+      }
+      @media (min-width: 768px) {
+          @include util.flex-container(row, wrap, space-between,center);
+      }
+
+      @media (min-width: 992px) {
+        padding: 0 util.gutter(sm);
+      }
+
+      @media (min-width: 1200px) {
+        @include util.flex-container(row,wrap,space-between,center);
+        padding: util.gutter(default);
+        width: 50%;
+      }
+
+      @media (min-width: 1400px) {
+        @include util.flex-container(row,wrap,start,center);
+        padding: util.gutter(default);
+        @include util.gap(sm);
+        width: 50%;
+      }
+    }
+  } 
 
     .services-info-col {
         @include util.flex-container(column,wrap,center,center);

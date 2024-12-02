@@ -33,7 +33,7 @@ const ServiceCard = ({name, factone, facttwo, factthree, typeOfService, closeCar
     return (
         <Card className='service-card'>
              <CloseButton variant='black' onClick={closeCard} className='close-btn' />
-            <Card.Title className='h3 service-title' >{name}</Card.Title>
+            <Card.Title className='h4 service-title' >{name}</Card.Title>
                 <Card.Body className='row service-body'>
                     <Card.Text  className='service-text' >{factone}</Card.Text>
                     <Card.Text  className='service-text' >{facttwo}</Card.Text> 

@@ -14,7 +14,8 @@ import '../styles/homepage/homepage.scss';
 import heroImageSmall from '../app/assets/images/hero-image-mobile.png';
 import heroImageMedium from '../app/assets/images/hero-image-medium.png';
 import heroImageLarge from '../app/assets/images/hero-image-large.png';
-
+import heroImage from '../app/assets/images/hero-image.png';
+import heroImageXl from '../app/assets/images/hero-imagexl.png';
 import ServicesIcons from '../features/services/ServicesIcons';
 import ServiceInfo from '../features/services/ServiceInfo';
 import service from '../db.json';
@@ -44,7 +45,11 @@ const HomePage = () => {
                         ? heroImageSmall :
                         windowWidth <= 768
                         ? heroImageMedium :
-                        heroImageLarge
+                        windowWidth <= 992
+                        ? heroImageLarge :
+                        windowWidth <= 1200 
+                        ? heroImage :
+                        heroImageXl
                     }
                     className='hero-image'
                 />
@@ -59,7 +64,7 @@ const HomePage = () => {
             </Card>
             <Row className='hero-mission'>
                 <Col className='mission-title-col'>
-                    <h2>Our Service to you.</h2>
+                    <h2 className='h2'>Our Service to you.</h2>
                 </Col>
                 <Col className='mission-statement'>
                     <p>Laboris dolore duis enim duis esse exercitation laboris 
@@ -72,19 +77,18 @@ const HomePage = () => {
                     cupidatat ea excepteur sit ad esse.
                     </p>
                 </Col>
-                <Row className='services-container'>
-                    <Col className='services-icon-col'>
-                        <h3 className='service-title'>Professional Tire Services ...and more!</h3>
-                        <div className='service-icon-container'>
-                            <ServicesIcons />
-                        </div>
-                    </Col>
-                    <Col className='services-info-col'>
-                        <ServiceInfo />
-                    </Col>
-                </Row>
-                    
             </Row>
+            <Row className='services-container'>
+                <Col className='services-icon-col'>
+                    <h3 className='h3 service-title'>Professional Tire Services ...and more!</h3>
+                    <div className='service-icon-container'>
+                        <ServicesIcons />
+                    </div>
+                </Col>
+                <Col className='services-info-col'>
+                    <ServiceInfo />
+                </Col>
+            </Row>        
         </Container>
     )
 }

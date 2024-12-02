@@ -2,17 +2,25 @@
 @use '../variables/colors.scss' as colors;
 @use '../variables/utils.scss' as util;
 
-.service-info-container, 
-.anime-service-card,
-.service-body,
-.btn-col {
+.card-img-overlay,
+.hero-mission,
+.service-info-container {
   @include util.flex-container();
 }
+
+@media (min-width: 1200px) {
+  .hero-mission {
+    @include util.flex-container(row,wrap, space-around,center);
+  }
+}
+
+
 
 .card-container,
 .service-info-container {
   overflow: hidden;
 }
+
 
 .card-back,
 .anime-service-card,
@@ -22,6 +30,7 @@
   height: 100%;
 }
 
+// Position relative
 .card-container,
 .service-info-container,
 .service-info,
@@ -29,123 +38,142 @@
   position: relative;
 }
 
+// Position absolute
 .card-back,
 .anime-service-card {
   position: absolute;
 }
 
+
 .service-info-container,
 .service-info,
-.service-card,
-.service-body {
-  @include util.gap(sm);
+.service-card {
+  @include util.gap(xs);
+
+  @media (min-width: 576px) {
+    @include util.gap(sm);
+  }
 }
 
 .card-container {
-    max-width: 4rem;
-    max-height: 4rem;
-        @media(min-width:576px) {
-          max-width: 6rem;
-          max-height: 6rem;
+  max-width: 3rem;
+  max-height: 3rem;
+  @media (min-width: 576px) {
+    max-width: 6rem;
+    max-height: 6rem;
+  }
+  .icon-image {
+    width: 3rem;
+    height: 3rem;
+    @media (min-width: 576px) {
+      width: 6rem;
+      height: 6rem;
     }
-
-    @media(min-width:768px) {
-      max-width: 8rem;
-      max-height: 8rem;
-    }
-
-    .card-front{
-      display: flex;
-      min-width: 4rem;
-      min-height: 4rem;
-
-      @media (min-width: 768px) {
-        min-width: 8rem;
-        min-height: 8rem;
-      }
-    }
-
-    .card-back {
-      backface-visibility: hidden;
-    }
-
-    .icon-image {
-       max-width: 4rem;
-       max-height: 4rem;
-
-       @media (min-width: 768px) {
-        max-width: 8rem;
-        max-height: 8rem;
-       }
-    }
+  }
+  .card-back {
+    backface-visibility: hidden;
+  }
 }
 
 .tool-tip {
-    border: 1px solid #ccc; 
-    & .tooltip-inner { 
-      background-color: colors.colorTheme(yellow);
-      color: colors.colorTheme(black);
-      padding: util.gutter(xs);
-    }
-  
-    & .arrow::before {
-      border-top-color: #f0f0f0; 
+  border: 1px solid #ccc;
+
+  & .tooltip-inner {
+    background-color: colors.colorTheme(yellow);
+    color: colors.colorTheme(black);
+    padding: util.gutter(xs);
+  }
+
+  & .arrow::before {
+    border-top-color: #f0f0f0;
+  }
+}
+
+.service-info-container {
+  background-color: colors.colorTheme(yellow);
+  overflow: hidden;
+
+  @media (min-width: 576px) {
+    @include util.flex-container(column, wrap, center, center);
+  }
+
+  .service-info-title {
+    line-height: 1.2;
+    letter-spacing: 0.3rem;
+    padding: util.gutter(xs);
+    color: colors.colorTheme(red);
+
+    @media (min-width: 992px) {
+      max-width: 35%;
+      padding: util.gutter(sm) 0 0;
+      text-align: center !important;
     }
   }
 
-  .service-info-container {
-    padding: 0 util.gutter(lg) !important;
-    background-color: colors.colorTheme(yellow);
-
+  .service-info {
+    @include util.flex-container(row, wrap, space-between, center);
+    width: 100%;
+    align-self: center;
+    padding: 0  util.gutter(sm) util.gutter(md);
+    list-style-type: none;
+    @include util.gap(xs);
+    
     @media (min-width: 576px) {
-      @include util.flex-container(column, wrap, center, start);
+      padding: 0 util.gutter(md) util.gutter(sm);
     }
 
-    @media (min-width:768px) {
+    @media (min-width: 992px) {
+      @include util.flex-container(row,wrap,start,center);
+    }
+
+    @media (min-width: 1200px) {
+      padding: 0 0 util.gutter(md);
+      max-width: 70%;
+      margin: 0 auto;
       @include util.gap(md);
     }
 
-    .service-info-title {
-      @include util.margin(top,top);
-      line-height: 1.2;
-      letter-spacing: 0.3rem;
+    .service-info-item {
+      list-style-position: inside;
+      font-weight: 500;
+      padding: util.gutter(default);
 
       @media (min-width: 576px) {
-        max-width: 72%;
+        padding: util.gutter(default);
       }
 
       @media (min-width: 768px) {
-        @include util.margin(md,top);
-        max-width: 62%;
+        text-wrap: nowrap;
       }
-    }
 
-    .service-info {
-      @include util.flex-container(row,wrap, space-between, center);
-      @include util.margin(top, bottom);
-      list-style-type: none;
+      @media (min-width: 992px) {
+        padding: 0;
+        max-width: 20%;
+      }
 
-      .service-info-item {
-        list-style-position: inside;
-        font-weight: 500;
+      @media (min-width: 1400px) {
+        max-width: 20%;
+      }
 
-        .service-name {
-          cursor: pointer;
-          text-decoration: underline;
-          text-underline-offset: 4px;
-          text-decoration-color: colors.colorTheme(red);
-          &:hover {
-            color: colors.colorTheme(red);
-          }
+      .service-name {
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-color: colors.colorTheme(red);
+
+        &:hover {
+          color: colors.colorTheme(red);
         }
       }
     }
+  }
 }
 
 .anime-service-card {
   top: 0;
   left: 0;
   z-index: 10;
+  padding: util.gutter(default);
 }
 
 .service-card {
@@ -154,13 +182,19 @@
   background-color: colors.colorTheme(black);
   color: colors.colorTheme(white);
 
-  @media (min-width:768px) {
+  @media (min-width: 768px) {
+    @include util.gap(xs);
+  }
+
+  @media (min-width: 992px) {
     @include util.gap(md);
   }
 
   .close-btn {
     align-self: flex-end;
-    @include util.margin(xs, (top,right));
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
     color: colors.colorTheme(white);
     background-color: colors.colorTheme(white);
     border-radius: 0;
@@ -172,37 +206,40 @@
     line-height: 1;
     letter-spacing: 0.05rem;
     color: colors.colorTheme(white);
-    @media(min-width: 768px) {
-      @include util.margin(default);
-      padding-left: util.gutter(lg);
-    }
-  }
-  .service-body {
-    padding: 0 util.gutter(lg);
-    width: 100%;
-    height: 100%;
-
-    .service-text {
-           line-height: 1.2;
-      @media (min-width: 768px) {
-        padding: 0 util.gutter(md);
-      }
-    }
 
     @media (min-width: 768px) {
-      @include util.gap(md);
+      text-align: center;
+      @include util.margin(default);
+      padding-left: util.gutter(sm);
+    }
+  }
+
+  .service-body {
+    padding: 0 util.gutter(sm);
+    @media (min-width: 992px) {
+      @include util.flex-container(row,wrap,center,start);
+      @include util.gap(sm);
+    }
+    .service-text {
+      line-height: 1.2;
+
+      @media (min-width: 768px) {
+        padding: 0 util.gutter(sm);
+      }
+
+      @media (min-width: 992px) {
+        max-width: 30%;
+        padding: util.gutter(default);
+        
+      }
     }
   }
 
   .btn-col {
-    @include util.margin(top, bottom);
+    @include util.flex-container();
 
-    @media (min-width: 768px) {
-      @include util.margin(md,bottom);
-    }
     .service-btn {
       @include util.call-action;
     }
   }
-
 }

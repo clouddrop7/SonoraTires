@@ -1,6 +1,7 @@
 @use 'sass:math';
 @use 'sass:color';
 @use '../variables/colors.scss' as colors;
+@use '../variables/utils.scss' as util;
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
 // Font Families
@@ -31,6 +32,7 @@ $font-themes: (
         font-weight: 500,
         letter-spacing: 0.0625rem,
         color: colors.colorTheme(black),
+        
     )
 );
 
@@ -51,13 +53,14 @@ $font-themes: (
 // Responsive font size functions 
 
 $title-font-sizes: (
-  xs: 2rem, 
-  sm: 2.5rem, // Changed to rem
-  lg: 4rem,   // Changed to rem
+  xs: 3.5rem, 
+  sm: 2.5rem, 
+  lg: 4rem,
+  xl: 5rem,   
 );
 
 @function font-title($breakpoint) {
-  @return map-get($font-title, $breakpoint);
+  @return map-get($title-font-sizes, $breakpoint);
 }
 
 $default-font-size: (
@@ -70,11 +73,11 @@ $default-font-size: (
 }
 
 $subTitle: (
-    xs: 1.125rem,
-    sm: 1.25rem,
-    md: 1.5rem,
-    lg: 2rem,
-    xl: 2.5rem,  // Add the 'md' breakpoint here
+    xs: 1.25rem,
+    sm: 1.5rem,
+    md: 2rem,
+    lg: 3rem,
+    xl: 3.5rem, 
 );
 
 @function responsive-sub-title($breakpoint) {
@@ -84,18 +87,21 @@ $subTitle: (
 $font-h3: (
   xs: 1.125rem,
   md: 1.25rem,
-  lg: 1.5rem
+  lg: 1.5rem,
+  xl: 2rem,
+  xxl: 2.5rem,
 );
 
 @function responsive-fonth3($breakpoint) {
   @return map-get($font-h3, $breakpoint);
 }
 
-$font-title: (
-    xs:2.25rem,
-    md: 3.5rem,
-);
+// $font-title: (
+//     xs:2.25rem,
+//     md: 3.5rem,
+//     lg: 4rem,
+// );
 
-@function responsive-font-title($breakpoint) {
-  @return map-get($font-title, $breakpoint);
-}
+// @function responsive-font-title($breakpoint) {
+//   @return map-get($font-title, $breakpoint);
+// }
