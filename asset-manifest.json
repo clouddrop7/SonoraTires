@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SonoraTires/static/css/main.5024f56b.css",
+    "main.css": "/SonoraTires/static/css/main.8e91de9e.css",
     "main.js": "/SonoraTires/static/js/main.b8ef01f2.js",
     "static/media/hero-imagexl.png": "/SonoraTires/static/media/hero-imagexl.ed2bf366b6440bd45c9b.png",
     "static/media/hero-image.png": "/SonoraTires/static/media/hero-image.25c019704f6043303ada.png",
@@ -14,11 +14,11 @@
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/SonoraTires/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/SonoraTires/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "index.html": "/SonoraTires/index.html",
-    "main.5024f56b.css.map": "/SonoraTires/static/css/main.5024f56b.css.map",
+    "main.8e91de9e.css.map": "/SonoraTires/static/css/main.8e91de9e.css.map",
     "main.b8ef01f2.js.map": "/SonoraTires/static/js/main.b8ef01f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.5024f56b.css",
+    "static/css/main.8e91de9e.css",
     "static/js/main.b8ef01f2.js"
   ]
 }
