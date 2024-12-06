@@ -16,8 +16,11 @@ import heroImageMedium from '../app/assets/images/hero-image-medium.png';
 import heroImageLarge from '../app/assets/images/hero-image-large.png';
 import heroImage from '../app/assets/images/hero-image.png';
 import heroImageXl from '../app/assets/images/hero-imagexl.png';
+
 import ServicesIcons from '../features/services/ServicesIcons';
 import ServiceInfo from '../features/services/ServiceInfo';
+import About from '../components/About';
+import Contact from '../features/contact/Contact';
 import service from '../db.json';
 
 const HomePage = () => {
@@ -88,7 +91,9 @@ const HomePage = () => {
                 <Col className='services-info-col'>
                     <ServiceInfo />
                 </Col>
-            </Row>        
+            </Row>  
+            <About />  
+            <Contact />  
         </Container>
     )
 }

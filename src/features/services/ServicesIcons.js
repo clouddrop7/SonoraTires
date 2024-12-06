@@ -3,7 +3,7 @@ import { Card, CardImg } from "reactstrap";
 import { useSpring, animated } from "@react-spring/web";
 import { Tooltip} from 'reactstrap';
 import "../../styles/services/service.scss";
-import icons from '../../db.json';
+import icons from "../../db.json";
 
 const ServicesIcons = () => {
     const [iconData] = useState(icons.icons);

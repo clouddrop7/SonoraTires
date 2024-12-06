@@ -1,0 +1,15 @@
+@use '../variables/colors.scss' as colors;
+@use '../variables/fonts.scss' as font;
+@use '../variables/utils.scss' as util;
+
+
+.contact-form {
+    display: flex;
+    width: 100%;
+    max-width: 100px;
+    height: 100%;
+}
+.contact-form-container {
+    @include util.flex-container();
+    width: 100%;
+}

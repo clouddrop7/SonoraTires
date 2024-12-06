@@ -102,11 +102,15 @@
         max-width: 55%;
       }
 
-      @media (min-width: 1600px) {
+      @media (min-width: 1515px) {
         max-width: 50%;
       }
 
       @media (min-width: 1600px) {
+        max-width: 50%;
+      }
+
+      @media (min-width: 1655px) {
         max-width: 45%;
       }
     }
@@ -128,6 +132,9 @@
     @media (min-width: 1200px) {
       .mission-title-col {
         padding-left: util.gutter(md);
+        .h2 {
+          text-align: center !important;
+        }
       }
 
       @include util.gap(default);
@@ -150,13 +157,18 @@
     @media (min-width: 1200px) {
       @include util.flex-container(row-reverse,wrap, space-between,center);
       @include util.gap(default);
-      padding: 0 util.gutter(md);
+      padding: 0 2rem;
     }
 
     @media (min-width: 1400px) {
-      @include util.flex-container(row-reverse,wrap,start,center);
+      @include util.flex-container(row-reverse,wrap,space-between,center);
       @include util.gap(default);
-      padding: 0 0 0 util.gutter(md);
+    }
+
+    @media (min-width: 1600px) {
+      @include util.flex-container(row-reverse,wrap,space-between,start);
+      @include util.gap(default);
+      padding: 0;
     }
 
     .service-title {
@@ -210,7 +222,7 @@
       }
 
       @media (min-width: 1200px) {
-        @include util.flex-container(row,wrap,space-between,center);
+        @include util.flex-container(row,wrap,start,center);
         padding: util.gutter(default);
         width: 50%;
       }
@@ -220,6 +232,12 @@
         padding: util.gutter(default);
         @include util.gap(sm);
         width: 50%;
+      }
+
+      @media (min-width: 1600px) {
+        @include util.flex-container(row,wrap,center,start);
+        @include util.gap(sm);
+        max-width: 70%;
       }
     }
   } 

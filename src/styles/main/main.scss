@@ -27,9 +27,11 @@ body {
       }
 
       @media (min-width: 992px) {
-          @include util.flex-container(column, wrap, center, center);
-          padding: util.gutter(default);
-          @include util.gap(xs);
+        align-self: center;
+        margin: 0 auto;
+        @include util.flex-container(column, wrap, center, center);
+        padding: util.gutter(default);
+        @include util.gap(xs);
       }
 
     }
@@ -64,7 +66,7 @@ body {
       width: 100%;
       max-width: 100%;
       @media (min-width: 768px) {
-        @include util.flex-container(column, wrap,start,center);
+        @include util.flex-container(column, wrap,center,center);
       }
     }
   
@@ -124,10 +126,14 @@ body {
         font-size: font.responsive-fonth3(xl);
       }
     }
+
+    h4, .h4, h5, .h5 {
+      @include util.margin(default);
+      padding: util.gutter(default);
+    }
   
     h1, h2, h3, h4, h5, p {
       @include util.text-align(center);
-  
       @media (min-width: 768px) {
         @include util.text-align(start);
       }
