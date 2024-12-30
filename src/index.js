@@ -5,9 +5,9 @@ import { store } from './app/store';
 import "../node_modules/bootstrap/scss/bootstrap.scss";
 import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
-import { HashRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import CartContext from './context/CartContext';
+import ServiceProvider from './providers/ServiceProvider';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -15,9 +15,11 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-        <Router>
-          <App />
-        </Router>
+        <BrowserRouter>
+          <ServiceProvider>
+            <App />
+          </ServiceProvider>
+        </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

@@ -1,5 +1,5 @@
 @use '../variables/colors.scss' as colors;
-
+@use '../variables//fonts.scss' as font;
 $grid-gutter-widths: (
     default: 0,
     xs: 1rem,
@@ -76,68 +76,24 @@ $gap-sizes: (
     text-align: $alignment;
 }
 
-
-
-@mixin link-hover-style( $underline-offset: 0.15em, 
-    $underline-color: colors.colorTheme(red),
-    $link-color: colors.colorTheme(black),
-    $hover-bg-color: colors.colorTheme(black),
-    $hover-color: colors.colorTheme(yellow),
-    $border-radius: 0,
-) {
-    text-transform: uppercase;
-    text-align: start;
-    color: $link-color;
-    background-color: transparent;
-    border-radius: $border-radius;
-    transition: all 0.3s ease;
-    border-bottom: 2px solid transparent;
-    padding: 1rem;
-
-    &:hover {
-        color: $hover-color;
-        background-color: $hover-bg-color;
-        border-bottom: 2px solid $underline-color;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    &:active,
-    &:focus {
-        outline: none;
-        background-color: $hover-bg-color;
-        color: $hover-color;
-    }
-}
-
 @mixin button-style(
-    $underline-color: colors.colorTheme(red),
-    $link-color: colors.colorTheme(black),
-    $hover-bg-color: colors.colorTheme(black),
-    $hover-color: colors.colorTheme(yellow),
-    $border-radius: 0,
+    $border: none,
+    $background: colors.colorTheme(app-red),
+    $color: colors.colorTheme(app-white),
+    $fontFamily: "Oxanium",
+    $padding: 0,
+    $text: capitalize,
+    $cursor: pointer,
+    $radius: 0,
 ) {
-    background-color: colors.colorTheme(yellow);
-    color: colors.colorTheme(red);
-    text-align: center;
-    border: none;
-    min-width: 10em;
-    font-weight: 700;
-    letter-spacing: 0.05rem;
-    padding: 12px 12px;
-    border-radius: 0;
-    &:hover {
-        color: colors.colorTheme(yellow);
-        background-color: colors.colorTheme(red);
-        border-bottom: 2px solid $underline-color;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    &:active,
-    &:focus {
-        outline: none;
-        background-color: $hover-bg-color;
-        color: $hover-color;
-    }
+    border: $border;
+    border-radius: $radius;
+    background-color: $background;
+    padding: $padding;
+    font-family: $fontFamily;
+    text-transform: $text;
+    letter-spacing: 0.0675rem;
+    cursor: $cursor;
 }
 
 @mixin call-action {
@@ -157,4 +113,17 @@ $gap-sizes: (
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
         transform: translateY(-2px);
     }
+}
+
+@mixin links (
+  $letter: 0.0875rem,
+  $decoration: underline,
+  $decorationColor: colors.colorTheme(app-yellow),
+  $fontFamily: 'Oxanium, serif'
+) {
+  font-family: $fontFamily;
+  letter-spacing: $letter;
+  text-decoration: $decoration;
+  text-decoration-color: $decorationColor;
+  text-underline-offset: 4px;
 }

@@ -1,14 +1,5 @@
-import { 
-    Container, 
-    Row,
-    Col,
-    Card, 
-    CardImg, 
-    CardTitle, 
-    CardImgOverlay, 
-    CardBody 
-} from 'reactstrap';
-
+import { Container, Card, CardImg, CardTitle, CardImgOverlay} from 'reactstrap';
+import { Button } from 'react-bootstrap';
 import { useState, useEffect } from  'react';
 import '../styles/homepage/homepage.scss';
 import heroImageSmall from '../app/assets/images/hero-image-mobile.png';
@@ -17,16 +8,14 @@ import heroImageLarge from '../app/assets/images/hero-image-large.png';
 import heroImage from '../app/assets/images/hero-image.png';
 import heroImageXl from '../app/assets/images/hero-imagexl.png';
 
-import ServicesIcons from '../features/services/ServicesIcons';
-import ServiceInfo from '../features/services/ServiceInfo';
-import About from '../components/About';
-import Contact from '../features/contact/Contact';
-import service from '../db.json';
+import Header from '../components/Header';
+import Services from '../features/services/Services';
+
 
 const HomePage = () => {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [services] = useState(service.services);
+    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
@@ -38,62 +27,41 @@ const HomePage = () => {
         console.log('flipped');
     }
 
+    const callToACtion =  () => {
+        
+    }
+
     return (
         <Container className='homepage-container'>
-            <Card className='hero-card'>
-                <CardImg 
-                    alt='tires with red tire marks on ground'
+            <Card className="hero-card">
+                <CardImg
                     src={
-                        windowWidth <= 576
-                        ? heroImageSmall :
-                        windowWidth <= 768
-                        ? heroImageMedium :
-                        windowWidth <= 992
-                        ? heroImageLarge :
-                        windowWidth <= 1200 
-                        ? heroImage :
-                        heroImageXl
-                    }
-                    className='hero-image'
+                    windowWidth <= 576
+                    ? heroImageSmall :
+                    windowWidth <= 768
+                    ? heroImageMedium :
+                    windowWidth <= 992
+                    ? heroImageLarge :
+                    windowWidth <= 1200 
+                    ? heroImage :
+                    heroImageXl
+                    } 
+                    className="hero-image"
+                    alt="perelli tires" 
                 />
-                <CardImgOverlay>
-                    <CardTitle tag='h1' className='h1 hero-title'>
-                        Sonora Tires
-                    </CardTitle>
-                    <CardBody className='h2 hero-text'>
-                        Family owned and operated for over 30 years.
-                    </CardBody>
+                <CardImgOverlay className="overlay">
+                    <Header />
+                        <CardTitle className="h1 hero-title">sonora tires</CardTitle>
+                        <Button
+                            className="app-btn"  
+                            onMouseEnter={() => setIsHovered(true)} 
+                            onMouseLeave={() => setIsHovered(false)} 
+                        >
+                            schedule service
+                        </Button>
                 </CardImgOverlay>
             </Card>
-            <Row className='hero-mission'>
-                <Col className='mission-title-col'>
-                    <h2 className='h2'>Our Service to you.</h2>
-                </Col>
-                <Col className='mission-statement'>
-                    <p>Laboris dolore duis enim duis esse exercitation laboris 
-                    incididunt nulla esse magna. Laboris ex do irure nostrud 
-                    culpa tempor nostrud eiusmod sunt velit nostrud. Sint esse 
-                    dolore occaecat anim est quis ex consectetur exercitation esse. 
-                    Excepteur culpa ullamco in labore ipsum tempor ut qui elit officia. 
-                    Officia consequat duis quis elit. Sunt eiusmod qui culpa mollit sunt 
-                    Lorem sit aute nostrud ea sunt cillum. Voluptate proident veniam aliqua 
-                    cupidatat ea excepteur sit ad esse.
-                    </p>
-                </Col>
-            </Row>
-            <Row className='services-container'>
-                <Col className='services-icon-col'>
-                    <h3 className='h3 service-title'>Professional Tire Services ...and more!</h3>
-                    <div className='service-icon-container'>
-                        <ServicesIcons />
-                    </div>
-                </Col>
-                <Col className='services-info-col'>
-                    <ServiceInfo />
-                </Col>
-            </Row>  
-            <About />  
-            <Contact />  
+            <Services />
         </Container>
     )
 }

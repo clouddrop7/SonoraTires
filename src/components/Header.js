@@ -1,4 +1,5 @@
-import { Container, Navbar, Nav, Offcanvas, Image, Button } from 'react-bootstrap';
+import { Container, Navbar, Nav, Offcanvas, Image } from 'react-bootstrap';
+import { Tooltip } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import sonoraIcon from '../app/assets/images/sonoraIcon.png';
@@ -9,6 +10,8 @@ const Header = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [toolOpen, setToolOpen] = useState(false);
+    const toggleToolTip = () => setToolOpen(!toolOpen);
     return (
         <Navbar expand="lg">
             <Container>
@@ -16,10 +19,6 @@ const Header = () => {
                     onClick={handleShow}
                     aria-controls="offcanvasNavbar-expand-lg"
                 />
-                <Navbar.Brand href="#home" className="navbar-brand">
-                    <Image className='tire-image' src={sonoraIcon} alt='Sonora Tires logo' />
-                        <span className='brand'>tires inc.</span>
-                </Navbar.Brand>
                 <Navbar.Offcanvas
                     id="offcanvasNavbar-expand-md"
                     aria-labelledby="offcanvasnavbar-expand-lg"
@@ -46,13 +45,21 @@ const Header = () => {
                                 <Nav.Link as={Link} to="/batteries" className="link" onClick={handleClose}>
                                     batteries
                                 </Nav.Link>
-                            </div>
-
-                            <div className="info"> 
-                                <Nav.Link as={Link} to="/about" className="link underline-opactiy-0" onClick={handleClose}>
-                                    <i className='fa fa-info fa-lg fa-2x' /> 
+                                <Nav.Link href="tel:+9513478976" className="phone">
+                                    <i className='fa fa-phone fa-2x' /> 
                                 </Nav.Link>
-                                <Button as={Link} to="/contact" className="btn contact-btn" onClick={handleClose} variant="primary">Contact Us</Button>
+                                <Nav.Link id="locationIcon"className="location">
+                                    <i className="fa-solid fa-location-dot fa-2x" />
+                                    <Tooltip
+                                        placement="right"
+                                        isOpen={toolOpen}
+                                        target="locationIcon"
+                                        toggle={toggleToolTip}
+                                    >
+                                        Bloomington, CA 92316
+                                    </Tooltip>
+                                </Nav.Link>
+                                
                             </div>
                         </Navbar>
                     </Offcanvas.Body>

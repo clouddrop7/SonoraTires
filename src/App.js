@@ -12,20 +12,9 @@ import './styles/main/main.scss';
 
 function App() {
   return (
-    <Container fluid>
-      <Header />
         <Routes>
           <Route path='/' element={<HomePage />}/>
-          <Route />
-          <Route />
-          <Route />
-          <Route />
-          <Route />
-          <Route />
-          <Route />
         </Routes>
-      <Footer />
-    </Container>
   );
 }
 

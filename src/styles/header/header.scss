@@ -1,152 +1,65 @@
+@use '../variables/colors.scss' as colors;
+@use '../variables/fonts.scss' as font;
 @use '../variables/utils.scss' as util;
-
-// Navigation Styles
-
-.navbar {
-    width: 100%;
-    @include util.margin(xs,top);
-    padding: util.gutter(default);
-
-    @media (min-width: 576px) {
-        @include util.flex-container(row, wrap,center,center);
-    }
-
-    .container {
-        flex-direction: row;
-        padding: 0 util.gutter(xs);
-
-        @media (min-width: 576px) {
-            padding: util.gutter(default);
-        }
-
-        @media (min-width: 992px) {
-            padding: 0 util.gutter(sm);
-        }
-
-        .navbar-brand {
-            @include util.flex-container(column,wrap,center,center);
-            text-transform: uppercase;
-
-            .brand {
-                line-height: 1;
-                @media (min-width: 768px) {
-                    font-size: 1.5rem;
-                    align-self: center;
-                }
-            }
-
-            @media (min-width: 992px) {
-                @include util.gap(default);
-            }
-
-            @media (min-width: 1200px) {
-                @include util.flex-container(row,wrap,center,center);
-            }
-        
-            .tire-image {
-                max-width: 100px;
-                max-height: 100px;
-
-                @media (min-width: 768px) {
-                    max-width: 150px;
-                    max-height: 150px;
-                }
-
-                @media (min-width: 1200px) {
-                    max-width: 200px;
-                    max-height: 200px;
-                }
-            }
+.navbar, .container {
+    padding: 0;
+    align-self: flex-start;
+    .navbar-toggler {
+        border-radius: 0;
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
         }
     }
 }
 
-.offcanvas { 
-    padding: 0 util.gutter(xs);
+.offcanvas {
+    padding: util.gutter(xs);
     @include util.gap(xs);
 
-    @media (min-width: 992px) {
-        padding: util.gutter(default);
-    }
-
     .offcanvas-header {
-        @include util.flex-container(row,wrap,start, center);
-        @include util.margin(top, top);
-        @include util.gap(sm);
-        text-transform: uppercase;
-
-        .tire-icon { 
-            max-width: 100px;
-            max-height: 100px;
-            @media (min-width: 992px) {
-                display: block; 
-            }
-        }
-
-        .btn-close {
-            @include util.margin(left, auto);
-            padding: util.gutter(xs);
-        }
+        padding: 1rem 0;
     }
 
-    .offcanvas-body { 
-        @media (min-width: 992px) {
-            justify-content: center;
-        }
-    
-        .navbar-nav {
-
-            @include util.flex-container();
-            @include util.gap(sm);
-
-            @media (min-width: 992px) {
-                @include util.flex-container(row, nowrap,space-between,center);
-                @include util.gap(default);
-                padding-left: util.gutter(xs);
-            }
-
+    .offcanvas-body {
+        @include util.flex-container();
+        padding: 0;
+        .navbar {
             .nav-link-group {
                 @include util.flex-container();
-                @include util.gap(xs);
-
-                @media (min-width: 992px) {
-                @include util.flex-container(row, nowrap, center, center);
-                @include util.gap(xs);
+                gap: 1rem;
+                .nav-link {
+                    padding: 0;
+                    @include util.links();
                 }
 
-                @media (min-width: 1200px) {
-                @include util.gap(default);
-                @include util.gap(sm);
-                width: 100%;
-                margin: 0 auto;
-                }
-            }
-
-            .nav-link {
-                @include util.link-hover-style();
-            }
-
-            .info {
-                @include util.flex-container();
-                @include util.gap(sm);
-
-                @media (min-width: 992px) {
-                    @include util.flex-container(row, nowrap,center,center);
-                    @include util.gap(xs);
+                .nav-link:hover {
+                    color: colors.colorTheme(app-red);
+                    text-decoration-color: colors.colorTheme(black);
                 }
 
-                @media (min-width: 1200px) {
-                    margin-left: auto;
-                    align-items: center;
-                    @include util.gap(sm);
+                .phone {
+                    background-color: colors.colorTheme(app-black);
+                    padding: 0.5rem;
+                    border-radius: 50%;
+                    color: colors.colorTheme(app-red);
                 }
-            }
 
-            .contact-btn { 
-                @include util.button-style();
+                .phone:hover {
+                    background-color: colors.colorTheme(app-red);
+                    color: colors.colorTheme(app-yellow);
+                }
+
+                .location {
+                    color: colors.colorTheme(app-black);
+                }
             }
         }
     }
+
+    .tire-icon {
+        max-width: 6.25rem;
+        max-height: 6.25rem;
+    }
+
+    text-transform: uppercase;
 }
-
-

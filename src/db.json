@@ -9,7 +9,7 @@
         },
         {
             "id": 1,
-            "name": "Tire Alignment",
+            "name": "Alignment",
             "image": "/images/allign-small.png",
             "icon": "/images/allignment-small.png",
             "message": "Extend Tire Life with Proper Alignment"
@@ -23,11 +23,25 @@
         },
         {
             "id": 3,
-            "name": "Batteries",
+            "name": "Brakes",
             "image": "/images/brakes-small.png",
             "icon": "/images/brakesIcon.png",
             "message": "Get peace of mind on the road and check your brakes."
-        }
+        },
+        {
+          "id": 3,
+          "name": "Mufflers",
+          "image": "/images/brakes-small.png",
+          "icon": "/images/brakesIcon.png",
+          "message": "Get peace of mind on the road and check your brakes."
+        },
+        {
+          "id": 3,
+          "name": "Catalytic Converters",
+          "image": "/images/brakes-small.png",
+          "icon": "/images/brakesIcon.png",
+          "message": "Get peace of mind on the road and check your brakes."
+      }
        
     ],
     "tires" : [ 
