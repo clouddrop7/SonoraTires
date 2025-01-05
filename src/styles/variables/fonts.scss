@@ -52,7 +52,7 @@ $font-themes: (
 // Responsive font size functions 
 
 $title-font-sizes: (
-  xs: 1.5rem, 
+  xs: 2rem, 
   sm: 2rem, 
   md: 3rem,
   lg: 4rem,
@@ -73,26 +73,26 @@ $default-font-size: (
 }
 
 $subTitle: (
-    xs: 1.25rem,
+    xs: 1.5rem,
     sm: 1.5rem,
     md: 2rem,
     lg: 3rem,
     xl: 3.5rem, 
 );
 
-@function responsive-sub-title($breakpoint) {
+@function sub-title($breakpoint) {
     @return map-get($subTitle, $breakpoint);
 }
 
 $font-h3: (
-  xs: 1.125rem,
+  xs: 1.25rem,
   md: 1.25rem,
   lg: 1.5rem,
   xl: 2rem,
   xxl: 2.5rem,
 );
 
-@function responsive-fonth3($breakpoint) {
+@function titles($breakpoint) {
   @return map-get($font-h3, $breakpoint);
 }
 

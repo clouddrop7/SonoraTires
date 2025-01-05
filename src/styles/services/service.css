@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+.service-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.service-container .service-row .service-col {
+  display: grid;
+  gap: 1rem;
+}
+.service-container .service-row .service-col .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.service-container .service-row .service-col .title .more-tag {
+  display: inline-block;
+  align-self: flex-start;
+  margin-left: 2rem;
+}
+.service-container .service-row .service-col .service-card {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(min-content, max-content));
+  padding: 1rem;
+  border: 1px solid #F2BA31;
+  background-color: #000000;
+  color: #ffffff;
+  gap: 1rem;
+  cursor: pointer;
+}
+.service-container .service-row .service-col .service-card .service-image {
+  grid-row: 2;
+  width: 10rem;
+  align-self: center;
+  justify-self: center;
+}
+.service-container .service-row .service-col .service-card .service-title {
+  grid-row: 1;
+  align-self: start;
+}
+.service-container .service-row .service-col .service-card .service-title:hover {
+  color: #F2BA31;
+  cursor: pointer;
+}
+.service-container .service-row .service-col .service-card .card-body {
+  grid-row: 3;
+  align-self: end;
+  padding: 1rem;
+}
+.service-container .service-row .service-col .service-card .card-body .service-text {
+  font-size: 14px;
+  letter-spacing: 0.05rem;
+}
+.service-container .service-row .service-col .service-card .service-btn {
+  grid-row: 4;
+  align-self: end;
+  max-width: 220;
+  justify-self: center;
+  padding: 0.875rem 1rem;
+  border: 1px solid #E41B17;
+  border-radius: 0;
+  background-color: #000000;
+  letter-spacing: 0.08rem;
+  box-shadow: inset 0 0 0 0 #000000;
+  transition: box-shadow 0.3s ease-in;
+}
+.service-container .service-row .service-col .service-card .service-btn:hover {
+  box-shadow: inset 14em 0 0 0 #E41B17;
+  color: #000000;
+}/*# sourceMappingURL=service.css.map */

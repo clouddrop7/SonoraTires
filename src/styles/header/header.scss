@@ -1,9 +1,12 @@
 @use '../variables/colors.scss' as colors;
 @use '../variables/fonts.scss' as font;
 @use '../variables/utils.scss' as util;
-.navbar, .container {
+.navbar {
     padding: 0;
-    align-self: flex-start;
+    .container {
+        padding: 0;
+    }
+    align-items: flex-start;
     .navbar-toggler {
         border-radius: 0;
         .navbar-toggler-icon {

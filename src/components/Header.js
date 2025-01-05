@@ -50,14 +50,14 @@ const Header = () => {
                                 </Nav.Link>
                                 <Nav.Link id="locationIcon"className="location">
                                     <i className="fa-solid fa-location-dot fa-2x" />
-                                    <Tooltip
+                                    {/* <Tooltip
                                         placement="right"
                                         isOpen={toolOpen}
                                         target="locationIcon"
                                         toggle={toggleToolTip}
                                     >
                                         Bloomington, CA 92316
-                                    </Tooltip>
+                                    </Tooltip> */}
                                 </Nav.Link>
                                 
                             </div>

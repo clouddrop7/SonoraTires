@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+.contact-container {
+  padding: 0;
+  margin: 0;
+}
+.contact-container .contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.contact-container .contact-form .form {
+  padding: 1rem;
+}
+.contact-container .contact-form .form-row {
+  text-align: start;
+  margin: 0;
+}
+.contact-container .contact-form .form-row .form-label {
+  color: #F2BA31;
+  text-transform: capitalize;
+}
+.contact-container .contact-form .form-row .field-col {
+  padding: 0;
+}
+.contact-container .contact-form .form-row .field-col .form-control {
+  border: 1px solid #000000;
+  border-radius: 0;
+  background-color: transparent;
+  color: #ffffff;
+}
+.contact-container .contact-form .form-row .field-col .form-control::-moz-placeholder {
+  color: #ffffff;
+  opacity: 0.5;
+}
+.contact-container .contact-form .form-row .field-col .form-control::placeholder {
+  color: #ffffff;
+  opacity: 0.5;
+}/*# sourceMappingURL=contact.css.map */

@@ -85,12 +85,14 @@ $gap-sizes: (
     $text: capitalize,
     $cursor: pointer,
     $radius: 0,
+    $weight: 600,
 ) {
     border: $border;
     border-radius: $radius;
     background-color: $background;
     padding: $padding;
     font-family: $fontFamily;
+    font-weight: $weight;
     text-transform: $text;
     letter-spacing: 0.0675rem;
     cursor: $cursor;

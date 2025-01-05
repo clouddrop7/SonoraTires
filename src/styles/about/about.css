@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+.about-container {
+  padding: 0 3rem;
+  margin: 0;
+}
+.about-container .about {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.about-container .about .about-col {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+}
+.about-container .about .about-col .about-subtitle {
+  margin: 0;
+}
+.about-container .about .about-col .about-p {
+  line-height: 1.1;
+}/*# sourceMappingURL=about.css.map */

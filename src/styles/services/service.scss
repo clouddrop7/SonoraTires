@@ -2,244 +2,81 @@
 @use '../variables/colors.scss' as colors;
 @use '../variables/utils.scss' as util;
 
-.card-img-overlay,
-.hero-mission,
-.service-info-container {
-  @include util.flex-container();
-}
+.service-container {
+  @include util.flex-container(column,wrap,center,center);
+  padding: 0 1rem;
+  .service-row {
+    .service-col {
+      display: grid;
+      gap: 1rem;
 
-@media (min-width: 1200px) {
-  .hero-mission {
-    @include util.flex-container(row,wrap, space-around,center);
-  }
-}
-
-
-
-.card-container,
-.service-info-container {
-  overflow: hidden;
-}
-
-
-.card-back,
-.anime-service-card,
-.service-card,
-.service-body {
-  width: 100%;
-  height: 100%;
-}
-
-// Position relative
-.card-container,
-.service-info-container,
-.service-info,
-.service-info-item {
-  position: relative;
-}
-
-// Position absolute
-.card-back,
-.anime-service-card {
-  position: absolute;
-}
-
-
-.service-info-container,
-.service-info,
-.service-card {
-  @include util.gap(xs);
-
-  @media (min-width: 576px) {
-    @include util.gap(sm);
-  }
-}
-
-.card-container {
-  max-width: 3rem;
-  max-height: 3rem;
-  @media (min-width: 576px) {
-    max-width: 6rem;
-    max-height: 6rem;
-  }
-  .icon-image {
-    width: 3rem;
-    height: 3rem;
-    @media (min-width: 576px) {
-      width: 6rem;
-      height: 6rem;
-    }
-  }
-  .card-back {
-    backface-visibility: hidden;
-  }
-}
-
-.tool-tip {
-  border: 1px solid #ccc;
-
-  & .tooltip-inner {
-    background-color: colors.colorTheme(yellow);
-    color: colors.colorTheme(black);
-    padding: util.gutter(xs);
-  }
-
-  & .arrow::before {
-    border-top-color: #f0f0f0;
-  }
-}
-
-.service-info-container {
-  background-color: colors.colorTheme(yellow);
-  overflow: hidden;
-
-  @media (min-width: 576px) {
-    @include util.flex-container(column, wrap, center, center);
-  }
-
-  .service-info-title {
-    line-height: 1.2;
-    letter-spacing: 0.3rem;
-    padding: util.gutter(xs);
-    color: colors.colorTheme(red);
-
-    @media (min-width: 992px) {
-      max-width: 35%;
-      padding: util.gutter(sm) 0 0;
-      text-align: center !important;
-    }
-  }
-
-  .service-info {
-    @include util.flex-container(row, wrap, space-between, center);
-    width: 100%;
-    align-self: center;
-    padding: 0  util.gutter(sm) util.gutter(md);
-    list-style-type: none;
-    @include util.gap(xs);
-    
-    @media (min-width: 576px) {
-      padding: 0 util.gutter(md) util.gutter(sm);
-    }
-
-    @media (min-width: 992px) {
-      @include util.flex-container(row,wrap,start,center);
-    }
-
-    @media (min-width: 1200px) {
-      padding: 0 0 util.gutter(md);
-      max-width: 70%;
-      margin: 0 auto;
-      @include util.gap(md);
-    }
-
-    .service-info-item {
-      list-style-position: inside;
-      font-weight: 500;
-      padding: util.gutter(default);
-
-      @media (min-width: 576px) {
-        padding: util.gutter(default);
+      .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .more-tag {
+          display: inline-block;
+          align-self: flex-start;
+          margin-left: 2rem;
+        }
       }
 
-      @media (min-width: 768px) {
-        text-wrap: nowrap;
-      }
-
-      @media (min-width: 992px) {
-        padding: 0;
-        max-width: 20%;
-      }
-
-      @media (min-width: 1400px) {
-        max-width: 20%;
-      }
-
-      .service-name {
+      .service-card {
+        display: grid;
+        grid-template-rows: repeat(4, minmax(min-content,max-content));
+        padding: 1rem;
+        border: 1px solid colors.colorTheme(app-yellow);
+        background-color: colors.colorTheme(app-black);
+        color: colors.colorTheme(app-white);
+        gap: 1rem;
         cursor: pointer;
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-color: colors.colorTheme(red);
+        .service-image {
+          grid-row: 2;
+          width: 10rem;
+          align-self: center;
+          justify-self: center;
+        }
 
-        &:hover {
-          color: colors.colorTheme(red);
+          .service-title {
+            grid-row: 1;
+            align-self: start;
+          }
+
+          .service-title:hover {
+            color: colors.colorTheme(app-yellow);
+            cursor:pointer;
+          }
+
+          .card-body {
+            grid-row: 3;
+            align-self: end;
+            padding: 1rem;
+            .service-text {
+              font-size: 14px;
+              letter-spacing: 0.05rem;
+            }
+          }
+        .service-btn {
+          grid-row: 4;
+          align-self: end;
+          max-width: 220;
+          justify-self: center;
+          padding: 0.875rem 1rem;
+          border: 1px solid colors.colorTheme(app-red);
+          border-radius: 0;
+          background-color: colors.colorTheme(app-black);
+          letter-spacing: 0.08rem;
+          box-shadow: inset 0 0 0 0 colors.colorTheme(app-black);
+          transition: box-shadow 0.3s ease-in;
+        }
+
+        .service-btn:hover {
+          box-shadow: inset 14em 0 0 0 colors.colorTheme(app-red);
+          color: colors.colorTheme(app-black);
         }
       }
     }
   }
-}
 
-.anime-service-card {
-  top: 0;
-  left: 0;
-  z-index: 10;
-  padding: util.gutter(default);
-}
+};
 
-.service-card {
-  border: 0;
-  border-radius: 0;
-  background-color: colors.colorTheme(black);
-  color: colors.colorTheme(white);
-
-  @media (min-width: 768px) {
-    @include util.gap(xs);
-  }
-
-  @media (min-width: 992px) {
-    @include util.gap(md);
-  }
-
-  .close-btn {
-    align-self: flex-end;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    padding: 1rem;
-    color: colors.colorTheme(white);
-    background-color: colors.colorTheme(white);
-    border-radius: 0;
-  }
-
-  .service-title {
-    @include util.margin(auto);
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: 0.05rem;
-    color: colors.colorTheme(white);
-
-    @media (min-width: 768px) {
-      text-align: center;
-      @include util.margin(default);
-      padding-left: util.gutter(sm);
-    }
-  }
-
-  .service-body {
-    padding: 0 util.gutter(sm);
-    @media (min-width: 992px) {
-      @include util.flex-container(row,wrap,center,start);
-      @include util.gap(sm);
-    }
-    .service-text {
-      line-height: 1.2;
-
-      @media (min-width: 768px) {
-        padding: 0 util.gutter(sm);
-      }
-
-      @media (min-width: 992px) {
-        max-width: 30%;
-        padding: util.gutter(default);
-        
-      }
-    }
-  }
-
-  .btn-col {
-    @include util.flex-container();
-
-    .service-btn {
-      @include util.call-action;
-    }
-  }
-}

@@ -4,9 +4,29 @@
 @import '../reset/reset.scss';
 
 body {
-    
-    h1 {
+    display: flex;
+    justify-content: center;
+    h1,.h1 {
         font-size: font.font-title(xs);
+    }
+
+    h2, .h2 {
+        font-size: font.sub-title(xs);
+        font-weight: 600;
+    }
+
+    h3, .h3 {
+        font-size: font.titles(xs);
+    }
+
+    h1, h2, h3, p, .h1, .h2, .h3, .p,
+    .card, .row, .col, 
+    .card-body, .card-img, 
+    .card-img-overlay {
+        @include util.margin(default);
+        padding: util.gutter(default);
+        border: none;
+        border-radius: 0;
     }
 
     p {

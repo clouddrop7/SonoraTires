@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+.navbar {
+  padding: 0;
+  align-items: flex-start;
+}
+.navbar .container {
+  padding: 0;
+}
+.navbar .navbar-toggler {
+  border-radius: 0;
+}
+.navbar .navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.offcanvas {
+  padding: 1rem;
+  gap: 1rem;
+  text-transform: uppercase;
+}
+.offcanvas .offcanvas-header {
+  padding: 1rem 0;
+}
+.offcanvas .offcanvas-body {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+}
+.offcanvas .offcanvas-body .navbar .nav-link-group {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.offcanvas .offcanvas-body .navbar .nav-link-group .nav-link {
+  padding: 0;
+  font-family: "Oxanium, serif";
+  letter-spacing: 0.0875rem;
+  text-decoration: underline;
+  text-decoration-color: #F2BA31;
+  text-underline-offset: 4px;
+}
+.offcanvas .offcanvas-body .navbar .nav-link-group .nav-link:hover {
+  color: #E41B17;
+}
+.offcanvas .offcanvas-body .navbar .nav-link-group .phone {
+  background-color: #000000;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: #E41B17;
+}
+.offcanvas .offcanvas-body .navbar .nav-link-group .phone:hover {
+  background-color: #E41B17;
+  color: #F2BA31;
+}
+.offcanvas .offcanvas-body .navbar .nav-link-group .location {
+  color: #000000;
+}
+.offcanvas .tire-icon {
+  max-width: 6.25rem;
+  max-height: 6.25rem;
+}/*# sourceMappingURL=header.css.map */

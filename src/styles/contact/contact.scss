@@ -2,14 +2,42 @@
 @use '../variables/fonts.scss' as font;
 @use '../variables/utils.scss' as util;
 
+.contact-container {
+    padding: 0;
+    margin: 0;
 
-.contact-form {
-    display: flex;
-    width: 100%;
-    max-width: 100px;
-    height: 100%;
-}
-.contact-form-container {
-    @include util.flex-container();
-    width: 100%;
+    .contact-form {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+
+        .form {
+            padding: 1rem;
+        }
+
+        .form-row {
+            text-align: start;
+            margin: 0;
+            .form-label {
+                color: colors.colorTheme(app-yellow);
+                text-transform: capitalize;
+            }
+            .field-col {
+                padding: 0;
+    
+                .form-control {
+                    border: 1px solid colors.colorTheme(app-black);
+                    border-radius: 0;
+                    background-color: transparent;
+                    color: colors.colorTheme(app-white);
+                }
+    
+                .form-control::placeholder {
+                    color: colors.colorTheme(app-white);
+                    opacity: 0.5;
+                }
+            }
+        }
+        
+    }
 }

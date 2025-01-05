@@ -2,54 +2,25 @@
 @use '../variables/fonts.scss' as font;
 @use '../variables/utils.scss' as util;
 
-.about {
-    @include util.flex-container();
-    @include util.gap(xs);
-    width: 100%;
+.about-container {
+    padding: 0 3rem;
+    margin: 0;
 
-    @media (min-width: 768px) {
-        @include util.gap(xs);
-    }
-
-    @media (min-width: 1200px) {
-        @include util.flex-container(row,wrap,space-between,center);
-        @include util.gap(default);
-    }
-
-    .about-title {
+    .about {
+        display: grid;
+        gap: 1rem;
         text-align: center;
-        color: colors.colorTheme(red);
-        font-weight: 600;
-        letter-spacing: 0.2rem;
-        padding: 0 1rem;
-    }
-
-    .about-col-container {
-        @include util.flex-container(column, wrap, center,center);
-        @include util.gap(xs);
-
-        .about-subtitle {
-            color: colors.colorTheme(yellow);
-            text-decoration: underline;
-            text-decoration-color: colors.colorTheme(black);
-            text-underline-offset: 4px;
-        }
-
-        @media (min-width: 1200px) {
-            padding: util.gutter(sm);
-        }
-
+        overflow: hidden;
         .about-col {
-            @include util.flex-container(column,wrap,center,center);
-            padding: util.gutter(xs);
-            @media (min-width: 992px) {
-                max-width: 60%;
-                padding: 0 util.gutter(md);
+            display: grid;
+            gap: 1rem;
+            text-align: center;
+            .about-subtitle {
+                margin: 0;  
             }
-
-            @media (min-width: 1200px) {
-                padding: 0;
-                max-width: 100%;
+    
+            .about-p {
+                line-height: 1.1;
             }
         }
     }

@@ -25,39 +25,15 @@ const Contact = () => {
             <Card className='contact-card'>
                 <CardImg 
                     alt='pirelli tires with yellow rims'
-                    src={
-                        windowWidth <= 576
-                        ? tire :
-                        windowWidth <= 768
-                        ? tiremed :
-                        windowWidth <= 992
-                        ? tirelg :
-                        windowWidth <= 1200 
-                        ? tirexl :
-                        tirexl
-                    }
+                    src={tire}
                     className='hero-image'
                 />
                 <CardImgOverlay>
-                    <CardTitle tag='h2' className='h2 contact-title'>
-                        Contact Us
-                    </CardTitle>
                     <CardBody className='contact-form'>
                         <ContactForm />
                     </CardBody>
                 </CardImgOverlay>
             </Card>
-            <Row className='contact'>
-                <Col className='contact-option-title-col'>
-                    <h2 className='h2'>Contact</h2>
-                </Col>
-                <Col className='contact-option-col'>
-                    <div>Mail</div>
-                    <div>Location</div>
-                    <div>Phone</div>
-                    <div>Hours</div>
-                </Col>
-            </Row>
         </Container>
     )
 }

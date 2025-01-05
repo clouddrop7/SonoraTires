@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react';
 import ServiceContext from '../ServiceContext';
 import { useDispatch, useSelector } from 'react-redux';
-import services from '../db.json';
+import { fetchServices } from '../utils/serviceApi';
 const ServiceProvider = ({ children }) => {
-    const contextValue = {
 
+    const dispatch = useDispatch();
+    const servicesArray = useSelector(state => state.services.servicesArray);
+    useEffect(() => {
+        dispatch(fetchServices());
+    }, [dispatch]);
+
+    const contextValue = {
+        servicesArray,
     }
 
     return (

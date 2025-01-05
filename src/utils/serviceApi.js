@@ -1,11 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { db } from '../firebase.coonfig';
-import {collection, getDocs } from 'firebase/firestore';
-
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase.config';
 
 export const fetchServices = createAsyncThunk('services/fetchServices', async() => {
     try {
-
         const  querySnapshot = await getDocs(collection(db, 'services'));
         const  services = [];
         
@@ -13,6 +11,7 @@ export const fetchServices = createAsyncThunk('services/fetchServices', async() 
             services.push({id: doc.id, ...doc.data() });
         });
 
+        services.sort((a,b) => b.name.localeCompare(a.name));
         return services;
 
     } catch (error) {
