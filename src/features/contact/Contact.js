@@ -26,10 +26,12 @@ const Contact = () => {
                 <CardImg 
                     alt='pirelli tires with yellow rims'
                     src={tire}
-                    className='hero-image'
+                    className='contact-image'
+                    h
                 />
                 <CardImgOverlay>
                     <CardBody className='contact-form'>
+                        <CardTitle className="h3 contact-title">contact us</CardTitle>
                         <ContactForm />
                     </CardBody>
                 </CardImgOverlay>

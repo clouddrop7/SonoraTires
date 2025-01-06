@@ -5,39 +5,122 @@
 .contact-container {
     padding: 0;
     margin: 0;
-
-    .contact-form {
+    .contact-card {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(2,1fr);
 
-        .form {
-            padding: 1rem;
+        .contact-image {
+            min-height: 400px;
         }
-
-        .form-row {
-            text-align: start;
+        .contact-form {
             margin: 0;
-            .form-label {
-                color: colors.colorTheme(app-yellow);
-                text-transform: capitalize;
+            padding: 0;
+            .contact-title {
+                color: colors.colorTheme(app-white);
+                text-transform:capitalize;
+                padding: 1rem;
             }
-            .field-col {
+    
+            .form {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(min-content,max-content));
+                grid-template-rows: repeat(4, minmax(min-content,max-content));
+                justify-content: center;
+                padding: 0 1rem;
+                gap: 1rem;
+                width: 100%;
+                max-width: 100%;
+                width: fit-content;
+            height: fit-content;
+            }
+    
+            .form-row {
+                display: grid;
+                grid-template-rows: repeat(2, auto);
+                text-align: start;
+                margin: 0 !important;
                 padding: 0;
-    
-                .form-control {
-                    border: 1px solid colors.colorTheme(app-black);
-                    border-radius: 0;
-                    background-color: transparent;
-                    color: colors.colorTheme(app-white);
+                gap: 0.5rem;
+                .form-label {
+                    margin: 0;
+                    padding: 0;
+                    color: colors.colorTheme(app-yellow);
+                    text-transform: capitalize;
                 }
-    
-                .form-control::placeholder {
-                    color: colors.colorTheme(app-white);
-                    opacity: 0.5;
+                .field-col {
+                    display: grid;
+                    position: relative;
+                    gap: 0.5rem;
+                    padding: 0;
+                    .form-control {
+                        border: 1px solid colors.colorTheme(app-black);
+                        border-radius: 0;
+                        background-color: transparent;
+                        color: colors.colorTheme(app-white);
+                    }
+        
+                    .form-control::placeholder {
+                        color: colors.colorTheme(app-white);
+                        opacity: 0.75;
+                        text-transform: capitalize;
+                    }
+
+                    .text-danger {
+                        position: absolute;
+                        top: 2rem;
+                        justify-self: end;
+                        padding-right: 0.5rem;
+                        text-transform: capitalize;
+                    }
+
+                    .subject-error {
+                        position: absolute;
+                        color: colors.colorTheme(app-red);
+                        top: 2rem;
+                        justify-self: end;
+                        text-transform: capitalize;
+                        padding-right: 1rem;
+                    }
+
+                    .message-error {
+                        position: absolute;
+                        color: colors.colorTheme(app-red);
+                        top: 2rem;
+                        justify-self: end;
+                        padding-right: 1rem;
+                        text-transform: capitalize;
+                    }
+                }
+
+                .message-group {
+                    .message {
+                        max-height: 5rem;
+                    }
                 }
             }
+    
+            .subject-group {
+                grid-column: 1 / span 2;
+            }
+    
+            .btn-group {
+                grid-column: 1 / span 2;
+                align-self: center;
+                display: flex;
+                justify-content: center;
+    
+                .contact-btn {
+                    border: none;
+                    background-color: colors.colorTheme(app-black);
+                    color: colors.colorTheme(app-yellow);
+                }
+    
+                .contact-btn:hover{
+                    background-color: colors.colorTheme(app-yellow);
+                    color: colors.colorTheme(app-black);
+                    border: none;
+                    font-family: 'Oxanium', serif;
+                }
+            }     
         }
-        
     }
 }

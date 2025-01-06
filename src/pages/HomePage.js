@@ -10,8 +10,11 @@ import heroImageXl from '../app/assets/images/hero-imagexl.png';
 
 import Header from '../components/Header';
 import Services from '../features/services/Services';
+import ShopByTires from '../features/shopbyservices/ShopByTires';
 import About from '../components/About';
+import Faqs from '../components/Faqs';
 import Contact from '../features/contact/Contact';
+
 const HomePage = () => {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -62,7 +65,9 @@ const HomePage = () => {
                 </CardImgOverlay>
             </Card>
             <Services />
+            <ShopByTires />
             <About />
+            <Faqs />
             <Contact />
         </Container>
     )
