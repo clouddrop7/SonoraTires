@@ -1,11 +1,11 @@
-import { Card, CardTitle, CardBody, CardText } from 'reactstrap';
-import ServiceForm from '../../components/serviceForm';
+import { Container } from 'react-bootstrap';
+import ServiceForm from '../../components/ServiceForm';
 
 const ShopByTires = () => {
     return (
-        <>
-        This is the service form
-        </>
+        <Container>
+            <ServiceForm />
+        </Container>
     )
 }
 

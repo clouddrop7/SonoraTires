@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
 .homepage-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   border-radius: 0;
   text-align: center;
   padding: 0;
   gap: 1rem;
+}
+.homepage-container .homepage {
+  display: grid;
 }
 .homepage-container .hero-card .overlay {
   display: grid;

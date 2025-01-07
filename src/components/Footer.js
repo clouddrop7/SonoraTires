@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <Container>
-            <h1>Footer</h1>
-        </Container>
+        <>
+            Footer Section
+        </>
     )
 }
 

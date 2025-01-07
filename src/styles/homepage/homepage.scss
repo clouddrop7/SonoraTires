@@ -3,12 +3,15 @@
 @use '../variables/utils.scss' as util;
 
 .homepage-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   border-radius: 0;
   text-align: center;
   padding: 0;
   gap: 1rem;
+
+  .homepage {
+    display: grid;
+  }
   .hero-card {
     .overlay {
       display: grid;

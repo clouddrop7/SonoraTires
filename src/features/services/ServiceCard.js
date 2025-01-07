@@ -1,4 +1,4 @@
-import { Card, CardTitle, CardBody, CardImg, CardText, Button, CardImgOverlay} from 'react-bootstrap';
+import { Card, CardTitle, CardBody, CardImg, CardText, Button} from 'react-bootstrap';
 import '../../styles/services/service.scss';
 const ServiceCard = ({ image, message, name}) => {
     return (

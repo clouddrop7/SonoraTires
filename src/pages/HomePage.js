@@ -1,5 +1,5 @@
-import { Container, Card, CardImg, CardTitle, CardImgOverlay} from 'reactstrap';
-import { Button } from 'react-bootstrap';
+import {  Card, CardImg, CardTitle, CardImgOverlay} from 'reactstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useState, useEffect } from  'react';
 import '../styles/homepage/homepage.scss';
 import heroImageSmall from '../app/assets/images/hero-image-mobile.png';
@@ -13,8 +13,10 @@ import Services from '../features/services/Services';
 import ShopByTires from '../features/shopbyservices/ShopByTires';
 import About from '../components/About';
 import Faqs from '../components/Faqs';
+import Ratings from '../features/ratings/Ratings';
 import Contact from '../features/contact/Contact';
-
+import Promotions from '../features/promotions/Promotions';
+import Footer from '../components/Footer';
 const HomePage = () => {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -36,39 +38,65 @@ const HomePage = () => {
 
     return (
         <Container className='homepage-container'>
-            <Card className="hero-card">
-                <CardImg
-                    src={
-                    windowWidth <= 576
-                    ? heroImageSmall :
-                    windowWidth <= 768
-                    ? heroImageMedium :
-                    windowWidth <= 992
-                    ? heroImageLarge :
-                    windowWidth <= 1200 
-                    ? heroImage :
-                    heroImageXl
-                    } 
-                    className="hero-image"
-                    alt="perelli tires" 
-                />
-                <CardImgOverlay className="overlay">
-                    <Header />
-                        <CardTitle className="h1 hero-title">sonora tires</CardTitle>
-                        <Button
-                            className="app-btn"  
-                            onMouseEnter={() => setIsHovered(true)} 
-                            onMouseLeave={() => setIsHovered(false)} 
-                        >
-                            schedule service
-                        </Button>
-                </CardImgOverlay>
-            </Card>
-            <Services />
-            <ShopByTires />
-            <About />
-            <Faqs />
-            <Contact />
+            <Row className="homepage">
+                <Col>
+                    <Card className="hero-card">
+                    <CardImg
+                        src={
+                        windowWidth <= 576
+                        ? heroImageSmall :
+                        windowWidth <= 768
+                        ? heroImageMedium :
+                        windowWidth <= 992
+                        ? heroImageLarge :
+                        windowWidth <= 1200 
+                        ? heroImage :
+                        heroImageXl
+                        } 
+                        className="hero-image"
+                        alt="perelli tires" 
+                    />
+                    <CardImgOverlay className="overlay">
+                        <Header />
+                            <CardTitle className="h1 hero-title">sonora tires</CardTitle>
+                            <Button
+                                className="app-btn"  
+                                onMouseEnter={() => setIsHovered(true)} 
+                                onMouseLeave={() => setIsHovered(false)} 
+                            >
+                                schedule service
+                            </Button>
+                    </CardImgOverlay>
+                    </Card>
+                </Col>
+                <Col>
+                    <Services />
+                </Col>
+                <Col>
+                    <ShopByTires />
+                </Col>
+                <Col>
+                    <Promotions />
+                </Col>
+                <Col>
+
+                </Col>
+                <Col>
+                    <About />
+                </Col>
+                <Col>
+                    <Faqs />
+                </Col>
+                <Col>
+                    <Contact />
+                </Col>
+                <Col>
+                    <Ratings />
+                </Col>
+                <Col>
+                    <Footer />
+                </Col>
+            </Row>
         </Container>
     )
 }

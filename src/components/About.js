@@ -23,15 +23,6 @@ const About = () => {
                             ex Lorem ullamco in magna.
                         </p>
                 </Col>
-                <Col className="about-col">
-                    <h5 className='h5 about-subtitle'>Services</h5>
-                        <p className='about-p'>
-                            loremSit excepteur proident tempor exercitation laboris. 
-                            Occaecat aute sunt in commodo laborum proident dolor laboris 
-                            sit amet. Nostrud deserunt consequat fugiat enim tempor quis 
-                            ex Lorem ullamco in magna.
-                        </p>
-                </Col>
             </Row>
         </Container>
     )
