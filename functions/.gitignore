@@ -1,2 +1,5 @@
 node_modules/
 *.local
+.env
+functions/firebaseconfig.js
+functions/sonoratiresinc-firebase-adminsdk-wl5h5-95167faa50.json
