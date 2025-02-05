@@ -3,47 +3,63 @@
 @use '../variables/utils.scss' as util;
 
 .homepage-container {
-  display: grid;
-  border-radius: 0;
-  text-align: center;
-  padding: 0;
-  gap: 1rem;
-
-  .homepage {
-    display: grid;
-  }
+  @include util.grid-layout(
+    $columns: 1, 
+    $rows: auto,
+    $gap: 0,
+    $align-items: stretch,
+    $justify-items: stretch,
+    $align-content: start,
+    $justify-content: start
+  );
+  max-width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
   .hero-card {
-    .overlay {
-      display: grid;
-      grid-template-columns: repeat(6, auto);
-      grid-template-rows: repeat(3, 1fr);
 
+    @media (min-width: 90rem) {
+      height: 100vh;
+      overflow:hidden;
+      .card {
+        height: 100%;
+        .card-img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .hero-image {
+      border-radius: 0;
+    }
+    .hero-overlay {
+      @include util.grid-layout(
+        $columns: 1,
+        $rows: repeat(3, 1fr),
+        $gap: 0.5rem,
+      );
       .navbar {
-        grid-column: 1;
         grid-row: 1;
+        grid-column: 1;
+        .container {
+          padding: 0.5rem;
+        }
       }
       .hero-title {
         @include font.font-theme(title);
+        color:colors.colorTheme(app-yellow);
         text-transform: uppercase;
-        justify-self: center;
-        grid-row: 2;
-        grid-column: 2/4;
-        align-self: start;
         opacity: 0.85;
+        grid-column: 1;
+        grid-row: 2;
+        align-self: start;
+        justify-self: center;
       }
       .app-btn {
-        @include util.button-style();
-        width: 10rem;
-        height: 3rem;
-        grid-column: 2/4;
+        @include util.enhanced-button-style();
         grid-row: 3;
+        grid-column: 1;
+        align-self: start;
         justify-self: center;
-        box-shadow: inset 0 0 0 0 colors.colorTheme(app-red);
-        transition: box-shadow 0.3s ease-in;
-      }
-      .app-btn:hover {
-        box-shadow: inset 10.25em 0 0 0 colors.colorTheme(app-yellow);
-        color: colors.colorTheme(app-black);
       }
     }
   }

@@ -4,32 +4,43 @@
 @import '../reset/reset.scss';
 
 body {
-    display: flex;
-    justify-content: center;
-    h1,.h1 {
-        font-size: font.font-title(xs);
+    font-family: font.$defaultFont;
+    // color: colors.$text-primary;
+    .container {
+      @include util.responsive-spacing(padding, -x, $gutter-map: util.$global-gutter-widths); // Apply horizontal padding
+      @include util.responsive-spacing(padding, -y, $gutter-map: util.$global-gutter-widths); // Apply vertical padding
+      max-width: 100%; // Ensure it doesn't exceed screen width
+      margin: 0 auto;
     }
+}
 
-    h2, .h2 {
-        font-size: font.sub-title(xs);
-        font-weight: 600;
-    }
+h1, h2, h3, h4, h5, h6 {
+    @include font.font-theme(title);
+    @include font.responsive-font-size(h1); // Adjust for each heading level
+}
 
-    h3, .h3 {
-        font-size: font.titles(xs);
-    }
+p {
+    @include font.font-theme(default);
+    @include font.responsive-font-size(p);
+}
 
-    h1, h2, h3, p, .h1, .h2, .h3, .p,
-    .card, .row, .col, 
-    .card-body, .card-img, 
-    .card-img-overlay {
-        @include util.margin(default);
-        padding: util.gutter(default);
-        border: none;
-        border-radius: 0;
-    }
+small {
+    @include font.font-theme(default);
+    @include font.responsive-font-size(small);
+}
 
-    p {
-        @include font.font-theme(default);
-    }
+button, .button {
+    @include font.font-theme(title);
+    @include font.responsive-font-size(button);
+    // Keep default alignment for buttons
+}
+
+a {
+    @include font.font-theme(default);
+    // Keep default alignment for links
+}
+
+.nav-link {
+  padding: 0;
+  margin: 0;
 }

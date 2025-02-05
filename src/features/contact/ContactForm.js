@@ -1,67 +1,80 @@
-import { Button, Label, Col, FormGroup} from 'reactstrap';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Form,Button, } from 'react-bootstrap';
+import { Formik} from 'formik';
 import { useContext } from 'react';
 import ContactContext from '../../ContactContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 const ContactForm = () => {
+    // const { handleSubmit: submitForm, contactValidation } = useContext(ContactContext);
+    const handleSubmit = () => {
+        // Placeholder for actual submission logic
+    };
 
-     const { handleSubmit: submitForm, contactValidation } = useContext(ContactContext);
+    const submitForm = (values, resetForm) => {
+        // Logic for form submission goes here
+        console.log(values); // Log values for demonstration
+        resetForm(); // Reset form after submission
+    };
 
-     return (
-         <Formik initialValues={{
-             name:'',
-             email:'',
-             subject:'',
-             message:'',
-         }}
-         onSubmit={(values, {resetForm }) => {
-          submitForm(values, resetForm);
-         }}
-         validate={contactValidation}
-         >
-         <Form className="form">
-           <FormGroup row className="form-row name-group">
-               <Col className="field-col" xs='12'>
-                    <Label htmlFor="name">full name</Label>
-                    <Field className='form-control' name="name" placeholder="full name"/>
-                    <ErrorMessage name="name">
-                         {(msg) => <p className="text-danger">{msg}</p>}
-                    </ErrorMessage>
-               </Col>
-           </FormGroup>
-           <FormGroup row className="form-row email-group">
-               <Col className="field-col" md='12'>
-                    <Label htmlFor="email">email address</Label>
-                    <Field className='form-control' name="email" placeholder="email address"/>
-                    <ErrorMessage name="email">
-                         {(msg) => <p className="text-danger">{msg}</p>}
-                    </ErrorMessage>
-               </Col>
-           </FormGroup>
-           <FormGroup row className="form-row subject-group">
-               <Col className="field-col" md='12'>
-                    <Label htmlFor="subject">subject</Label>
-                    <Field className='form-control' name="subject" placeholder="subject"/>
-                    <ErrorMessage name="subject">
-                         {(msg) => <p className="subject-error">{msg}</p>}
-                    </ErrorMessage>
-               </Col>
-               <Col className="field-col message-group" md='1'>
-                    <Label htmlFor="message">message</Label>
-                    <Field className='form-control message' name="message" as="textarea" rows='8' placeholder="message"/>
-                    <ErrorMessage name="message">
-                         {(msg) => <p className="message-error">{msg}</p>}
-                    </ErrorMessage>
-               </Col>
-           </FormGroup>
-           <FormGroup className="form-row btn-group">
-               <Col className="field-col" md='12'>
-                    <Button type="submit" className="contact-btn">Send Message</Button>
-               </Col>
-           </FormGroup>
-         </Form>
-         </Formik>
-     )
- }
- 
- export default ContactForm;
+    const contactValidation = (values) => {
+        // Placeholder for validation logic
+        const errors = {};
+        if (!values.name) {
+            errors.name = 'Name is required';
+        }
+        if (!values.email) {
+            errors.email = 'Email is required';
+        }
+        if (!values.message) {
+            errors.message = 'Message is required';
+        }
+        return errors;
+    };
+
+    return (
+        <Formik 
+            initialValues={{
+                name: '',
+                email: '',
+                message: '',
+            }}
+            onSubmit={(values, { resetForm }) => {
+                submitForm(values, resetForm);
+            }}
+            validate={contactValidation}
+        >
+            <Form className="form">
+                <Form.Group className="form-row name-group">
+                    <Form.Label htmlFor="name">Full Name</Form.Label>
+                    <Form.Control className='form-control' name="name" placeholder="Full Name"/>
+                    <Form.Control.Feedback name="name">
+                        {(msg) => <p className="text-danger">{msg}</p>}
+                    </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group className="form-row email-group">
+                    <Form.Label htmlFor="email">Email Address</Form.Label>
+                    <Form.Control className='form-control' name="email" placeholder="Email Address"/>
+                    <Form.Control.Feedback name="email">
+                        {(msg) => <p className="text-danger">{msg}</p>}
+                    </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group className="form-row message-group">
+                    <Form.Label className="message-label" htmlFor="message">Message</Form.Label>
+                    <Form.Control className='form-control message' name="message" as="textarea" rows='8' placeholder="Message"/>
+                    <Form.Control.Feedback name="message">
+                        {(msg) => <p className="message-error">{msg}</p>}
+                    </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group className="form-row btn-group">
+                    <Button type="submit" className="contact-btn">
+                         Send Message
+                         <FontAwesomeIcon icon={faPaperPlane} aria-hidden="true" />
+                    </Button>
+                </Form.Group>
+            </Form>
+        </Formik>
+    );
+};
+
+export default ContactForm;

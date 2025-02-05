@@ -1,79 +1,82 @@
 @use '../variables/colors.scss' as colors;
 @use '../variables//fonts.scss' as font;
-$grid-gutter-widths: (
-    default: 0,
+$global-gutter-widths: (
     xs: 1rem,
-    sm: 2rem,
-    md: 2.5rem,
-    lg: 3rem,
-);
-
-@function gutter($breakpoint) {
-    @return map-get($grid-gutter-widths, $breakpoint);
-}
-
-@mixin flex-container (
-    $direction: column,
-    $wrap: wrap,
-    $justify:flex-start,
-    $align:flex-start,
-
-    ) {
-    align-items: $align;
-    display: flex;
-    flex-direction: $direction;
-    flex-wrap: $wrap;
-    justify-content: $justify;
-}
-
-$margin-sizes: (
-    default: 0,
-    xs: 2rem,
-    top: 1rem,
-    auto: auto,
+    sm: 1.5rem,
     md: 2rem,
+    lg: 2.5rem,
+    xl: 3rem
 );
 
-@mixin margin($size: sm, $sides: all) {  // Add $sides parameter with default 'all'
-    @if $sides == all {
-      margin: map-get($margin-sizes, $size);
-    } @else if $sides == 'x' {
-      margin-left: map-get($margin-sizes, $size);
-      margin-right: map-get($margin-sizes, $size);
-    } @else if $sides == 'y' {
-      margin-top: map-get($margin-sizes, $size);
-      margin-bottom: map-get($margin-sizes, $size);
-    } @else {
-      @each $side in $sides {
-        @if $side == top {
-          margin-top: map-get($margin-sizes, $size);
-        } @else if $side == right {
-          margin-right: map-get($margin-sizes, $size);
-        } @else if $side == bottom {
-          margin-bottom: map-get($margin-sizes, $size);
-        } @else if $side == left {
-          margin-left: map-get($margin-sizes, $size);
-        } @else {
-          @warn "Invalid margin side: #{$side}";
+@function global-gutter($breakpoint) {
+    @return map-get($global-gutter-widths, $breakpoint);
+};
+
+@mixin responsive-spacing($property: padding, $direction: '', $gutter-map: $global-gutter-widths) {
+    // Define which directions are valid for padding or margin
+    $valid-directions: (
+      '-x': ('left', 'right'),
+      '-y': ('top', 'bottom'),
+      '': ('')
+    );
+    
+    $directions-to-use: map-get($valid-directions, $direction);
+    
+    @if $directions-to-use != null {
+      @each $dir in $directions-to-use {
+        #{$property}-#{$dir}: global-gutter(xs);
+        
+        @each $breakpoint, $value in $gutter-map {
+          @if $breakpoint != xs {
+            @media (min-width: #{map-get((
+                sm: 576px,
+                md: 768px,
+                lg: 992px,
+                xl: 1200px
+            ), $breakpoint)}) {
+              #{$property}-#{$dir}: global-gutter($breakpoint);
+            }
+          }
         }
       }
+    } @else {
+        @error "Invalid direction `#{$direction}` for #{$property}. Use '', '-x', or '-y'.";
     }
-  }
-
-$gap-sizes: (
-    default: 0,
-    xs: 1rem,
-    sm: 2rem,
-    md: 3rem,
-    lg: 4rem,
-);
-
-@mixin gap($size: sm) {
-    gap: map-get($gap-sizes, $size);
 }
 
-@mixin text-align($alignment: left) {
-    text-align: $alignment;
+@mixin grid-layout(
+  $columns: 1,
+  $rows: auto,
+  $gap: 1rem,
+  $align-items: stretch,
+  $justify-items: stretch,
+  $align-content: start,
+  $justify-content: start,
+  $grid-template-areas: none
+) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: $rows;
+  gap: $gap;
+  align-items: $align-items;
+  justify-items: $justify-items;
+  align-content: $align-content;
+  justify-content: $justify-content;
+  grid-template-areas: $grid-template-areas;
+  margin: 0;
+  padding: 0;
+  
+  // Additional utility for named grid areas
+  @if $grid-template-areas != none {
+    > * {
+      @content;
+    }
+  }
+}
+
+// Example of how to use named areas within the mixin
+@mixin grid-area($area-name) {
+  grid-area: $area-name;
 }
 
 @mixin button-style(
@@ -96,6 +99,42 @@ $gap-sizes: (
     text-transform: $text;
     letter-spacing: 0.0675rem;
     cursor: $cursor;
+}
+
+@mixin enhanced-button-style(
+  $border-color: colors.colorTheme(app-red),
+  $background: transparent,
+  $text-color: colors.colorTheme(app-white),
+  $hover-background: colors.colorTheme(app-red),
+  $hover-text-color: colors.colorTheme(app-white),
+  $hover-border-color: colors.colorTheme(app-yellow),
+  $fontFamily: "Oxanium",
+  $padding: 12px 24px,
+  $text-transform: uppercase,
+  $cursor: pointer,
+  $radius: 5px,
+  $weight: 700
+) {
+  border: 2px solid $border-color;
+  background-color: $background;
+  color: $text-color;
+  font-family: $fontFamily;
+  font-weight: $weight;
+  text-transform: $text-transform;
+  letter-spacing: 0.0675rem;
+  cursor: $cursor;
+  border-radius: $radius;
+  padding: $padding;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $hover-background;
+    color: $hover-text-color;
+    border-color: $hover-border-color;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
 }
 
 @mixin call-action {
@@ -128,4 +167,120 @@ $gap-sizes: (
   text-decoration: $decoration;
   text-decoration-color: $decorationColor;
   text-underline-offset: 4px;
+}
+
+// Mixin for navbar base styles
+@mixin navbar-base( $padding: 0.5rem 1rem) {
+  padding: $padding;
+}
+
+// Mixin for navbar brand
+@mixin navbar-brand($color: colors.colorTheme(app-yellow), $font-size: 1.5rem, $margin-right: 1rem) {
+  @include font.font-theme(title);
+  color: $color;
+  font-size: $font-size;
+  margin-right: $margin-right;
+}
+
+// Mixin for navbar toggler
+@mixin navbar-toggler($background: colors.colorTheme(app-red)) {
+  border: none;
+  border-radius: 0;
+  padding: 0.25rem 0.75rem;
+  background-color: $background;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+}
+
+// Mixin for nav links
+@mixin nav-link($color: colors.colorTheme(app-yellow), $font-size: 1rem) {
+  @include font.font-theme(default);
+  color: $color;
+  font-size: $font-size;
+  transition: color 0.3s ease;
+  margin-right: 1rem;
+  text-decoration: none;
+
+  &:hover {
+    color: colors.colorTheme(app-red);
+  }
+}
+
+// Mixin for icon buttons (phone, location)
+@mixin icon-button($background: colors.colorTheme(app-yellow), $color: colors.colorTheme(app-black), $hover-background: colors.colorTheme(app-red), $hover-color: colors.colorTheme(app-white)) {
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  justify-content: center;
+  background-color: $background;
+  color: $color;
+  &:hover {
+    background-color: $hover-background;
+    color: $hover-color;
+  }
+}
+
+// Mixin for tire icon
+@mixin tire-icon($max-width: 6.25rem, $max-height: 6.25rem, $margin-right: 1rem) {
+  max-width: $max-width;
+  max-height: $max-height;
+  margin-right: $margin-right;
+  filter: brightness(150%); 
+}
+
+// Mixin for offcanvas header
+@mixin offcanvas-header($background: colors.colorTheme(app-white), $color: colors.colorTheme(app-yellow), $padding: 1rem) {
+  @include font.font-theme(title);
+  color: $color;
+  background: $background;
+  padding: $padding;
+
+  .tire-icon {
+    @include tire-icon(4rem, 4rem, 0);
+  }
+}
+
+// Mixin for offcanvas body
+@mixin offcanvas-body($background: colors.colorTheme(app-black), $color: colors.colorTheme(app-yellow)) {
+  background: $background;
+  color: $color;
+  
+  .navbar {
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    .nav-link-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 1rem;
+      
+      .nav-link {
+        @include nav-link($color);
+      }
+      
+      .phone, .location {
+        width: 3rem;
+        height: 3rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .phone {
+        @include icon-button(colors.colorTheme(app-yellow), colors.colorTheme(app-black), colors.colorTheme(app-red), colors.colorTheme(app-white));
+      }
+      
+      .location {
+        @include icon-button(colors.colorTheme(app-yellow), colors.colorTheme(app-black), colors.colorTheme(app-red), colors.colorTheme(app-white));
+      }
+    }
+  }
 }

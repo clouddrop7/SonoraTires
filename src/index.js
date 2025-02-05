@@ -16,11 +16,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
         <BrowserRouter>
-          <ServiceProvider>
-          <ContactProvider>
             <App />
-          </ContactProvider>
-          </ServiceProvider>
         </BrowserRouter>
     </Provider>
   </React.StrictMode>

@@ -1,68 +1,36 @@
-@use '../variables/colors.scss' as colors;
-@use '../variables/fonts.scss' as font;
 @use '../variables/utils.scss' as util;
+
 .navbar {
-    padding: 0;
-    .container {
-        padding: 0;
-    }
-    align-items: flex-start;
-    .navbar-toggler {
-        border-radius: 0;
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-        }
-    }
+  @include util.navbar-base();
+  .navbar-brand {
+    @include util.navbar-brand();
+  }
+
+  .navbar-toggler {
+    @include util.navbar-toggler();
+  }
+
+  .nav-link {
+    @include util.nav-link();
+  }
+
+  .phone, .location {
+    @include util.icon-button();
+  }
+
+  .tire-icon {
+    @include util.tire-icon();
+  }
 }
 
 .offcanvas {
-    padding: util.gutter(xs);
-    @include util.gap(xs);
+  .offcanvas-header {
+    @include util.offcanvas-header();
+  }
 
-    .offcanvas-header {
-        padding: 1rem 0;
-    }
+  .offcanvas-body {
+    @include util.offcanvas-body();
+  }
 
-    .offcanvas-body {
-        @include util.flex-container();
-        padding: 0;
-        .navbar {
-            .nav-link-group {
-                @include util.flex-container();
-                gap: 1rem;
-                .nav-link {
-                    padding: 0;
-                    @include util.links();
-                }
-
-                .nav-link:hover {
-                    color: colors.colorTheme(app-red);
-                    text-decoration-color: colors.colorTheme(black);
-                }
-
-                .phone {
-                    background-color: colors.colorTheme(app-black);
-                    padding: 0.5rem;
-                    border-radius: 50%;
-                    color: colors.colorTheme(app-red);
-                }
-
-                .phone:hover {
-                    background-color: colors.colorTheme(app-red);
-                    color: colors.colorTheme(app-yellow);
-                }
-
-                .location {
-                    color: colors.colorTheme(app-black);
-                }
-            }
-        }
-    }
-
-    .tire-icon {
-        max-width: 6.25rem;
-        max-height: 6.25rem;
-    }
-
-    text-transform: uppercase;
+  text-transform: uppercase;
 }

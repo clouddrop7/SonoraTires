@@ -3,24 +3,11 @@
 @use '../variables/utils.scss' as util;
 
 .about-container {
-    padding: 0 3rem;
-    margin: 0;
-
     .about {
-        display: grid;
-        gap: 1rem;
-        text-align: center;
-        overflow: hidden;
         .about-col {
-            display: grid;
-            gap: 1rem;
-            text-align: center;
             .about-subtitle {
-                margin: 0;  
             }
-    
             .about-p {
-                line-height: 1.1;
             }
         }
     }

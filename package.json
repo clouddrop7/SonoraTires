@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@firebase/firestore": "^4.7.5",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@reduxjs/toolkit": "^1.9.7",
     "@sendgrid/mail": "^8.1.4",
     "@testing-library/jest-dom": "^5.17.0",
@@ -31,7 +34,8 @@
     "sonoratires": "file:",
     "uuid": "^11.0.3",
     "validator": "^13.12.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.6.1"
   },
   "scripts": {
     "start": "react-scripts start",

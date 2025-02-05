@@ -5,103 +5,105 @@
 
 // Font Families
 $defaultFont: 'Oxanium', serif;
-$Title: 'Orbitron', sans-serif;
+$titleFont: 'Orbitron', sans-serif;
 
-// Font Theme Map
+// Font Sizes
+$base-font-size: 16px;
+$font-sizes: (
+    'h1': (xs: 2.5rem, sm: 3rem, md: 3.5rem, lg: 4rem, xl: 4.5rem),
+    'h2': (xs: 2rem, sm: 2.5rem, md: 3rem, lg: 3.5rem, xl: 4rem),
+    'h3': (xs: 1.75rem, sm: 2rem, md: 2.25rem, lg: 2.5rem, xl: 2.75rem),
+    'h4': (xs: 1.5rem, sm: 1.75rem, md: 2rem, lg: 2.25rem, xl: 2.5rem),
+    'h5': (xs: 1rem, sm: 1.125rem, md: 1.25rem, lg: 1.5rem, xl: 1.75rem),
+    'h6': (xs: 1rem, sm: 1.125rem, md: 1.25rem, lg: 1.5rem, xl: 1.75rem),
+    'p': (xs: 1rem, sm: 1.125rem, md: 1.25rem, lg: 1.375rem, xl: 1.5rem),
+    'small': (xs: 0.875rem, sm: 0.9375rem, md: 1rem, lg: 1.0625rem, xl: 1.125rem),
+    'button': (xs: 1rem, sm: 1.125rem, md: 1.25rem, lg: 1.375rem, xl: 1.5rem),
+);
 
+// Letter Spacing
+$letter-spacing: (
+    'h1': 0.02em,
+    'h2': 0.015em,
+    'h3': 0.01em,
+    'h4': 0.005em,
+    'h5': 0,
+    'h6': 0,
+    'p': 0.01em, 
+    'small': 0,
+    'button': 0.03em, 
+);
+
+// Line Height
+$line-heights: (
+    'h1': 1.2,
+    'h2': 1.3,
+    'h3': 1.4,
+    'h4': 1.5,
+    'h5': 1.6,
+    'h6': 1.6,
+    'p': 1.6,
+    'small': 1.5,
+    'button': 1.4
+);
+
+@function get-font-size($element, $breakpoint: 'xs') {
+    $size-map: map-get($font-sizes, $element);
+    @return map-get($size-map, $breakpoint);
+}
+
+@function get-letter-spacing($element) {
+    @return map-get($letter-spacing, $element);
+}
+
+@function get-line-height($element) {
+    @return map-get($line-heights, $element);
+}
+
+@mixin responsive-font-size($element) {
+    font-size: get-font-size($element);
+    letter-spacing: get-letter-spacing($element);
+    line-height: get-line-height($element);
+
+    @each $breakpoint, $size in (
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px // Assuming xxl breakpoint for larger screens
+    ) {
+        @media (min-width: $size) {
+            font-size: get-font-size($element, $breakpoint);
+        }
+    }
+}
+
+// Font Themes including alignment for responsiveness
 $font-themes: (
     default: (
         font-family: $defaultFont,
-        font-weight: 400,
-        line-height: 166.667%,
-        color: colors.colorTheme(black),
+        text-align: left,
     ),
-
     title: (
-        font-family: $Title,
-        font-weight: 700,
-        letter-spacing: 1.286px,
-        line-height: 1,
-        color: colors.colorTheme(app-yellow),
-        text-shadow: 0px 2px 4px rgba(0,0,0,0.8),
+        font-family: $titleFont,
+        text-align: left,
     ),
-
-    subTitle: (
-        font-family: $defaultFont,
-        font-weight: 500,
-        letter-spacing: 0.0625rem,
-        color: colors.colorTheme(black),
-        
-    )
 );
 
 @mixin font-theme($theme-name) {
     $theme: map-get($font-themes, $theme-name);
-  
     @if $theme {
-      font-family: map-get($theme, font-family);
-      font-weight: map-get($theme, font-weight);
-      line-height: map-get($theme, line-height);
-      letter-spacing: map-get($theme, letter-spacing);
-      color: map-get($theme, color);
+        font-family: map-get($theme, font-family);
+        text-align: map-get($theme, text-align);
+        
+        @media (min-width: 23rem) and (max-width: 61.5rem) { // From sm to md
+            text-align: center;
+        }
+        
+        @media (min-width: 62rem) { // From lg upwards
+            text-align: left;
+        }
     } @else {
-      @error "No font theme found for `#{$theme-name}`";
+        @error "No font theme found for `#{$theme-name}`";
     }
 }
-
-// Responsive font size functions 
-
-$title-font-sizes: (
-  xs: 2rem, 
-  sm: 2rem, 
-  md: 3rem,
-  lg: 4rem,
-  xl: 5rem,   
-);
-
-@function font-title($breakpoint) {
-  @return map-get($title-font-sizes, $breakpoint);
-}
-
-$default-font-size: (
-    xs: 0.9375rem,
-    md: 1.125rem,
-);
-
-@function default-font-size($breakpoint) {
-    @return map-get($default-font-size, $breakpoint);
-}
-
-$subTitle: (
-    xs: 1.5rem,
-    sm: 1.5rem,
-    md: 2rem,
-    lg: 3rem,
-    xl: 3.5rem, 
-);
-
-@function sub-title($breakpoint) {
-    @return map-get($subTitle, $breakpoint);
-}
-
-$font-h3: (
-  xs: 1.25rem,
-  md: 1.25rem,
-  lg: 1.5rem,
-  xl: 2rem,
-  xxl: 2.5rem,
-);
-
-@function titles($breakpoint) {
-  @return map-get($font-h3, $breakpoint);
-}
-
-// $font-title: (
-//     xs:2.25rem,
-//     md: 3.5rem,
-//     lg: 4rem,
-// );
-
-// @function responsive-font-title($breakpoint) {
-//   @return map-get($font-title, $breakpoint);
-// }

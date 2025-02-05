@@ -7,7 +7,6 @@ import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import Callback from './components/callback/Callback';
 import './styles/main/main.scss';
 
 function App() {

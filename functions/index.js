@@ -1,45 +1,37 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+import * as functions from 'firebase-functions';
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import { firestoreDb, realtimeDb, storageInstance } from './firebaseconfig.js'; 
+const app = express();
 
-const {onRequest} = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
+// Middleware setup
+app.use(cors({ 
+  origin: true, 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
+}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
-
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
-
-const functions = require("firebase-functions");
-const axios = require("axios");
-
-exports.fetchCarData = functions.https.onRequest(async( req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
-    res.set('Access-Control-Allow-Methods', 'Get, POST, OPTIONS');
-    res.set('Access-Control-Allow-Headers', 'Content-Type');
-
-    if (req.method === 'OPTIONS') {
-        return res.status(204).send('');
-    }
-
+app.get('/images/:filename', async (req, res) => {
     try {
-        const url = 'https://carapi.app/api/makes';
-        const response = await axios.get(url, {
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-        return res.status(200).json(response.data);
+      const bucket = storageInstance.bucket();
+      const file = bucket.file(req.params.filename);
+      
+      file.createReadStream()
+        .on('error', (err) => {
+          console.error('Error reading file:', err);
+          res.status(500).send('Error retrieving file');
+        })
+        .pipe(res);
     } catch (error) {
-        console.error('Error fetching data:', error);
-        return res.status(500).json({ error: 'Error fetching car data'});
+      console.error('Error getting file:', error);
+      res.status(500).send('Error retrieving file');
     }
 });
+
+
+
+// Export the Express app as a Firebase function
+export const api = functions.https.onRequest(app);

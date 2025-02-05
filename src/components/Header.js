@@ -46,10 +46,10 @@ const Header = () => {
                                     batteries
                                 </Nav.Link>
                                 <Nav.Link href="tel:+9513478976" className="phone">
-                                    <i className='fa fa-phone fa-2x' /> 
+                                    <i className='phone-icon fa fa-phone fa-2x' /> 
                                 </Nav.Link>
                                 <Nav.Link id="locationIcon"className="location">
-                                    <i className="fa-solid fa-location-dot fa-2x" />
+                                    <i className="location-icon fa-solid fa-location-dot fa-2x" />
                                     {/* <Tooltip
                                         placement="right"
                                         isOpen={toolOpen}
