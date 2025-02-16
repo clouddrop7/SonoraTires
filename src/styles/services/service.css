@@ -1,74 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
-.service-container {
-  align-items: center;
+.services-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0 1rem;
-}
-.service-container .service-row .service-col {
-  display: grid;
-  gap: 1rem;
-}
-.service-container .service-row .service-col .title {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.service-container .service-row .service-col .title .more-tag {
-  display: inline-block;
-  align-self: flex-start;
-  margin-left: 2rem;
-}
-.service-container .service-row .service-col .service-card {
-  display: grid;
-  grid-template-rows: repeat(4, minmax(min-content, max-content));
-  padding: 1rem;
-  border: 1px solid #F2BA31;
-  background-color: #000000;
-  color: #ffffff;
-  gap: 1rem;
-  cursor: pointer;
-}
-.service-container .service-row .service-col .service-card .service-image {
-  grid-row: 2;
-  width: 10rem;
-  align-self: center;
-  justify-self: center;
-}
-.service-container .service-row .service-col .service-card .service-title {
-  grid-row: 1;
-  align-self: start;
-}
-.service-container .service-row .service-col .service-card .service-title:hover {
-  color: #F2BA31;
-  cursor: pointer;
-}
-.service-container .service-row .service-col .service-card .card-body {
-  grid-row: 3;
-  align-self: end;
+  background-color: #D3D3D3;
+  width: 100%;
+  max-width: 100%;
   padding: 1rem;
 }
-.service-container .service-row .service-col .service-card .card-body .service-text {
-  font-size: 14px;
-  letter-spacing: 0.05rem;
+.services-container .services-row {
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  max-width: 100%;
+  width: 100%;
 }
-.service-container .service-row .service-col .service-card .service-btn {
-  grid-row: 4;
-  align-self: end;
-  max-width: 220;
-  justify-self: center;
-  padding: 0.875rem 1rem;
-  border: 1px solid #E41B17;
+@media (min-width: 48rem) {
+  .services-container .services-row {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-around;
+    padding: 2rem 0;
+  }
+}
+@media (min-width: 75rem) {
+  .services-container .services-row {
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+.services-container .services-row .card {
   border-radius: 0;
-  background-color: #000000;
-  letter-spacing: 0.08rem;
-  box-shadow: inset 0 0 0 0 #000000;
-  transition: box-shadow 0.3s ease-in;
+  border: none;
+  padding: 0;
+  background-color: #333333;
+  width: 100%;
+  max-width: 100%;
 }
-.service-container .service-row .service-col .service-card .service-btn:hover {
-  box-shadow: inset 14em 0 0 0 #E41B17;
-  color: #000000;
+@media (min-width: 48rem) {
+  .services-container .services-row .card {
+    width: auto;
+    max-width: 14rem;
+  }
+}
+.services-container .services-row .card .card-img {
+  border-radius: 0;
+  width: 100%;
+  height: 5rem;
+}
+.services-container .services-row .card .muffler {
+  width: 100%;
+  height: auto;
+}
+.services-container .services-row .card .card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.services-container .services-row .card .card-body p {
+  font-family: "Syne", serif;
+  font-size: 1.6rem;
+  color: #DAA520;
+  padding: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.services-container .services-row .services-col {
+  max-height: auto;
+}
+@media (min-width: 62rem) {
+  .services-container .services-row .services-col {
+    max-width: 19.125rem;
+    max-height: 25.4375rem;
+  }
+}
+.services-container .services-row .services-col .card-img {
+  width: 100%;
+  height: 16rem;
+}
+@media (min-width: 62rem) {
+  .services-container .services-row .services-col .card-img {
+    height: 100%;
+  }
+}
+@media (min-width: 75rem) {
+  .services-container .services-row .wheel {
+    max-width: 31.6875rem;
+    height: 37.9375rem;
+    max-height: 37.9375rem;
+  }
 }/*# sourceMappingURL=service.css.map */

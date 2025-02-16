@@ -1,36 +1,142 @@
+@use '../variables/colors.scss' as colors;
+@use '../../styles/variables/fonts.scss' as font;
 @use '../variables/utils.scss' as util;
 
-.navbar {
-  @include util.navbar-base();
-  .navbar-brand {
-    @include util.navbar-brand();
-  }
+.header-container {
+  grid-row: 1;
+  width:  100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 6vw !important;
 
-  .navbar-toggler {
-    @include util.navbar-toggler();
+  @media (min-width: 62rem) {
+    padding: 2vw 4vw !important;
+    margin: 0;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
   }
+    .row {
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      .col {
+        padding: 0;
+      }
 
-  .nav-link {
-    @include util.nav-link();
-  }
+      .title-col {
+        flex: 1;
+      }
 
-  .phone, .location {
-    @include util.icon-button();
-  }
+      .cart-col {
+        flex: 0 0 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .fa-cart-shopping {
+          width: 25px;
+          height: 25px;
+        }
+      }
+  
+    }
 
-  .tire-icon {
-    @include util.tire-icon();
+    .nav-col {
+      flex: 0;
+      justify-self: end;
+
+      .navbar-toggler {
+        border: none;
+        flex: 0 0 50px;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24'/%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 16h24'/%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 24h24'/%3E%3C/svg%3E");
+        padding: 0 0.5em;
+      }
+    }
+
+  .header-title {
+    margin: 0;
+    line-height: 1.2em;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    font-family: 'Syne', serif;
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration:none;
+    color: colors.colorTheme(app-yellow);
+
+    @media (min-width: 62rem) {
+      font-size: 1.5rem;
+    }
   }
 }
 
 .offcanvas {
+  box-sizing: border-box;
+  justify-content: flex-start;
   .offcanvas-header {
-    @include util.offcanvas-header();
+    padding: 6vw;
+    align-items: center;
+    height: 6.5em;
+    .nav-title {
+      margin: 0;
+      line-height: 1.2em;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      font-family: 'Syne', serif;
+      font-size: 1em;
+      font-weight: 700;
+      text-decoration:none;
+      color: colors.colorTheme(app-yellow);
+    }
   }
 
   .offcanvas-body {
-    @include util.offcanvas-body();
-  }
+    padding: 0;
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+      gap: 1rem;
+      padding: 6vw;
 
-  text-transform: uppercase;
+      @media (min-width: 62rem) {
+        flex-direction: row;
+        padding: 0;
+        align-items: center;
+      }
+      .nav-link {
+        border: 1px solid colors.colorTheme(app-red);
+        padding: 0.5em;
+
+        &:hover {
+          background-color: colors.colorTheme(app-yellow);
+          color: colors.colorTheme(app-white);
+        }
+        .fa-2x {
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      .appt-btn {
+        border: 1px solid colors.colorTheme(app-yellow);
+        border-radius: 0;
+        background-color: transparent;
+        color: colors.colorTheme(app-yellow);
+        padding: 1rem 1rem;
+        text-transform: uppercase;
+
+        &:hover {
+          background-color: colors.colorTheme(app-yellow);
+          color: colors.colorTheme(app-white);
+        }
+
+        @media (min-width: 62rem) {
+          padding: 1rem 1.3rem;
+          min-width: 12.25rem;
+        }
+      }
+    }
+  }
 }

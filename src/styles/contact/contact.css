@@ -1,117 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
 .contact-container {
-  padding: 0;
-  margin: 0;
+  padding: 0 !important;
+  background-image: url("../../app/assets/images/pirellitires.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
-.contact-container .contact-card {
-  display: grid;
-}
-.contact-container .contact-card .contact-image {
-  min-height: 400px;
-}
-.contact-container .contact-card .contact-form {
-  margin: 0;
-  padding: 0;
-}
-.contact-container .contact-card .contact-form .contact-title {
+.contact-container .contact-title {
   color: #ffffff;
   text-transform: capitalize;
+  text-align: center;
+  font-size: 2rem;
   padding: 1rem;
+  margin: 0;
+  width: 100%;
 }
-.contact-container .contact-card .contact-form .form {
+.contact-container .form {
   display: grid;
   grid-template-columns: repeat(2, minmax(min-content, max-content));
-  grid-template-rows: repeat(4, minmax(min-content, max-content));
-  justify-content: center;
-  padding: 0 1rem;
+  grid-template-rows: auto auto;
   gap: 1rem;
   width: 100%;
-  max-width: 100%;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  padding: 1rem;
+  background-color: transparent;
 }
-.contact-container .contact-card .contact-form .form-row {
-  display: grid;
-  grid-template-rows: repeat(2, auto);
-  text-align: start;
+.contact-container .form .form-row {
   margin: 0 !important;
-  padding: 0;
-  gap: 0.5rem;
 }
-.contact-container .contact-card .contact-form .form-row .form-label {
-  margin: 0;
-  padding: 0;
-  color: #F2BA31;
+.contact-container .form .form-row.name-group {
+  grid-column: 1;
+  grid-row: 1;
+}
+.contact-container .form .form-row.email-group {
+  grid-column: 2;
+  grid-row: 1;
+}
+.contact-container .form .form-row.message-group {
+  grid-column: 1/span 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+}
+.contact-container .form .form-row.btn-group {
+  grid-column: 1/span 2;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+}
+.contact-container .form .form-row .form-label {
+  color: #DAA520;
   text-transform: capitalize;
+  display: block;
+  margin-bottom: 0.5rem;
 }
-.contact-container .contact-card .contact-form .form-row .field-col {
-  display: grid;
-  position: relative;
-  gap: 0.5rem;
-  padding: 0;
-}
-.contact-container .contact-card .contact-form .form-row .field-col .form-control {
+.contact-container .form .form-row .form-control {
   border: 1px solid #000000;
   border-radius: 0;
   background-color: transparent;
   color: #ffffff;
+  padding: 0.75rem;
+  font-size: 1rem;
 }
-.contact-container .contact-card .contact-form .form-row .field-col .form-control::-moz-placeholder {
+.contact-container .form .form-row .form-control::-moz-placeholder {
   color: #ffffff;
   opacity: 0.75;
   text-transform: capitalize;
 }
-.contact-container .contact-card .contact-form .form-row .field-col .form-control::placeholder {
+.contact-container .form .form-row .form-control::placeholder {
   color: #ffffff;
   opacity: 0.75;
   text-transform: capitalize;
 }
-.contact-container .contact-card .contact-form .form-row .field-col .text-danger {
-  position: absolute;
-  top: 2rem;
-  justify-self: end;
-  padding-right: 0.5rem;
+.contact-container .form .form-row .text-danger,
+.contact-container .form .form-row .message-error {
+  color: #333333;
   text-transform: capitalize;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  display: block;
 }
-.contact-container .contact-card .contact-form .form-row .field-col .subject-error {
-  position: absolute;
-  color: #E41B17;
-  top: 2rem;
-  justify-self: end;
-  text-transform: capitalize;
-  padding-right: 1rem;
-}
-.contact-container .contact-card .contact-form .form-row .field-col .message-error {
-  position: absolute;
-  color: #E41B17;
-  top: 2rem;
-  justify-self: end;
-  padding-right: 1rem;
-  text-transform: capitalize;
-}
-.contact-container .contact-card .contact-form .form-row .message-group .message {
-  max-height: 5rem;
-}
-.contact-container .contact-card .contact-form .subject-group {
-  grid-column: 1/span 2;
-}
-.contact-container .contact-card .contact-form .btn-group {
-  grid-column: 1/span 2;
-  align-self: center;
+.contact-container .form .contact-btn {
   display: flex;
+  align-items: center;
   justify-content: center;
-}
-.contact-container .contact-card .contact-form .btn-group .contact-btn {
+  gap: 0.875rem;
   border: none;
   background-color: #000000;
-  color: #F2BA31;
+  color: #DAA520;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
 }
-.contact-container .contact-card .contact-form .btn-group .contact-btn:hover {
-  background-color: #F2BA31;
+.contact-container .form .contact-btn:hover {
+  background-color: #DAA520;
   color: #000000;
   border: none;
-  font-family: "Oxanium", serif;
+}
+.contact-container .form .message {
+  width: 80%;
+  height: 100px;
+  resize: vertical;
+  max-height: 200px;
+}
+
+@media (max-width: 767px) {
+  .contact-container .form {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+  .contact-container .form .form-row {
+    grid-column: 1/-1;
+    display: block;
+  }
+  .contact-container .form .message {
+    width: 100%;
+  }
 }/*# sourceMappingURL=contact.css.map */

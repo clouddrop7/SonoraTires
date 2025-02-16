@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+.modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DAA520;
+  padding: 1rem;
+  text-align: center;
+}
+.modal .modal-header .tire-icon {
+  max-width: 5rem;
+  max-height: 5rem;
+}
+.modal .modal-header .modal-title {
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  max-width: 45%;
+}
+.modal .modal-header .btn-close {
+  margin: 0;
+}
+.modal .modal-header .btn-close:hover {
+  opacity: 0.7;
+}
+.modal .modal-body {
+  background-color: #ffffff;
+  padding: 2rem;
+}
+.modal .modal-body .form-label {
+  color: #000000;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  text-transform: capitalize;
+}
+.modal .modal-body .form-control {
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.75rem 1rem;
+}
+.modal .modal-body .form-control::-moz-placeholder {
+  opacity: 1;
+  text-transform: capitalize;
+}
+.modal .modal-body .form-control::placeholder {
+  opacity: 1;
+  text-transform: capitalize;
+}
+.modal .modal-body .form-control:focus {
+  border-color: #DAA520;
+  box-shadow: 0 0 0 0.2rem rgba(218, 165, 32, 0.25);
+}
+.modal .modal-body .form-control-feedback {
+  color: #333333;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+.modal .modal-body .form-group {
+  margin-bottom: 1.5rem;
+}
+.modal .modal-body .term-link {
+  color: #DAA520;
+  text-decoration: none;
+}
+.modal .modal-body .term-link:hover {
+  text-decoration: underline;
+}
+.modal .modal-body .cart-check {
+  display: flex;
+  margin: 1rem 0;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+.modal .modal-body .cart-check .form-check-input {
+  margin: 0;
+  padding: 0;
+}
+.modal .modal-body .cart-check .term-link {
+  padding-left: 0.5rem;
+}
+.modal .btn {
+  border: none;
+  background-color: #000000;
+  color: #DAA520;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.modal .btn:hover {
+  background-color: #DAA520;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .modal .modal-header .tire-icon {
+    max-width: 3rem;
+    max-height: 3rem;
+  }
+  .modal .modal-header .modal-title {
+    font-size: 1.2rem;
+  }
+  .modal .modal-body {
+    padding: 1rem;
+  }
+}/*# sourceMappingURL=serviceform.css.map */

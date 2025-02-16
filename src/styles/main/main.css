@@ -1,37 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
 }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, nav, section, main {
   display: block;
 }
 
 body {
-  box-sizing: border-box;
   line-height: 1;
   width: 100vw;
   height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container, .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+[class*=col-] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.navbar,
+.card-img-overlay,
+.card-body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.card-text,
+.card-title,
+.btn {
+  padding: 0;
+  margin: 0;
 }
 
 ol, ul {
@@ -42,8 +76,7 @@ blockquote, q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
@@ -53,31 +86,178 @@ table {
   border-spacing: 0;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-}
-body h1, body .h1 {
-  font-size: 2rem;
-}
-body h2, body .h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-body h3, body .h3 {
-  font-size: 1.25rem;
-}
-body h1, body h2, body h3, body p, body .h1, body .h2, body .h3, body .p,
-body .card, body .row, body .col,
-body .card-body, body .card-img,
-body .card-img-overlay {
-  margin: 0;
-  padding: 0;
-  border: none;
+input {
+  -webkit-appearance: none;
   border-radius: 0;
 }
-body p {
+
+body {
   font-family: "Oxanium", serif;
-  font-weight: 400;
-  line-height: 166.667%;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Orbitron", sans-serif;
+  text-align: left;
+  font-size: 2.5rem;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+@media (min-width: 23rem) and (max-width: 61.5rem) {
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+  }
+}
+@media (min-width: 62rem) {
+  h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+  }
+}
+@media (min-width: 576px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 992px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 4.5rem;
+  }
+}
+p {
+  font-family: "Oxanium", serif;
+  text-align: left;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+@media (min-width: 23rem) and (max-width: 61.5rem) {
+  p {
+    text-align: center;
+  }
+}
+@media (min-width: 62rem) {
+  p {
+    text-align: left;
+  }
+}
+@media (min-width: 576px) {
+  p {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 992px) {
+  p {
+    font-size: 1.375rem;
+  }
+}
+@media (min-width: 1200px) {
+  p {
+    font-size: 1.5rem;
+  }
+}
+small {
+  font-family: "Oxanium", serif;
+  text-align: left;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+@media (min-width: 23rem) and (max-width: 61.5rem) {
+  small {
+    text-align: center;
+  }
+}
+@media (min-width: 62rem) {
+  small {
+    text-align: left;
+  }
+}
+@media (min-width: 576px) {
+  small {
+    font-size: 0.9375rem;
+  }
+}
+@media (min-width: 768px) {
+  small {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  small {
+    font-size: 1.0625rem;
+  }
+}
+@media (min-width: 1200px) {
+  small {
+    font-size: 1.125rem;
+  }
+}
+button, .button {
+  font-family: "Orbitron", sans-serif;
+  text-align: left;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+@media (min-width: 23rem) and (max-width: 61.5rem) {
+  button, .button {
+    text-align: center;
+  }
+}
+@media (min-width: 62rem) {
+  button, .button {
+    text-align: left;
+  }
+}
+@media (min-width: 576px) {
+  button, .button {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 768px) {
+  button, .button {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 992px) {
+  button, .button {
+    font-size: 1.375rem;
+  }
+}
+@media (min-width: 1200px) {
+  button, .button {
+    font-size: 1.5rem;
+  }
+}
+a {
+  font-family: "Oxanium", serif;
+  text-align: left;
+}
+@media (min-width: 23rem) and (max-width: 61.5rem) {
+  a {
+    text-align: center;
+  }
+}
+@media (min-width: 62rem) {
+  a {
+    text-align: left;
+  }
+}
+
+.nav-link {
+  padding: 0;
+  margin: 0;
 }/*# sourceMappingURL=main.css.map */

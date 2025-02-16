@@ -2,9 +2,11 @@
 
 $color-theme: (
     app-white: #ffffff,
-    app-yellow: #F2BA31,
+    app-grey: #F5F5F5, 
+    app-yellow: #DAA520,
+    goldenrod: #DAA520,
     app-black: #000000,
-    app-red: #E41B17,
+    app-red: #333333,
 );
 
 @function colorTheme($key) { 

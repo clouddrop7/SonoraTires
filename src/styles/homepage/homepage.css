@@ -2,55 +2,117 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
 .homepage-container {
   display: grid;
+  grid-template-rows: minmax(min-content, max-content);
+  width: 100vw;
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.homepage-container .hero-card {
+  display: grid;
+  background-image: url("../../app/assets/images/hero-image.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
   border-radius: 0;
-  text-align: center;
-  padding: 0;
+  overflow: hidden;
+  border-bottom: 6px solid #DAA520;
+}
+@media (min-width: 62rem) {
+  .homepage-container .hero-card {
+    max-height: 80vh;
+  }
+}
+.homepage-container .hero-card .card-img-overlay {
+  background-color: #000000;
+  opacity: 45%;
+  border-radius: 0;
+}
+.homepage-container .hero-card .hero-body {
+  z-index: 1050;
+  display: grid;
+  padding: 1.5rem;
   gap: 1rem;
+  grid-template-rows: repeat(3, minmax(min-content, max-content));
 }
-.homepage-container .homepage {
-  display: grid;
+@media (min-width: 48rem) {
+  .homepage-container .hero-card .hero-body {
+    grid-template-columns: repeat(2, minmax(min-content, max-content));
+  }
 }
-.homepage-container .hero-card .overlay {
-  display: grid;
-  grid-template-columns: repeat(6, auto);
-  grid-template-rows: repeat(3, 1fr);
-}
-.homepage-container .hero-card .overlay .navbar {
-  grid-column: 1;
-  grid-row: 1;
-}
-.homepage-container .hero-card .overlay .hero-title {
-  font-family: "Orbitron", sans-serif;
+.homepage-container .hero-card .hero-body .welcome {
+  font-family: "Syne", serif;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: 1.286px;
-  color: #F2BA31;
+  line-height: 1.1em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-  justify-self: center;
-  grid-row: 2;
-  grid-column: 2/4;
-  align-self: start;
-  opacity: 0.85;
+  color: #ffffff;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 3rem;
+  text-align: center;
 }
-.homepage-container .hero-card .overlay .app-btn {
-  border: none;
+@media (min-width: 36rem) {
+  .homepage-container .hero-card .hero-body .welcome {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 62rem) {
+  .homepage-container .hero-card .hero-body .welcome {
+    grid-column: 1;
+    max-width: 30rem;
+  }
+}
+.homepage-container .hero-card .hero-body .call-action-text {
+  font-family: "Libre Baskerville", serif;
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1.3em;
+  letter-spacing: 0.12em;
+  text-align: center;
+  font-size: 1.25rem;
+  word-wrap: break-word;
+  padding: 0 1rem;
+}
+@media (min-width: 62rem) {
+  .homepage-container .hero-card .hero-body .call-action-text {
+    padding: 0;
+    align-self: center;
+    justify-self: center;
+    max-width: 12rem;
+  }
+}
+.homepage-container .hero-card .hero-body .call-action {
+  background-color: transparent;
+  border: 1px solid #DAA520;
   border-radius: 0;
-  background-color: #E41B17;
-  padding: 0;
-  font-family: "Oxanium";
-  font-weight: 600;
-  text-transform: capitalize;
-  letter-spacing: 0.0675rem;
-  cursor: pointer;
-  width: 10rem;
-  height: 3rem;
-  grid-column: 2/4;
-  grid-row: 3;
+  display: flex;
+  padding: 1rem 3rem;
   justify-self: center;
-  box-shadow: inset 0 0 0 0 #E41B17;
-  transition: box-shadow 0.3s ease-in;
+  color: #DAA520;
+  text-transform: uppercase;
+  z-index: 1;
 }
-.homepage-container .hero-card .overlay .app-btn:hover {
-  box-shadow: inset 10.25em 0 0 0 #F2BA31;
-  color: #000000;
+.homepage-container .hero-card .hero-body .call-action:hover {
+  background-color: #DAA520;
+  color: #ffffff;
+}
+@media (min-width: 75rem) {
+  .homepage-container .hero-card .hero-body .call-action {
+    grid-row: 4;
+    grid-column: 2/3;
+    align-self: start;
+    justify-self: center;
+    margin-left: 1.25em;
+  }
+}
+@media (min-width: 90rem) {
+  .homepage-container .hero-card .hero-body .call-action {
+    grid-row: 4;
+    grid-column: 2/3;
+    align-self: start;
+    justify-self: center;
+    margin-left: 1.25em;
+  }
 }/*# sourceMappingURL=homepage.css.map */

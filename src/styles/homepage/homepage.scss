@@ -3,63 +3,123 @@
 @use '../variables/utils.scss' as util;
 
 .homepage-container {
-  @include util.grid-layout(
-    $columns: 1, 
-    $rows: auto,
-    $gap: 0,
-    $align-items: stretch,
-    $justify-items: stretch,
-    $align-content: start,
-    $justify-content: start
-  );
+  display: grid;
+  grid-template-rows: minmax(min-content, max-content);
+  width: 100vw;
   max-width: 100%;
-  padding: 0 !important;
-  margin: 0 !important;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  
   .hero-card {
+    display: grid;
+    background-image: url("../../app/assets/images/hero-image.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    background-position: center;
+    border-radius: 0;
+    overflow: hidden;
+    border-bottom: 6px solid colors.colorTheme(app-yellow);
 
-    @media (min-width: 90rem) {
-      height: 100vh;
-      overflow:hidden;
-      .card {
-        height: 100%;
-        .card-img {
-          height: 100%;
-          object-fit: cover;
-        }
-      }
+    @media (min-width: 62rem) {
+      max-height: 80vh;
     }
-    .hero-image {
+    
+    .card-img-overlay {
+      background-color: colors.colorTheme(app-black);
+      opacity: 45%;
       border-radius: 0;
     }
-    .hero-overlay {
-      @include util.grid-layout(
-        $columns: 1,
-        $rows: repeat(3, 1fr),
-        $gap: 0.5rem,
-      );
-      .navbar {
-        grid-row: 1;
-        grid-column: 1;
-        .container {
-          padding: 0.5rem;
+    
+    .hero-body {
+      z-index: 1050;
+      display: grid;
+      padding: 1.5rem;
+      gap: 1rem;
+      grid-template-rows: repeat(3, minmax(min-content, max-content));
+
+      @media (min-width: 48rem) {
+        grid-template-columns: repeat(2,minmax(min-content, max-content));
+      }
+
+      @media (min-width: 62rem) {
+      }
+
+      .welcome {
+        font-family: "Syne", serif;
+        font-weight: 700;
+        line-height: 1.1em;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: colors.colorTheme(app-white);
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-size: 3rem;
+        text-align: center;
+        @media (min-width: 36rem) {
+          font-size: 4rem;
+        }
+
+        @media (min-width: 62rem) {
+          grid-column: 1;
+          max-width: 30rem;
         }
       }
-      .hero-title {
-        @include font.font-theme(title);
-        color:colors.colorTheme(app-yellow);
-        text-transform: uppercase;
-        opacity: 0.85;
-        grid-column: 1;
-        grid-row: 2;
-        align-self: start;
-        justify-self: center;
+
+      .call-action-text {
+        font-family: 'Libre Baskerville', serif;
+        color: colors.colorTheme(app-white);
+        font-weight: 500;
+        line-height: 1.3em;
+        letter-spacing: 0.12em;
+        text-align: center;
+        font-size: 1.25rem;
+        word-wrap: break-word;
+        padding: 0 1rem;
+
+        @media (min-width: 62rem) {
+          padding: 0;
+          align-self: center;
+          justify-self: center;
+          max-width: 12rem;
+        }
       }
-      .app-btn {
-        @include util.enhanced-button-style();
-        grid-row: 3;
-        grid-column: 1;
-        align-self: start;
+
+      .call-action {
+        background-color: transparent;
+        border: 1px solid colors.colorTheme(app-yellow);
+        border-radius: 0;
+        display: flex;
+        padding: 1rem 3rem;
         justify-self: center;
+        color: colors.colorTheme(app-yellow);
+        text-transform: uppercase;
+        z-index: 1;
+        
+        &:hover {
+          background-color: colors.colorTheme(app-yellow);
+          color: colors.colorTheme(app-white);
+        }
+
+        @media (min-width: 62rem) {
+          
+        }
+
+        @media (min-width: 75rem) {
+          grid-row: 4; 
+          grid-column: 2/3; 
+          align-self: start; 
+          justify-self: center; 
+          margin-left: 1.25em; 
+        }
+
+        @media (min-width: 90rem) {
+          grid-row: 4; 
+          grid-column: 2/3; 
+          align-self: start; 
+          justify-self: center; 
+          margin-left: 1.25em; 
+        }
       }
     }
   }

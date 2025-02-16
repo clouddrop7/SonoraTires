@@ -7,10 +7,10 @@ body {
     font-family: font.$defaultFont;
     // color: colors.$text-primary;
     .container {
-      @include util.responsive-spacing(padding, -x, $gutter-map: util.$global-gutter-widths); // Apply horizontal padding
-      @include util.responsive-spacing(padding, -y, $gutter-map: util.$global-gutter-widths); // Apply vertical padding
-      max-width: 100%; // Ensure it doesn't exceed screen width
-      margin: 0 auto;
+    //   @include util.responsive-spacing(padding, -x, $gutter-map: util.$global-gutter-widths); // Apply horizontal padding
+    //   @include util.responsive-spacing(padding, -y, $gutter-map: util.$global-gutter-widths); // Apply vertical padding
+    //   max-width: 100%;
+    //   margin: 0 auto;
     }
 }
 

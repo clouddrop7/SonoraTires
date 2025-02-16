@@ -1,9 +1,16 @@
-import { Container, Navbar, Nav, Offcanvas, Image } from 'react-bootstrap';
-import { Tooltip } from 'reactstrap';
+import { Container,Col, Row, Navbar, Nav, Offcanvas, Button } from 'react-bootstrap';
+
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import sonoraIcon from '../app/assets/images/sonoraIcon.png';
 import '../styles/header/header.scss';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXTwitter, faFacebook,  faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faShoppingCart, faPhone,faLocationDot } from '@fortawesome/free-solid-svg-icons';
+
+// Add all brand icons to the library
+library.add(fab)
 
 const Header = () => {
     const [show, setShow] = useState(false);
@@ -13,59 +20,59 @@ const Header = () => {
     const [toolOpen, setToolOpen] = useState(false);
     const toggleToolTip = () => setToolOpen(!toolOpen);
     return (
-        <Navbar expand="lg">
-            <Container>
-                <Navbar.Toggle
-                    onClick={handleShow}
-                    aria-controls="offcanvasNavbar-expand-lg"
-                />
-                <Navbar.Offcanvas
-                    id="offcanvasNavbar-expand-md"
-                    aria-labelledby="offcanvasnavbar-expand-lg"
-                    placement="start"
-                    show={show}
-                    onHide={handleClose}
-                >
-                    <Offcanvas.Header closeButton>
-                        <Image className='tire-icon' src={sonoraIcon} alt='Sonora Tires logo' />
-                        tires inc. 
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
-                        <Navbar className="navbar-nav"> 
-                            <div className="nav-link-group"> 
-                                <Nav.Link as={Link} to="/tires" className="link" onClick={handleClose}>
-                                    tires
-                                </Nav.Link>
-                                <Nav.Link as={Link} to="/brakes" className="link" onClick={handleClose}>
-                                    brakes
-                                </Nav.Link>
-                                <Nav.Link as={Link} to="/alignment" className="link" onClick={handleClose}>
-                                    alignment
-                                </Nav.Link>
-                                <Nav.Link as={Link} to="/batteries" className="link" onClick={handleClose}>
-                                    batteries
-                                </Nav.Link>
-                                <Nav.Link href="tel:+9513478976" className="phone">
-                                    <i className='phone-icon fa fa-phone fa-2x' /> 
-                                </Nav.Link>
-                                <Nav.Link id="locationIcon"className="location">
-                                    <i className="location-icon fa-solid fa-location-dot fa-2x" />
-                                    {/* <Tooltip
-                                        placement="right"
-                                        isOpen={toolOpen}
-                                        target="locationIcon"
-                                        toggle={toggleToolTip}
-                                    >
-                                        Bloomington, CA 92316
-                                    </Tooltip> */}
-                                </Nav.Link>
-                                
-                            </div>
-                        </Navbar>
-                    </Offcanvas.Body>
-                </Navbar.Offcanvas>
-            </Container>
-        </Navbar>
+       <Container className="header-container">
+            <Row>
+                <Col className="title-col">
+                    <a className="header-title">sonora tires inc.</a>
+                </Col>
+                <Col className="cart-col">
+                    <FontAwesomeIcon icon={faShoppingCart} size="2x" />
+                </Col>
+                <Col className="nav-col">
+                    <Navbar expand="lg">
+                        <Container>
+                            <Navbar.Toggle 
+                                onClick={handleShow}
+                                aria-controls="offcanvasNavbar-expand-lg"
+                            />
+                            <Navbar.Offcanvas
+                                id="offcanvasNavbar-expand-md"
+                                aria-labelledby="offcanvasnavbar-expand-lg"
+                                placement="start"
+                                show={show}
+                                onHide={handleClose}
+                            >
+                                <Offcanvas.Header closeButton>
+                                    <p className="nav-title">sonora tires inc.</p>
+                                    <FontAwesomeIcon  icon="shopping-cart"/>
+                                </Offcanvas.Header>
+                                <Offcanvas.Body>
+                                    <Navbar>
+                                        <Button className="appt-btn">shop tires</Button>
+                                        <Nav.Link as={Link} to="https://x.com">
+                                            <FontAwesomeIcon icon={faPhone} size="2x"/>
+                                        </Nav.Link>
+                                        <Nav.Link as={Link} to="https://x.com">
+                                            <FontAwesomeIcon icon={faLocationDot} size="2x"/>
+                                        </Nav.Link>
+                                        <Nav.Link as={Link} to="https://x.com">
+                                            <FontAwesomeIcon icon={faXTwitter} size="2x"/>
+                                        </Nav.Link>
+                                        <Nav.Link as={Link} to="https://facebook.com">
+                                            <FontAwesomeIcon icon={faFacebook} size="2x" />
+                                        </Nav.Link>
+                                        <Nav.Link as={Link} to="https://instagram.com">
+                                            <FontAwesomeIcon icon={faInstagram} size="2x" />
+                                        </Nav.Link>
+                                        
+                                    </Navbar>
+                                </Offcanvas.Body>
+                            </Navbar.Offcanvas>
+                        </Container>
+                    </Navbar>
+                </Col>
+            </Row>
+       </Container>
     );
 }
 
