@@ -23,6 +23,7 @@
 
     @media (min-width: 62rem) {
       max-height: 80vh;
+      height: 80vh;
     }
     
     .card-img-overlay {
@@ -32,17 +33,28 @@
     }
     
     .hero-body {
-      z-index: 1050;
+      z-index: 2;
       display: grid;
       padding: 1.5rem;
       gap: 1rem;
       grid-template-rows: repeat(3, minmax(min-content, max-content));
 
       @media (min-width: 48rem) {
-        grid-template-columns: repeat(2,minmax(min-content, max-content));
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(3,auto);
+        row-gap: 2rem;
+        column-gap: 0;
+        padding: 2rem;
       }
 
       @media (min-width: 62rem) {
+        grid-template-columns: repeat(12,1fr);
+        gap: 2rem;
+        padding: 0;
+      }
+
+      @media (min-width: 90rem) {
+        grid-template-rows: repeat(6,1fr);
       }
 
       .welcome {
@@ -56,13 +68,34 @@
         word-wrap: break-word;
         font-size: 3rem;
         text-align: center;
+
         @media (min-width: 36rem) {
-          font-size: 4rem;
+          font-size: 3rem;
+          max-width: 24rem;
+          justify-self: center;
+        }
+
+        @media (min-width: 48rem) {
+          grid-column: 2/8;
+          grid-row: 2;
         }
 
         @media (min-width: 62rem) {
-          grid-column: 1;
+          grid-row: 2;
+          grid-column: 2/7;
+          line-height: 100%;
+          align-self: start;
+          justify-self: start;
           max-width: 30rem;
+        }
+
+        @media (min-width: 75rem) {
+          font-size: 4rem;
+        } 
+
+        @media (min-width: 90rem) {
+          grid-column: 3/7;
+          justify-self: center;
         }
       }
 
@@ -76,12 +109,32 @@
         font-size: 1.25rem;
         word-wrap: break-word;
         padding: 0 1rem;
+        max-width: 16rem;
+        justify-self: center;
+        @media (min-width: 48rem) {
+          padding: 0;
+          grid-row: 2;
+          grid-column: 8/11;
+          align-self: end;
+          justify-self: start;
+        }
 
         @media (min-width: 62rem) {
-          padding: 0;
+          grid-row: 2;
+          grid-column: 7/11;
+          font-size: 1.75rem;
+          text-align: start;
           align-self: center;
-          justify-self: center;
-          max-width: 12rem;
+        }
+
+        @media (min-width: 75rem) {
+          grid-column: 7/10;
+        }
+
+        @media (min-width: 90rem) {
+          align-self: center;
+          grid-row: 2/4;
+          max-width: 16rem;
         }
       }
 
@@ -89,36 +142,42 @@
         background-color: transparent;
         border: 1px solid colors.colorTheme(app-yellow);
         border-radius: 0;
-        display: flex;
         padding: 1rem 3rem;
         justify-self: center;
         color: colors.colorTheme(app-yellow);
         text-transform: uppercase;
-        z-index: 1;
+        text-align: center;
         
         &:hover {
           background-color: colors.colorTheme(app-yellow);
           color: colors.colorTheme(app-white);
         }
 
+        @media (min-width: 48rem) {
+          grid-row: 3;
+          grid-column: 3/8;
+          justify-self: start;
+        }
+
         @media (min-width: 62rem) {
-          
+          grid-row: 2;
+          grid-column: 2/7;
+          align-self: end;
+          justify-self: center;
         }
 
         @media (min-width: 75rem) {
-          grid-row: 4; 
-          grid-column: 2/3; 
-          align-self: start; 
-          justify-self: center; 
-          margin-left: 1.25em; 
+          grid-column: 3/6;
         }
 
         @media (min-width: 90rem) {
-          grid-row: 4; 
-          grid-column: 2/3; 
+          grid-row: 3; 
+          grid-column: 3/7; 
           align-self: start; 
           justify-self: center; 
-          margin-left: 1.25em; 
+          margin-left: 1.25em;
+          padding: 2rem 4rem;
+          margin: 0 auto;
         }
       }
     }

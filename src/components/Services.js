@@ -6,7 +6,7 @@ import catalytic from '../app/assets/images/catalytic.png';
 
 const Services = () => {
     return (
-        <Container className="services-container">
+        <Container id="services" className="services-container">
             <Row className="services-row">
                 <Card className="services-col">
                     <Card.Img className="service-image muffler" src={muffler} alt="muffler on red card"/>

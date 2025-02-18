@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet');
+.social-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+.social-container .social-row {
+  padding: 2rem;
+  gap: 1rem;
+  justify-content: center;
+}
+@media (min-width: 62rem) {
+  .social-container .social-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(min-content, max-content));
+    padding: 3rem;
+    gap: 2rem;
+  }
+}
+@media (min-width: 75rem) {
+  .social-container .social-row {
+    gap: 2rem;
+  }
+}
+.social-container .social-row .card {
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  max-width: 100%;
+}
+.social-container .social-row .card .social-images {
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+@media (min-width: 48rem) {
+  .social-container .social-row .card {
+    max-width: 12rem;
+  }
+}
+@media (min-width: 62rem) {
+  .social-container .social-row .card {
+    width: 18rem;
+    max-width: 100%;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+  }
+}
+@media (min-width: 75rem) {
+  .social-container .social-row .card {
+    width: 100%;
+    max-width: 24rem;
+    height: 30rem;
+  }
+}
+.social-container .social-row .social-btn {
+  font-family: "Syne", serif;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  line-height: 1.5em;
+  border: 1px solid #DAA520;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  color: #DAA520;
+  text-decoration: none;
+  text-align: center;
+}
+.social-container .social-row .social-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+@media (min-width: 48rem) {
+  .social-container .social-row .social-btn {
+    max-width: 22rem;
+    justify-self: center;
+  }
+}
+@media (min-width: 62rem) {
+  .social-container .social-row .social-btn {
+    grid-column: 2;
+  }
+}/*# sourceMappingURL=social.css.map */

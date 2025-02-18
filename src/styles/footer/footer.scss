@@ -1,0 +1,220 @@
+@use '../variables/colors.scss' as colors;
+@use '../../styles/variables/fonts.scss' as font;
+@use '../variables/utils.scss' as util;
+
+.footer-container {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    .footer-row {
+        display: grid;
+        grid-template-rows: repeat(6, minmax(min-content,max-content));
+        padding: 1rem;
+        width: 100%;
+
+        @media (min-width: 48rem) {
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        @media(min-width: 62rem) {
+            grid-template-columns: repeat(2,minmax(min-content,max-content));
+            justify-content: space-around;
+        }
+
+        @media (min-width: 75rem) {
+            grid-template-columns: repeat(4,minmax(min-content,max-content));
+            grid-template-rows: repeat(2,auto);
+        }
+
+        .footer-title, .footer-subtitle {
+            padding: 0;
+        }
+        .footer-title {
+            font-family: "Syne", serif;
+            font-weight: 700;
+            line-height: 1.2em;
+            letter-spacing: -0.02em;
+            color: colors.colorTheme(app-red);
+            font-size: 2rem;
+
+            @media (min-width: 48rem) {
+                font-size: 3rem;
+                grid-column: 1/3;
+            }
+
+            @media (min-width: 75rem) {
+                grid-column: 1/5;
+                grid-row: 1;
+            }
+        }
+
+        .list-group {
+            padding: 1rem;
+            .footer-subtitle {
+                font-family: "Syne", serif;
+                font-weight: 600;
+                line-height: 1.5em;
+                letter-spacing: 0.1em;
+                font-size: 1.5rem;
+                color: colors.colorTheme(app-yellow);
+                text-align: center;
+
+                @media (min-width: 48rem) {
+                    font-size: 2rem;
+                    text-align: start;
+                }
+            }
+
+            .list-group-item {
+                font-family: "Libre Baskerville";
+                font-size: 0.875rem;
+                line-height: 1.5em;
+                letter-spacing: 0.1em;
+                border-bottom: none;
+                text-align: start;
+                width: 100%;
+                max-width: 12rem;
+                padding: 0;
+                text-decoration:underline;
+                text-decoration-color: colors.colorTheme(app-red);
+                text-underline-offset: 4px;
+                cursor: pointer;
+                &:hover {
+                    color: colors.colorTheme(app-yellow);
+                    text-decoration: colors.colorTheme(app-yellow);
+                }
+            }
+
+            .address, .phone {
+                font-family: "Libre Baskerville", serif;
+                text-decoration: none !important;
+            }
+        }
+
+        .explore {
+            display: grid;
+            grid-template-columns: repeat(3,auto);
+            grid-template-rows: repeat(3, 1fr);
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+
+            .footer-subtitle {
+                grid-row: 1;
+                grid-column: 1/4;
+
+                @media (min-width: 48rem) {
+                    grid-column: 1/4;
+                    justify-self: start;
+                }
+            }
+
+            @media (min-width: 48rem) {
+                grid-template-columns: repeat(3, minmax(min-content,max-content));
+                grid-template-rows: repeat(3, 1fr);
+                justify-content: unset;
+                align-items: start;
+                justify-content: start;
+            }
+        }
+
+        .legal {
+            gap: 1rem;
+        }
+
+        .social-container {
+            display: grid;
+            grid-template-rows: repeat(2, minmax(min-content,max-content));
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+
+            .footer-subtitle {
+                grid-row: 1;
+                grid-column: 1;
+                align-self: center;
+
+                @media (min-width: 62rem) {
+                    grid-column: 1/3;
+                }
+            }
+            .social-links {
+                grid-row: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid colors.colorTheme(app-black);
+
+                .fa-2x {
+                    padding: 0.5rem;
+                }
+
+                &:hover {
+                    background-color: colors.colorTheme(app-yellow);
+                    color: colors.colorTheme(app-white);
+                }
+            }
+
+            @media (min-width: 62rem){
+                grid-template-columns: repeat(3,auto);
+                grid-template-rows: repeat(3,1fr);
+                justify-content: unset;
+                align-items: start;
+                justify-content: start;
+            }
+        }
+
+        .address-info {
+            gap: 1rem;
+            .address {
+                max-width: 16rem;
+            } 
+
+            @media (min-width: 36rem) {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(2,1fr);
+                align-items: start;
+                justify-content: center;
+                text-align: center;
+
+                .footer-subtitle {
+                    grid-column: 1/ span 2;
+                }
+            }
+
+            @media (min-width: 62rem) {
+                grid-template-columns: 1fr;
+
+                .footer-subtitle {
+                    grid-column: 1;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        text-decoration: none !important;
+        display: flex;
+        padding: 1rem !important;
+        gap: 0.5rem;
+        grid-column: 2;
+        .developer-site, .developer-name {
+            font-size: 0.675rem !important;
+            border: none;
+            text-decoration: none !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            text-align: center !important;
+
+            @media (min-width: 48rem) {
+                text-align: end !important;
+            }
+        }
+
+        @media (min-width: 75rem) {
+            grid-column: 4;
+        }
+    }
+}

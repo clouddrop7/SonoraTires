@@ -22,6 +22,7 @@
 @media (min-width: 62rem) {
   .homepage-container .hero-card {
     max-height: 80vh;
+    height: 80vh;
   }
 }
 .homepage-container .hero-card .card-img-overlay {
@@ -30,7 +31,7 @@
   border-radius: 0;
 }
 .homepage-container .hero-card .hero-body {
-  z-index: 1050;
+  z-index: 2;
   display: grid;
   padding: 1.5rem;
   gap: 1rem;
@@ -38,7 +39,24 @@
 }
 @media (min-width: 48rem) {
   .homepage-container .hero-card .hero-body {
-    grid-template-columns: repeat(2, minmax(min-content, max-content));
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 2rem;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    padding: 2rem;
+  }
+}
+@media (min-width: 62rem) {
+  .homepage-container .hero-card .hero-body {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    padding: 0;
+  }
+}
+@media (min-width: 90rem) {
+  .homepage-container .hero-card .hero-body {
+    grid-template-rows: repeat(6, 1fr);
   }
 }
 .homepage-container .hero-card .hero-body .welcome {
@@ -55,13 +73,36 @@
 }
 @media (min-width: 36rem) {
   .homepage-container .hero-card .hero-body .welcome {
-    font-size: 4rem;
+    font-size: 3rem;
+    max-width: 24rem;
+    justify-self: center;
+  }
+}
+@media (min-width: 48rem) {
+  .homepage-container .hero-card .hero-body .welcome {
+    grid-column: 2/8;
+    grid-row: 2;
   }
 }
 @media (min-width: 62rem) {
   .homepage-container .hero-card .hero-body .welcome {
-    grid-column: 1;
+    grid-row: 2;
+    grid-column: 2/7;
+    line-height: 100%;
+    align-self: start;
+    justify-self: start;
     max-width: 30rem;
+  }
+}
+@media (min-width: 75rem) {
+  .homepage-container .hero-card .hero-body .welcome {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 90rem) {
+  .homepage-container .hero-card .hero-body .welcome {
+    grid-column: 3/7;
+    justify-self: center;
   }
 }
 .homepage-container .hero-card .hero-body .call-action-text {
@@ -74,45 +115,81 @@
   font-size: 1.25rem;
   word-wrap: break-word;
   padding: 0 1rem;
+  max-width: 16rem;
+  justify-self: center;
+}
+@media (min-width: 48rem) {
+  .homepage-container .hero-card .hero-body .call-action-text {
+    padding: 0;
+    grid-row: 2;
+    grid-column: 8/11;
+    align-self: end;
+    justify-self: start;
+  }
 }
 @media (min-width: 62rem) {
   .homepage-container .hero-card .hero-body .call-action-text {
-    padding: 0;
+    grid-row: 2;
+    grid-column: 7/11;
+    font-size: 1.75rem;
+    text-align: start;
     align-self: center;
-    justify-self: center;
-    max-width: 12rem;
+  }
+}
+@media (min-width: 75rem) {
+  .homepage-container .hero-card .hero-body .call-action-text {
+    grid-column: 7/10;
+  }
+}
+@media (min-width: 90rem) {
+  .homepage-container .hero-card .hero-body .call-action-text {
+    align-self: center;
+    grid-row: 2/4;
+    max-width: 16rem;
   }
 }
 .homepage-container .hero-card .hero-body .call-action {
   background-color: transparent;
   border: 1px solid #DAA520;
   border-radius: 0;
-  display: flex;
   padding: 1rem 3rem;
   justify-self: center;
   color: #DAA520;
   text-transform: uppercase;
-  z-index: 1;
+  text-align: center;
 }
 .homepage-container .hero-card .hero-body .call-action:hover {
   background-color: #DAA520;
   color: #ffffff;
 }
+@media (min-width: 48rem) {
+  .homepage-container .hero-card .hero-body .call-action {
+    grid-row: 3;
+    grid-column: 3/8;
+    justify-self: start;
+  }
+}
+@media (min-width: 62rem) {
+  .homepage-container .hero-card .hero-body .call-action {
+    grid-row: 2;
+    grid-column: 2/7;
+    align-self: end;
+    justify-self: center;
+  }
+}
 @media (min-width: 75rem) {
   .homepage-container .hero-card .hero-body .call-action {
-    grid-row: 4;
-    grid-column: 2/3;
-    align-self: start;
-    justify-self: center;
-    margin-left: 1.25em;
+    grid-column: 3/6;
   }
 }
 @media (min-width: 90rem) {
   .homepage-container .hero-card .hero-body .call-action {
-    grid-row: 4;
-    grid-column: 2/3;
+    grid-row: 3;
+    grid-column: 3/7;
     align-self: start;
     justify-self: center;
     margin-left: 1.25em;
+    padding: 2rem 4rem;
+    margin: 0 auto;
   }
 }/*# sourceMappingURL=homepage.css.map */

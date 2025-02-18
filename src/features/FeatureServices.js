@@ -4,7 +4,7 @@ import brakeImage from '../app/assets/images/brakesimage2.jpg';
 import '../styles/features/features.scss';
 const FeatureServices = () => {
     return (
-        <Container className="features-container">
+        <Container id="tires" className="features-container">
             <Row className="feature-row">
                 <Col className="feature-col">
                     <h2 className="h2 feature-title">featured services</h2>

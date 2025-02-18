@@ -3,137 +3,85 @@
 @use '../variables/utils.scss' as util;
 
 .contact-container {
-    padding: 0 !important;
-    background-image: url('../../app/assets/images/pirellitires.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%; // Image to cover full width and height of container
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  background-color: colors.colorTheme(app-red);
+    overflow:hidden;
+  @media (min-width: 62rem) {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-content: center;
+  }
 
-    .contact-title {
-        color: colors.colorTheme(app-white);
-        text-transform: capitalize;
-        text-align: center;
-        font-size: 2rem;
-        padding: 1rem;
-        margin: 0;
+  .contact-title {
+    font-family: "Syne", serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: colors.colorTheme(app-yellow);
+    text-transform: uppercase;
+    margin: 0;
+
+    @media (min-width: 62rem) {
+        max-width: 22rem;
+        font-size: 2.8rem;
+        justify-self: center;
+    }
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    @media (min-width: 62rem) {
         width: 100%;
+        padding: 2rem;
     }
 
-    .form {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(min-content,max-content)); // Two columns
-        grid-template-rows: auto auto; // Two rows
-        gap: 1rem;
-        width: 100%;
-        padding: 1rem;
+    @media (min-width: 75rem) {
+        max-width: 26rem;
+    }
+    
+    .form-label {
+        font-family: "Libre Baskerville";
+        margin: 1rem 0;
+        color: colors.colorTheme(app-white);
+    }
+
+    .form-control {
         background-color: transparent;
-
-        .form-row {
-            margin: 0 !important;
-
-            // Name and Email in first row, each in its own column
-            &.name-group {
-                grid-column: 1;
-                grid-row: 1;
-            }
-            &.email-group {
-                grid-column: 2;
-                grid-row: 1;
-            }
-            
-            // Message spans both columns in the second row
-            &.message-group {
-                grid-column: 1 / span 2;
-                grid-row: 2;
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            // Button also spans both columns but positioned below the message
-            &.btn-group {
-                grid-column: 1 / span 2;
-                grid-row: 3;
-                display: flex;
-                justify-content: center; // Center the button
-            }
-
-            .form-label {
-                color: colors.colorTheme(app-yellow);
-                text-transform: capitalize;
-                display: block;
-                margin-bottom: 0.5rem;
-            }
-
-            .form-control {
-                border: 1px solid colors.colorTheme(app-black);
-                border-radius: 0;
-                background-color: transparent;
-                color: colors.colorTheme(app-white);
-                padding: 0.75rem;
-                font-size: 1rem;
-
-                &::placeholder {
-                    color: colors.colorTheme(app-white);
-                    opacity: 0.75;
-                    text-transform: capitalize;
-                }
-            }
-
-            .text-danger, 
-            .message-error {
-                color: colors.colorTheme(app-red);
-                text-transform: capitalize;
-                margin-top: 0.5rem;
-                font-size: 0.9rem;
-                display: block;
-            }
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid colors.colorTheme(app-white);
+        &::placeholder {
+            color: colors.colorTheme(app-white);
+            padding: 1.25em;
+            opacity: 65%;
         }
+    }
 
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.875rem;
-            border: none;
+    .contact-btn {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+        background-color: colors.colorTheme(app-yellow);
+        color: colors.colorTheme(app-white);
+        font-family: "Syne", serif;
+        padding: 1rem 2.25rem;
+        border:none;
+        border-radius: 0;
+        margin-top: 1rem;
+
+        &:hover {
             background-color: colors.colorTheme(app-black);
             color: colors.colorTheme(app-yellow);
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: auto; // Adjust to fit content, not full width
-
-            &:hover {
-                background-color: colors.colorTheme(app-yellow);
-                color: colors.colorTheme(app-black);
-                border: none;
-            }
-        }
-
-        .message {
-            width: 80%; // Adjust this to control how wide the message area should be within the span
-            height: 100px;
-            resize: vertical;
-            max-height: 200px;
         }
     }
-}
 
-@media (max-width: 767px) {
-    .contact-container {
-        .form {
-            grid-template-columns: 1fr; // Stack items vertically on mobile
-            grid-template-rows: repeat(4, auto); // Four rows for mobile layout
-            .form-row {
-                grid-column: 1 / -1; // All items in one column on mobile
-                display: block; // Reset flex for mobile
-            }
-            .message {
-                width: 100%; // Full width on mobile
-            }
-        }
-    }
+  }
 }

@@ -1,0 +1,84 @@
+@use '../variables/fonts.scss' as font;
+@use '../variables/colors.scss' as colors;
+@use '../variables/utils.scss' as util;
+
+.social-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    .social-row {
+        padding: 2rem;
+        gap: 1rem;
+        justify-content: center;
+
+        @media (min-width: 62rem) {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2,minmax(min-content,max-content));
+            padding: 3rem;
+            gap: 2rem;
+        }
+
+        @media (min-width: 75rem) {
+            gap: 2rem;
+        }
+
+        .card {
+            padding: 0;
+            border-radius: 0;
+            border:none;
+            max-width: 100%;
+            .social-images {
+                border-radius: 0;
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+            }
+
+            @media (min-width: 48rem) {
+                max-width: 12rem;
+            }
+
+            @media (min-width: 62rem) {
+                width: 18rem;
+                max-width: 100%;
+                height: 100%;
+                align-self: center;
+                justify-self: center;
+            }
+
+            @media (min-width: 75rem ) {
+                width: 100%;
+                max-width: 24rem;
+                height: 30rem;
+            }
+        }
+
+        .social-btn {
+            font-family: "Syne", serif;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+            line-height: 1.5em;
+            border: 1px solid colors.colorTheme(app-yellow);
+            padding: 1rem 3rem;
+            text-transform: uppercase;
+            color:colors.colorTheme(app-yellow);
+            text-decoration: none;
+            text-align: center;
+            &:hover {
+                background-color: colors.colorTheme(app-black);
+                color: colors.colorTheme(app-white);
+            }
+
+            @media (min-width: 48rem) {
+                max-width: 22rem;
+                justify-self: center;
+            }
+
+            @media (min-width: 62rem) {
+                // max-width: unset;
+                grid-column: 2;
+            }
+        }
+    }
+}

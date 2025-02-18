@@ -78,7 +78,7 @@
   width: 100%;
   height: 16rem;
 }
-@media (min-width: 62rem) {
+@media (min-width: 75rem) {
   .services-container .services-row .services-col .card-img {
     height: 100%;
   }

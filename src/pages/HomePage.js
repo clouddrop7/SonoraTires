@@ -6,11 +6,14 @@ import Header from '../components/Header';
 import FeatureServices from '../features/FeatureServices';
 import Services from '../components/Services';
 import Appointment from '../features/Appointment';
+import About from '../components/About';
+import Social from '../components/Social';
+import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 const HomePage = () => {
 
     return (
-        <Container className='homepage-container'>
+        <Container id="home" className='homepage-container'>
           <Header />
             <Card className="hero-card">
               <Card.ImgOverlay>
@@ -29,6 +32,10 @@ const HomePage = () => {
             <FeatureServices />
             <Services />
             <Appointment />
+            <About />
+            <Social />
+            <Contact />
+            <Footer />
         </Container>
     )
 }
