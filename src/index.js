@@ -7,8 +7,6 @@ import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import ServiceProvider from './providers/ServiceProvider';
-import ContactProvider from './providers/ContactProvider';
 const container = document.getElementById('root');
 const root = createRoot(container);
 

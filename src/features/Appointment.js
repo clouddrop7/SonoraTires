@@ -1,6 +1,14 @@
 import {Container, Button, Row, Col} from 'react-bootstrap';
+import { useState } from 'react';
+import Schedule from '../components/Schedule';
 import '../styles/features/appointments/appointment.scss';
 const Appointment = () => {
+    const [show, setShow] = useState(false);
+
+    const toggleForm = () => {
+        setShow((prev) => !prev);
+    };
+
     return (
         <Container id="appointment" className="appt-container">
             <Row className="appt-row">
@@ -9,7 +17,10 @@ const Appointment = () => {
                     Wether you need tires serviced, brakes, checked, or a wheel alignment, we will 
                     provide professional care to ensure you're back on the road safely.
                 </p>
-                <Button className="appt-btn">schedule appointment</Button>
+                {/* <Button onClick={toggleForm} className="appt-btn">schedule service</Button> */}
+                {/* {
+                    show &&  <Schedule show={show} toggleForm={toggleForm}/>
+                } */}
             </Row>
         </Container>
     );

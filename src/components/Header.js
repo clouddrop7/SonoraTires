@@ -9,16 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXTwitter, faFacebook,  faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faShoppingCart, faPhone,faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
-// Add all brand icons to the library
 library.add(fab)
 
-const Header = () => {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+const Header = ({toggleForm, handleClose, handleShow, showNav}) => {
+    
+    
 
-    const [toolOpen, setToolOpen] = useState(false);
-    const toggleToolTip = () => setToolOpen(!toolOpen);
     return (
        <Container className="header-container">
             <Row>
@@ -39,20 +35,20 @@ const Header = () => {
                                 id="offcanvasNavbar-expand-md"
                                 aria-labelledby="offcanvasnavbar-expand-lg"
                                 placement="start"
-                                show={show}
+                                show={showNav}
                                 onHide={handleClose}
                             >
                                 <Offcanvas.Header closeButton>
                                     <p className="nav-title">sonora tires inc.</p>
-                                    <FontAwesomeIcon  icon="shopping-cart"/>
+                                    <FontAwesomeIcon  icon={faShoppingCart}/>
                                 </Offcanvas.Header>
                                 <Offcanvas.Body>
                                     <Navbar>
-                                        <Button className="appt-btn">shop tires</Button>
-                                        <Nav.Link as={Link} to="https://x.com">
+                                        <Nav.Link to="/services" className="appt-btn">shop services</Nav.Link>
+                                        <Nav.Link href="tel:9098776350">
                                             <FontAwesomeIcon icon={faPhone} size="2x"/>
                                         </Nav.Link>
-                                        <Nav.Link as={Link} to="https://x.com">
+                                        <Nav.Link to="/contact">
                                             <FontAwesomeIcon icon={faLocationDot} size="2x"/>
                                         </Nav.Link>
                                         <Nav.Link as={Link} to="https://x.com">

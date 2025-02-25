@@ -1,0 +1,421 @@
+[debug] [2025-02-19T02:55:56.823Z] ----------------------------------------------------------------------
+[debug] [2025-02-19T02:55:56.826Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Cloud\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2025-02-19T02:55:56.827Z] CLI Version:   13.30.0
+[debug] [2025-02-19T02:55:56.827Z] Platform:      win32
+[debug] [2025-02-19T02:55:56.827Z] Node Version:  v22.9.0
+[debug] [2025-02-19T02:55:56.827Z] Time:          Tue Feb 18 2025 18:55:56 GMT-0800 (Pacific Standard Time)
+[debug] [2025-02-19T02:55:56.828Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-19T02:55:57.083Z] Object "/emulators/functions" in "firebase.json" has unknown property: {"additionalProperty":"loadEnvFile"}
+[debug] [2025-02-19T02:55:57.090Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-19T02:55:57.091Z] > authorizing via signed-in user (cloud@clouddropdesigns.com)
+[debug] [2025-02-19T02:55:57.091Z] [iam] checking project sonoratiresinc for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-02-19T02:55:57.092Z] Checked if tokens are valid: false, expires at: 1739934553861
+[debug] [2025-02-19T02:55:57.092Z] Checked if tokens are valid: false, expires at: 1739934553861
+[debug] [2025-02-19T02:55:57.093Z] > refreshing access token with scopes: []
+[debug] [2025-02-19T02:55:57.095Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-02-19T02:55:57.095Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-02-19T02:55:57.304Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-02-19T02:55:57.305Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-02-19T02:55:57.315Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions [none]
+[debug] [2025-02-19T02:55:57.315Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:55:57.315Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-02-19T02:55:57.556Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions 200
+[debug] [2025-02-19T02:55:57.556Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-02-19T02:55:57.557Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.557Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.557Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/sonoratiresinc/serviceAccounts/sonoratiresinc@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-02-19T02:55:57.557Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/sonoratiresinc/serviceAccounts/sonoratiresinc@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-02-19T02:55:57.863Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/sonoratiresinc/serviceAccounts/sonoratiresinc@appspot.gserviceaccount.com:testIamPermissions 404
+[debug] [2025-02-19T02:55:57.863Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/sonoratiresinc/serviceAccounts/sonoratiresinc@appspot.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2025-02-19T02:55:57.863Z] [functions] service account IAM check errored, deploy may fail: Request to https://iam.googleapis.com/v1/projects/sonoratiresinc/serviceAccounts/sonoratiresinc@appspot.gserviceaccount.com:testIamPermissions had HTTP Error: 404, Unknown service account {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://iam.googleapis.com/v1/projects/sonoratiresinc/serviceAccounts/sonoratiresinc@appspot.gserviceaccount.com:testIamPermissions had HTTP Error: 404, Unknown service account","status":404}
+[info] 
+[info] === Deploying to 'sonoratiresinc'...
+[info] 
+[info] i  deploying functions 
+[debug] [2025-02-19T02:55:57.868Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.868Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.868Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc [none]
+[debug] [2025-02-19T02:55:57.995Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc 200
+[debug] [2025-02-19T02:55:57.995Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc {"projectNumber":"176165926303","projectId":"sonoratiresinc","lifecycleState":"ACTIVE","name":"SonoraTiresInc","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-01-07T23:32:18.427868Z","parent":{"type":"organization","id":"468919700201"}}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2025-02-19T02:55:57.997Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.997Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.997Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.997Z] Checked if tokens are valid: true, expires at: 1739937356305
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2025-02-19T02:55:57.997Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.997Z] Checked if tokens are valid: true, expires at: 1739937356305
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-02-19T02:55:57.998Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.998Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:57.998Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-02-19T02:55:57.998Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:55:57.999Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-02-19T02:55:57.999Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:55:58.001Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/cloudbuild.googleapis.com [none]
+[debug] [2025-02-19T02:55:58.001Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/cloudbuild.googleapis.com x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:55:58.002Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/artifactregistry.googleapis.com [none]
+[debug] [2025-02-19T02:55:58.002Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/artifactregistry.googleapis.com x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:55:58.421Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/cloudbuild.googleapis.com 200
+[debug] [2025-02-19T02:55:58.422Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-02-19T02:55:58.423Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/cloudfunctions.googleapis.com 200
+[debug] [2025-02-19T02:55:58.423Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-02-19T02:55:58.424Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/artifactregistry.googleapis.com 200
+[debug] [2025-02-19T02:55:58.424Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2025-02-19T02:55:58.441Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/runtimeconfig.googleapis.com 200
+[debug] [2025-02-19T02:55:58.441Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-02-19T02:55:58.441Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:58.441Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:58.441Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sonoratiresinc/adminSdkConfig [none]
+[debug] [2025-02-19T02:55:58.853Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sonoratiresinc/adminSdkConfig 200
+[debug] [2025-02-19T02:55:58.853Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sonoratiresinc/adminSdkConfig {"projectId":"sonoratiresinc","databaseURL":"https://sonoratiresinc-default-rtdb.firebaseio.com","storageBucket":"sonoratiresinc.firebasestorage.app"}
+[debug] [2025-02-19T02:55:58.853Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:58.853Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:55:58.854Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/sonoratiresinc/configs [none]
+[debug] [2025-02-19T02:55:59.028Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/sonoratiresinc/configs 200
+[debug] [2025-02-19T02:55:59.028Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/sonoratiresinc/configs {}
+[debug] [2025-02-19T02:55:59.030Z] Validating nodejs source
+[debug] [2025-02-19T02:56:00.278Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "deploy:prod": "firebase deploy --only functions",
+    "predeploy:prod": "npm test",
+    "logs:prod": "firebase functions:log --only functions"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.3.2",
+    "functions": "file:",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-02-19T02:56:00.279Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-02-19T02:56:00.280Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-02-19T02:56:00.291Z] Found firebase-functions binary at 'C:\users\cloud\desktop\projectportfolio\sonoratires\sonoratires\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8353
+
+[debug] [2025-02-19T02:56:01.207Z] Got response from /__/functions.yaml {"endpoints":{"fetchCarMake":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"fetchCarMake"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[error] (node:39300) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2025-02-19T02:56:05.244Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:05.245Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:05.245Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/firebaseextensions.googleapis.com [none]
+[debug] [2025-02-19T02:56:05.245Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/firebaseextensions.googleapis.com x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:56:05.479Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/firebaseextensions.googleapis.com 200
+[debug] [2025-02-19T02:56:05.479Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/firebaseextensions.googleapis.com [omitted]
+[info] +  extensions: required API firebaseextensions.googleapis.com is enabled 
+[debug] [2025-02-19T02:56:05.479Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-19T02:56:05.480Z] > authorizing via signed-in user (cloud@clouddropdesigns.com)
+[debug] [2025-02-19T02:56:05.480Z] [iam] checking project sonoratiresinc for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2025-02-19T02:56:05.480Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:05.480Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:05.480Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions [none]
+[debug] [2025-02-19T02:56:05.480Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:56:05.480Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2025-02-19T02:56:05.728Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions 200
+[debug] [2025-02-19T02:56:05.728Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2025-02-19T02:56:05.728Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:05.728Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:05.729Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/sonoratiresinc/instances pageSize=100&pageToken=
+[debug] [2025-02-19T02:56:06.155Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/sonoratiresinc/instances 200
+[debug] [2025-02-19T02:56:06.155Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/sonoratiresinc/instances {}
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\users\cloud\desktop\projectportfolio\sonoratires\sonoratires\functions (68.58 KB) for uploading 
+[debug] [2025-02-19T02:56:06.254Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:06.254Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:06.255Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/sonoratiresinc/locations/-/functions [none]
+[debug] [2025-02-19T02:56:06.753Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/sonoratiresinc/locations/-/functions 200
+[debug] [2025-02-19T02:56:06.753Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/sonoratiresinc/locations/-/functions {}
+[debug] [2025-02-19T02:56:06.754Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:06.754Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:06.754Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2025-02-19T02:56:07.323Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/-/functions 200
+[debug] [2025-02-19T02:56:07.323Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/-/functions {}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[debug] [2025-02-19T02:56:07.331Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:07.331Z] Checked if tokens are valid: true, expires at: 1739937356305
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[debug] [2025-02-19T02:56:07.331Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:07.331Z] Checked if tokens are valid: true, expires at: 1739937356305
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[debug] [2025-02-19T02:56:07.332Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:07.332Z] Checked if tokens are valid: true, expires at: 1739937356305
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2025-02-19T02:56:07.332Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:07.332Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:07.332Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/run.googleapis.com [none]
+[debug] [2025-02-19T02:56:07.332Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/run.googleapis.com x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:56:07.333Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/eventarc.googleapis.com [none]
+[debug] [2025-02-19T02:56:07.333Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/eventarc.googleapis.com x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:56:07.335Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/pubsub.googleapis.com [none]
+[debug] [2025-02-19T02:56:07.335Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/pubsub.googleapis.com x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:56:07.337Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/storage.googleapis.com [none]
+[debug] [2025-02-19T02:56:07.337Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/storage.googleapis.com x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:56:07.690Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/run.googleapis.com 200
+[debug] [2025-02-19T02:56:07.690Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2025-02-19T02:56:07.739Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/eventarc.googleapis.com 200
+[debug] [2025-02-19T02:56:07.740Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2025-02-19T02:56:07.742Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/pubsub.googleapis.com 200
+[debug] [2025-02-19T02:56:07.742Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2025-02-19T02:56:07.750Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/storage.googleapis.com 200
+[debug] [2025-02-19T02:56:07.750Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sonoratiresinc/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[debug] [2025-02-19T02:56:07.751Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:07.751Z] Checked if tokens are valid: true, expires at: 1739937356305
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2025-02-19T02:56:07.752Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:07.752Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:07.752Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/176165926303/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2025-02-19T02:56:07.752Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/176165926303/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2025-02-19T02:56:08.092Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/176165926303/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2025-02-19T02:56:08.092Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/176165926303/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-176165926303@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"113582855408879250373"}}
+[debug] [2025-02-19T02:56:08.141Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/176165926303/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2025-02-19T02:56:08.142Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/176165926303/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-176165926303@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"104677967524566934593"}}
+[debug] [2025-02-19T02:56:08.143Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:08.143Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:08.143Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc [none]
+[debug] [2025-02-19T02:56:08.265Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc 200
+[debug] [2025-02-19T02:56:08.265Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc {"projectNumber":"176165926303","projectId":"sonoratiresinc","lifecycleState":"ACTIVE","name":"SonoraTiresInc","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-01-07T23:32:18.427868Z","parent":{"type":"organization","id":"468919700201"}}
+[debug] [2025-02-19T02:56:08.266Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:08.266Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:08.266Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/sonoratiresinc/billingInfo [none]
+[debug] [2025-02-19T02:56:08.411Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/sonoratiresinc/billingInfo 200
+[debug] [2025-02-19T02:56:08.411Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/sonoratiresinc/billingInfo {"name":"projects/sonoratiresinc/billingInfo","projectId":"sonoratiresinc","billingAccountName":"billingAccounts/01ADA9-0842B0-493CF2","billingEnabled":true}
+[debug] [2025-02-19T02:56:08.412Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2025-02-19T02:56:08.412Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:08.412Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:08.412Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions [none]
+[debug] [2025-02-19T02:56:08.412Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions x-goog-quota-user=projects/sonoratiresinc
+[debug] [2025-02-19T02:56:08.413Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2025-02-19T02:56:08.501Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions 200
+[debug] [2025-02-19T02:56:08.501Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sonoratiresinc:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2025-02-19T02:56:08.501Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2025-02-19T02:56:08.502Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:08.502Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:08.502Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2025-02-19T02:56:08.897Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2025-02-19T02:56:08.897Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-176165926303.us-central1.cloudfunctions.appspot.com/1d2d0575-848a-4ba4-98bd-ee698c6a5f34.zip?GoogleAccessId=service-176165926303@gcf-admin-robot.iam.gserviceaccount.com&Expires=1739935569&Signature=b0kPs9tDPlFCQHd1QoDqyLf%2FJ%2BjD7Ed3UyaquRDVmXU5SOHnCtg86a%2FInVh%2BfkLe2LAB4%2F8xVN%2FmDIa73k1tc1ccK2LPkilHWgbX2Ex042cdcTxeMCaBZour5K7nhhvzsaiZ7AFGipRYPWgc4U8wiV8mbdX8EWozsGtJL4pPMGpS%2BTLHe2MTCmeH4TBBpsRd11bP9UnoD6yrHYJReJN21MpGvbejgeynFaRGogVrs%2FCwkjbYCaLSS3IhW54czOPFTAB%2FqPv53jXM5IiZj9sAtHdSpF0HnjpyxXKogq2uv1g8L77iKhnufdh7Q90uuEkZVYTkvVMpUR8VQJLmBUAiHg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-176165926303.us-central1.cloudfunctions.appspot.com","object":"1d2d0575-848a-4ba4-98bd-ee698c6a5f34.zip"}}
+[debug] [2025-02-19T02:56:08.898Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-176165926303.us-central1.cloudfunctions.appspot.com/1d2d0575-848a-4ba4-98bd-ee698c6a5f34.zip GoogleAccessId=service-176165926303%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1739935569&Signature=b0kPs9tDPlFCQHd1QoDqyLf%2FJ%2BjD7Ed3UyaquRDVmXU5SOHnCtg86a%2FInVh%2BfkLe2LAB4%2F8xVN%2FmDIa73k1tc1ccK2LPkilHWgbX2Ex042cdcTxeMCaBZour5K7nhhvzsaiZ7AFGipRYPWgc4U8wiV8mbdX8EWozsGtJL4pPMGpS%2BTLHe2MTCmeH4TBBpsRd11bP9UnoD6yrHYJReJN21MpGvbejgeynFaRGogVrs%2FCwkjbYCaLSS3IhW54czOPFTAB%2FqPv53jXM5IiZj9sAtHdSpF0HnjpyxXKogq2uv1g8L77iKhnufdh7Q90uuEkZVYTkvVMpUR8VQJLmBUAiHg%3D%3D
+[debug] [2025-02-19T02:56:08.898Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-176165926303.us-central1.cloudfunctions.appspot.com/1d2d0575-848a-4ba4-98bd-ee698c6a5f34.zip [stream]
+[debug] [2025-02-19T02:56:09.222Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-176165926303.us-central1.cloudfunctions.appspot.com/1d2d0575-848a-4ba4-98bd-ee698c6a5f34.zip 200
+[debug] [2025-02-19T02:56:09.222Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-176165926303.us-central1.cloudfunctions.appspot.com/1d2d0575-848a-4ba4-98bd-ee698c6a5f34.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 22 (2nd Gen) function fetchCarMake(us-central1)... 
+[debug] [2025-02-19T02:56:09.227Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:09.227Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:09.227Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/functions functionId=fetchCarMake
+[debug] [2025-02-19T02:56:09.227Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/functions {"name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-uploads-176165926303.us-central1.cloudfunctions.appspot.com","object":"1d2d0575-848a-4ba4-98bd-ee698c6a5f34.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"}}
+[debug] [2025-02-19T02:56:10.048Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/functions 200
+[debug] [2025-02-19T02:56:10.048Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/functions {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2025-02-19T02:56:10.048Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:10.048Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:10.049Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:56:10.366Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:56:10.366Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2025-02-19T02:56:10.866Z] [create-default-us-central1-fetchCarMake] Retrying task index 0
+[debug] [2025-02-19T02:56:10.867Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:10.867Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:10.867Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:56:11.197Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:56:11.197Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8?project=176165926303"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8"},"done":false}
+[debug] [2025-02-19T02:56:12.203Z] [create-default-us-central1-fetchCarMake] Retrying task index 0
+[debug] [2025-02-19T02:56:12.203Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:12.203Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:12.203Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:56:12.500Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:56:12.500Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8?project=176165926303"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8"},"done":false}
+[debug] [2025-02-19T02:56:14.500Z] [create-default-us-central1-fetchCarMake] Retrying task index 0
+[debug] [2025-02-19T02:56:14.501Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:14.501Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:14.501Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:56:14.821Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:56:14.822Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8?project=176165926303"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8"},"done":false}
+[debug] [2025-02-19T02:56:18.830Z] [create-default-us-central1-fetchCarMake] Retrying task index 0
+[debug] [2025-02-19T02:56:18.830Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:18.830Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:18.831Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:56:19.114Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:56:19.114Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8?project=176165926303"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8"},"done":false}
+[debug] [2025-02-19T02:56:27.115Z] [create-default-us-central1-fetchCarMake] Retrying task index 0
+[debug] [2025-02-19T02:56:27.115Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:27.115Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:27.115Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:56:27.459Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:56:27.459Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8?project=176165926303"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8"},"done":false}
+[debug] [2025-02-19T02:56:37.462Z] [create-default-us-central1-fetchCarMake] Retrying task index 0
+[debug] [2025-02-19T02:56:37.463Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:37.463Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:37.463Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:56:37.818Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:56:37.818Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8?project=176165926303"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8"},"done":false}
+[debug] [2025-02-19T02:56:47.827Z] [create-default-us-central1-fetchCarMake] Retrying task index 0
+[debug] [2025-02-19T02:56:47.828Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:47.828Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:47.828Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:56:47.948Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:56:47.948Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8?project=176165926303"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8"},"done":false}
+[debug] [2025-02-19T02:56:57.968Z] [create-default-us-central1-fetchCarMake] Retrying task index 0
+[debug] [2025-02-19T02:56:57.969Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:57.970Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:56:57.970Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:56:58.291Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:56:58.291Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build finished","state":"COMPLETE","resource":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8?project=176165926303"},{"name":"SERVICE","message":"Creating Cloud Run service","state":"IN_PROGRESS","resource":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","resourceUri":"https://console.cloud.google.com/run/detail/us-central1/fetchcarmake?project=sonoratiresinc"}],"sourceToken":"Cldwcm9qZWN0cy8xNzYxNjU5MjYzMDMvbG9jYXRpb25zL3VzLWNlbnRyYWwxL2J1aWxkcy9iZDk1OWJmOC0yYTEzLTQ2MTktOWU4Yy1mNmI4YTU1YmM1ZTgSbnVzLWNlbnRyYWwxLWRvY2tlci5wa2cuZGV2L3Nvbm9yYXRpcmVzaW5jL2djZi1hcnRpZmFjdHMvc29ub3JhdGlyZXNpbmNfX3VzLS1jZW50cmFsMV9fZmV0Y2hfY2FyX21ha2U6dmVyc2lvbl8xGJ/ruqKQBSJEcHJvamVjdHMvc29ub3JhdGlyZXNpbmMvbG9jYXRpb25zL3VzLWNlbnRyYWwxL2Z1bmN0aW9ucy9mZXRjaENhck1ha2UqDAj0kNW9BhDQiN/pATIIbm9kZWpzMjI6dgojZ2NyLmlvL2dhZS1ydW50aW1lcy9ub2RlanMyMjpzdGFibGUST3VzLWNlbnRyYWwxLWRvY2tlci5wa2cuZGV2L3NlcnZlcmxlc3MtcnVudGltZXMvZ29vZ2xlLTIyLWZ1bGwvcnVudGltZXMvbm9kZWpzMjJAAQ==","operationType":"CREATE_FUNCTION","buildName":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8"},"done":false}
+[debug] [2025-02-19T02:56:58.291Z] Got source token Cldwcm9qZWN0cy8xNzYxNjU5MjYzMDMvbG9jYXRpb25zL3VzLWNlbnRyYWwxL2J1aWxkcy9iZDk1OWJmOC0yYTEzLTQ2MTktOWU4Yy1mNmI4YTU1YmM1ZTgSbnVzLWNlbnRyYWwxLWRvY2tlci5wa2cuZGV2L3Nvbm9yYXRpcmVzaW5jL2djZi1hcnRpZmFjdHMvc29ub3JhdGlyZXNpbmNfX3VzLS1jZW50cmFsMV9fZmV0Y2hfY2FyX21ha2U6dmVyc2lvbl8xGJ/ruqKQBSJEcHJvamVjdHMvc29ub3JhdGlyZXNpbmMvbG9jYXRpb25zL3VzLWNlbnRyYWwxL2Z1bmN0aW9ucy9mZXRjaENhck1ha2UqDAj0kNW9BhDQiN/pATIIbm9kZWpzMjI6dgojZ2NyLmlvL2dhZS1ydW50aW1lcy9ub2RlanMyMjpzdGFibGUST3VzLWNlbnRyYWwxLWRvY2tlci5wa2cuZGV2L3NlcnZlcmxlc3MtcnVudGltZXMvZ29vZ2xlLTIyLWZ1bGwvcnVudGltZXMvbm9kZWpzMjJAAQ== for region us-central1
+[debug] [2025-02-19T02:57:08.306Z] [create-default-us-central1-fetchCarMake] Retrying task index 0
+[debug] [2025-02-19T02:57:08.306Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:08.307Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:08.307Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 [none]
+[debug] [2025-02-19T02:57:08.623Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 200
+[debug] [2025-02-19T02:57:08.623Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3 {"name":"projects/sonoratiresinc/locations/us-central1/operations/operation-1739933770315-62e75e64ff5be-5c1c1885-2d68acd3","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-02-19T02:56:10.811961723Z","endTime":"2025-02-19T02:57:07.853664837Z","target":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build finished","state":"COMPLETE","resource":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8?project=176165926303"},{"name":"SERVICE","message":"Creating Cloud Run service","state":"COMPLETE","resource":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","resourceUri":"https://console.cloud.google.com/run/detail/us-central1/fetchcarmake?project=sonoratiresinc"}],"sourceToken":"Cldwcm9qZWN0cy8xNzYxNjU5MjYzMDMvbG9jYXRpb25zL3VzLWNlbnRyYWwxL2J1aWxkcy9iZDk1OWJmOC0yYTEzLTQ2MTktOWU4Yy1mNmI4YTU1YmM1ZTgSbnVzLWNlbnRyYWwxLWRvY2tlci5wa2cuZGV2L3Nvbm9yYXRpcmVzaW5jL2djZi1hcnRpZmFjdHMvc29ub3JhdGlyZXNpbmNfX3VzLS1jZW50cmFsMV9fZmV0Y2hfY2FyX21ha2U6dmVyc2lvbl8xGJ/ruqKQBSJEcHJvamVjdHMvc29ub3JhdGlyZXNpbmMvbG9jYXRpb25zL3VzLWNlbnRyYWwxL2Z1bmN0aW9ucy9mZXRjaENhck1ha2UqDAj0kNW9BhDQiN/pATIIbm9kZWpzMjI6dgojZ2NyLmlvL2dhZS1ydW50aW1lcy9ub2RlanMyMjpzdGFibGUST3VzLWNlbnRyYWwxLWRvY2tlci5wa2cuZGV2L3NlcnZlcmxlc3MtcnVudGltZXMvZ29vZ2xlLTIyLWZ1bGwvcnVudGltZXMvbm9kZWpzMjJAAQ==","operationType":"CREATE_FUNCTION","buildName":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8"},"done":true,"response":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/sonoratiresinc/locations/us-central1/functions/fetchCarMake","buildConfig":{"build":"projects/176165926303/locations/us-central1/builds/bd959bf8-2a13-4619-9e8c-f6b8a55bc5e8","runtime":"nodejs22","entryPoint":"fetchCarMake","source":{"storageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/sonoratiresinc/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-176165926303-us-central1","object":"fetchCarMake/function-source.zip","generation":"1739933770605545"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/sonoratiresinc/serviceAccounts/176165926303-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/sonoratiresinc/locations/us-central1/services/fetchcarmake","timeoutSeconds":60,"environmentVariables":{"DATABASE_EMULATOR_HOST":"127.0.0.1:9000","WHEEL_SIZE_API_KEY":"3ee807b5af97fd58bf363faef19cb7fd","FIREBASE_CONFIG":"{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}","GCLOUD_PROJECT":"sonoratiresinc","EVENTARC_CLOUD_EVENT_SOURCE":"projects/sonoratiresinc/locations/us-central1/services/fetchCarMake","FUNCTION_TARGET":"fetchCarMake","LOG_EXECUTION_ID":"true"},"maxInstanceCount":3,"ingressSettings":"ALLOW_ALL","uri":"https://fetchcarmake-e4wytwqyqq-uc.a.run.app","serviceAccountEmail":"176165926303-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"fetchcarmake-00001-feg","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2025-02-19T02:56:10.807238012Z","labels":{"firebase-functions-hash":"12bc63834dbb55ec42c066aebb40e6204dab3401","deployment-tool":"cli-firebase"},"environment":"GEN_2","url":"https://us-central1-sonoratiresinc.cloudfunctions.net/fetchCarMake","createTime":"2025-02-19T02:56:10.807238012Z","satisfiesPzi":true}}
+[debug] [2025-02-19T02:57:08.623Z] Got source token Cldwcm9qZWN0cy8xNzYxNjU5MjYzMDMvbG9jYXRpb25zL3VzLWNlbnRyYWwxL2J1aWxkcy9iZDk1OWJmOC0yYTEzLTQ2MTktOWU4Yy1mNmI4YTU1YmM1ZTgSbnVzLWNlbnRyYWwxLWRvY2tlci5wa2cuZGV2L3Nvbm9yYXRpcmVzaW5jL2djZi1hcnRpZmFjdHMvc29ub3JhdGlyZXNpbmNfX3VzLS1jZW50cmFsMV9fZmV0Y2hfY2FyX21ha2U6dmVyc2lvbl8xGJ/ruqKQBSJEcHJvamVjdHMvc29ub3JhdGlyZXNpbmMvbG9jYXRpb25zL3VzLWNlbnRyYWwxL2Z1bmN0aW9ucy9mZXRjaENhck1ha2UqDAj0kNW9BhDQiN/pATIIbm9kZWpzMjI6dgojZ2NyLmlvL2dhZS1ydW50aW1lcy9ub2RlanMyMjpzdGFibGUST3VzLWNlbnRyYWwxLWRvY2tlci5wa2cuZGV2L3NlcnZlcmxlc3MtcnVudGltZXMvZ29vZ2xlLTIyLWZ1bGwvcnVudGltZXMvbm9kZWpzMjJAAQ== for region us-central1
+[debug] [2025-02-19T02:57:08.624Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:08.624Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:08.624Z] >>> [apiv2][query] POST https://run.googleapis.com/v1/projects/sonoratiresinc/locations/us-central1/services/fetchcarmake:setIamPolicy [none]
+[debug] [2025-02-19T02:57:08.624Z] >>> [apiv2][body] POST https://run.googleapis.com/v1/projects/sonoratiresinc/locations/us-central1/services/fetchcarmake:setIamPolicy {"policy":{"bindings":[{"role":"roles/run.invoker","members":["allUsers"]}],"etag":"","version":3},"updateMask":"bindings,etag,version"}
+[debug] [2025-02-19T02:57:09.165Z] <<< [apiv2][status] POST https://run.googleapis.com/v1/projects/sonoratiresinc/locations/us-central1/services/fetchcarmake:setIamPolicy 400
+[debug] [2025-02-19T02:57:09.166Z] <<< [apiv2][body] POST https://run.googleapis.com/v1/projects/sonoratiresinc/locations/us-central1/services/fetchcarmake:setIamPolicy {"error":{"code":400,"message":"One or more users named in the policy do not belong to a permitted customer,  perhaps due to an organization policy.","status":"FAILED_PRECONDITION"}}
+[error] Failed to set the IAM Policy on the Service projects/sonoratiresinc/locations/us-central1/services/fetchcarmake
+[debug] [2025-02-19T02:57:09.174Z] Total Function Deployment time: 59933
+[debug] [2025-02-19T02:57:09.174Z] 1 Functions Deployed
+[debug] [2025-02-19T02:57:09.174Z] 1 Functions Errored
+[debug] [2025-02-19T02:57:09.174Z] 0 Function Deployments Aborted
+[debug] [2025-02-19T02:57:09.174Z] Average Function Deployment time: 59932
+[info] 
+[info] Functions deploy had errors with the following functions:
+	fetchCarMake(us-central1)
+[info] 
+[info] Unable to set the invoker for the IAM policy on the following functions:
+	fetchCarMake(us-central1)
+[info] 
+[info] Some common causes of this:
+[info] 
+[info] - You may not have the roles/functions.admin IAM role. Note that roles/functions.developer does not allow you to change IAM policies.
+[info] 
+[info] - An organization policy that restricts Network Access on your project.
+[info] 
+[info] One or more functions were being implicitly made publicly available on function create.
+[info] Functions are not implicitly made public on updates. To try to make these functions public on next deploy, configure these functions with invoker set to "public"
+[info] Function URL (fetchCarMake(us-central1)): https://us-central1-sonoratiresinc.cloudfunctions.net/fetchCarMake
+[info] i  functions: cleaning up build files... 
+[debug] [2025-02-19T02:57:09.290Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:09.290Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:09.291Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:09.291Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:09.291Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/sonoratiresinc/locations/us-central1/repositories/gcf-artifacts/packages/fetch_car_make [none]
+[debug] [2025-02-19T02:57:09.292Z] >>> [apiv2][query] GET https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list [none]
+[debug] [2025-02-19T02:57:09.519Z] <<< [apiv2][status] GET https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list 404
+[debug] [2025-02-19T02:57:09.519Z] <<< [apiv2][body] GET https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2025-02-19T02:57:09.519Z] Failed docker command with error  Request to https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2025-02-19T02:57:09.537Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:09.537Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:09.537Z] >>> [apiv2][query] GET https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list [none]
+[debug] [2025-02-19T02:57:09.656Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/sonoratiresinc/locations/us-central1/repositories/gcf-artifacts/packages/fetch_car_make 404
+[debug] [2025-02-19T02:57:09.657Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/sonoratiresinc/locations/us-central1/repositories/gcf-artifacts/packages/fetch_car_make {"error":{"code":404,"message":"Package \"projects/sonoratiresinc/locations/us-central1/repositories/gcf-artifacts/packages/fetch_car_make\" was not found.","status":"NOT_FOUND"}}
+[debug] [2025-02-19T02:57:09.689Z] <<< [apiv2][status] GET https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list 404
+[debug] [2025-02-19T02:57:09.689Z] <<< [apiv2][body] GET https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2025-02-19T02:57:09.689Z] Failed docker command with error  Request to https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2025-02-19T02:57:09.801Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:09.802Z] Checked if tokens are valid: true, expires at: 1739937356305
+[debug] [2025-02-19T02:57:09.802Z] >>> [apiv2][query] GET https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list [none]
+[debug] [2025-02-19T02:57:09.962Z] <<< [apiv2][status] GET https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list 404
+[debug] [2025-02-19T02:57:09.963Z] <<< [apiv2][body] GET https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2025-02-19T02:57:09.963Z] Failed docker command with error  Request to https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/sonoratiresinc/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/sonoratiresinc/us/gcf 
+[debug] [2025-02-19T02:57:09.965Z] Functions deploy failed.
+[debug] [2025-02-19T02:57:09.966Z] {
+  "endpoint": {
+    "id": "fetchCarMake",
+    "project": "sonoratiresinc",
+    "region": "us-central1",
+    "entryPoint": "fetchCarMake",
+    "platform": "gcfv2",
+    "runtime": "nodejs22",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "DATABASE_EMULATOR_HOST": "127.0.0.1:9000",
+      "WHEEL_SIZE_API_KEY": "3ee807b5af97fd58bf363faef19cb7fd",
+      "FIREBASE_CONFIG": "{\"projectId\":\"sonoratiresinc\",\"databaseURL\":\"https://sonoratiresinc-default-rtdb.firebaseio.com\",\"storageBucket\":\"sonoratiresinc.firebasestorage.app\"}",
+      "GCLOUD_PROJECT": "sonoratiresinc",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/sonoratiresinc/locations/us-central1/services/fetchCarMake"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "12bc63834dbb55ec42c066aebb40e6204dab3401",
+    "uri": "https://us-central1-sonoratiresinc.cloudfunctions.net/fetchCarMake",
+    "runServiceId": "fetchcarmake"
+  },
+  "op": "set invoker",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Failed to set the IAM Policy on the Service projects/sonoratiresinc/locations/us-central1/services/fetchcarmake",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "One or more users named in the policy do not belong to a permitted customer,  perhaps due to an organization policy.",
+            "status": "FAILED_PRECONDITION"
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "Request to https://run.googleapis.com/v1/projects/sonoratiresinc/locations/us-central1/services/fetchcarmake:setIamPolicy had HTTP Error: 400, One or more users named in the policy do not belong to a permitted customer,  perhaps due to an organization policy.",
+      "status": 400
+    },
+    "status": 400,
+    "code": 400
+  }
+}
+[debug] [2025-02-19T02:57:10.006Z] Error: Failed to set invoker function fetchCarMake in region us-central1
+    at C:\Users\Cloud\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:52:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Fabricator.createV2Function (C:\Users\Cloud\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:309:17)
+    at async Fabricator.createEndpoint (C:\Users\Cloud\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:137:13)
+    at async handle (C:\Users\Cloud\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:89:17)
+[error] 
+[error] Error: There was an error deploying functions

@@ -1,0 +1,102 @@
+@use '../variables/fonts.scss' as font;
+@use '../variables/colors.scss' as colors;
+@use '../variables/utils.scss' as util;
+
+.modal-container {
+    .modal-content {
+        border-radius: 0;
+        padding: 0.5rem;
+        .modal-header {
+            border-bottom: 6px solid colors.colorTheme(app-yellow);
+            padding: 0.5rem; 
+            .company-title {
+                font-family: "Syne", serif;
+                color: colors.colorTheme(app-yellow);
+                font-size: 1.25rem; 
+                font-weight: 700;
+                letter-spacing: 0.2em;
+                line-height: 1em; 
+            }
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .heading {
+                display: flex;
+                flex-direction: column;
+                .greeting, .schedule {
+                    font-family: "Libre Baskerville", serif;
+                    font-size: 0.875rem;
+                    letter-spacing: 0.1em;
+                    line-height: 1.2rem; 
+                    color: #333333;
+                    padding: 0.5rem; 
+                    max-width: 18rem;
+                    align-self: center;
+                    
+                    @media (min-width: 62rem) {
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            .detail-title {
+                font-family: "Libre Baskerville", serif;
+                font-size: 0.875rem; // Smaller
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                line-height: 1.2rem; // Tightened
+                color: #333333;
+                max-width: 12rem; // Reduced
+                align-self: start;
+            }
+            .detail-list {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem; // Reduced from 0.5rem
+                border: 1px solid black;
+                padding: 0.5rem; // Reduced from 1rem
+                .customer-info {
+                    border: none;
+                    border-radius: 0;
+                    font-family: "Libre Baskerville", serif;
+                    font-size: 10px; // Smaller font
+                    letter-spacing: 0.1em;
+                    line-height: 1.2rem; // Tightened
+                    color: #333333;
+                    padding: 0; // No extra padding
+                }
+            }
+
+            .info-div {
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem; // Reduced from 1rem
+                justify-content: start;
+                align-items: start;
+            }
+
+            .important-info {
+                font-family: "Libre Baskerville", serif;
+                font-size: 12px; // Smaller
+                letter-spacing: 0.1em;
+                line-height: 1.2rem; // Tightened
+                color: #333333;
+                text-align: start;
+                max-width: 100%; // Full width for compactness
+            }
+            .no-email-message {
+                font-family: "Libre Baskerville", serif;
+                font-size: 12px; // Smaller
+                letter-spacing: 0.1em;
+                line-height: 1.2rem; // Tightened
+                color: #333333;
+                text-align: start;
+                max-width: 60%;
+            }
+        }
+    }
+}

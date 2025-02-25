@@ -57,6 +57,7 @@
         border-radius: 0;
         border: none;
         border-bottom: 1px solid colors.colorTheme(app-white);
+        color: colors.colorTheme(app-white);
         &::placeholder {
             color: colors.colorTheme(app-white);
             padding: 1.25em;

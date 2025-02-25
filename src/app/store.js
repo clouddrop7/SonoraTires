@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { ServicesReducer } from '../utils/serviceApi';
-import { CarsDataReducer } from '../utils/carsAPI';
-
+import { carReducer } from '../utils/carDetailSlice';
+import { serviceScheduleReducer } from '../utils/scheduleSlice';
 export const store = configureStore({
   reducer: {
-    services: ServicesReducer,
-    cars: CarsDataReducer,
+    carDetails: carReducer,
+    serviceSchedule: serviceScheduleReducer,
   },
 });

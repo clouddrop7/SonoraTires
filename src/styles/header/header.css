@@ -72,6 +72,7 @@
   padding: 6vw;
   align-items: center;
   height: 6.5em;
+  gap: 1rem;
 }
 .offcanvas .offcanvas-header .nav-title {
   margin: 0;
@@ -105,6 +106,7 @@
 .offcanvas .offcanvas-body .navbar .nav-link {
   border: 1px solid #333333;
   padding: 0.5em;
+  text-align: center;
 }
 .offcanvas .offcanvas-body .navbar .nav-link:hover {
   background-color: #DAA520;
