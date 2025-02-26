@@ -6,92 +6,64 @@
   @media (min-width: 62rem) {
     justify-content: space-between;
   }
-    .nav-row {
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem;
-      .cart-col {
-        flex: 0 0 75px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .fa-cart-shopping {
-          width: 25px;
-          height: 25px;
-        }
-      }
-  
-    }
 
-    .nav-col {
-      flex: 0;
-      justify-self: end;
-      .navbar-toggler {
-        border: none;
-        flex: 0 0 50px;
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24'/%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 16h24'/%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 24h24'/%3E%3C/svg%3E");
-        padding: 0 0.5em;
+  .nav-row {
+    @include util.display-flex-space-between;
+    padding: 1rem;
+
+    .cart-col {
+      flex: 0 0 75px;
+      @include util.display-flex-center;
+      .fa-cart-shopping {
+        width: 25px;
+        height: 25px;
       }
     }
+  }
+
+  .nav-col {
+    flex: 0;
+    justify-self: end;
+    .navbar-toggler {
+      border: none;
+      flex: 0 0 50px;
+      @include util.bg-hamburger;
+      padding: 0 0.5em;
+    }
+  }
 
   .header-title {
-    line-height: 1.2em;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    font-family: 'Syne', serif;
-    font-size: 1em;
-    font-weight: 700;
-    text-decoration:none;
-    color: colors.colorTheme(app-yellow);
-    @media (min-width: 48rem) {
-      font-size: 1.6rem;
-    }
+    @include util.font-header-title;
+    @include util.color-yellow;
+    text-decoration: none;
   }
 }
 
 .offcanvas {
   box-sizing: border-box;
-  justify-content: flex-start;
+  @include util.display-flex-start;
+
   .offcanvas-header {
-    align-items: center;
-    justify-content: space-between;
+    @include util.display-flex-space-between;
     gap: 1rem;
     padding: 1rem;
-    .nav-title {
-      line-height: 1.2em;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      font-family: 'Syne', serif;
-      font-size: 1em;
-      font-weight: 700;
-      text-decoration:none;
-      color: colors.colorTheme(app-yellow);
 
-      @media (min-width: 48rem) {
-        font-size: 1.6rem;
-      }
+    .nav-title {
+      @include util.font-header-title;
+      @include util.color-yellow;
+      text-decoration: none;
     }
   }
 
   .offcanvas-body {
     padding: 1rem;
+
     .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
+      @include util.display-flex-column-nav;
       gap: 1rem;
-      @media (min-width: 62rem) {
-        flex-direction: row;
-        align-items: center;
-      }
+
       .nav-link {
-        border: 1px solid colors.colorTheme(app-red);
-        padding: 0.5em;
-        text-align: center;
-        &:hover {
-          background-color: colors.colorTheme(app-yellow);
-          color: colors.colorTheme(app-white);
-        }
+        @include util.btn-nav-link;
         .fa-2x {
           width: 25px;
           height: 25px;
@@ -99,22 +71,7 @@
       }
 
       .appt-btn {
-        border: 1px solid colors.colorTheme(app-yellow);
-        border-radius: 0;
-        background-color: transparent;
-        color: colors.colorTheme(app-yellow);
-        padding: 1rem 1rem;
-        text-transform: uppercase;
-
-        &:hover {
-          background-color: colors.colorTheme(app-yellow);
-          color: colors.colorTheme(app-white);
-        }
-
-        @media (min-width: 62rem) {
-          padding: 1rem 1.3rem;
-          min-width: 12.25rem;
-        }
+        @include util.btn-appt;
       }
     }
   }

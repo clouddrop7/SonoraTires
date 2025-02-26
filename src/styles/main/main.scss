@@ -4,37 +4,30 @@
 // @import '../reset/reset.scss';
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-    height: 100vh;
-    max-height: 100%;
-    .container,.offcanvas-header, .offcanvas-body, .row .col,.card, .card-body, .card-img-overlay,.list-group {
-        padding: 0;
-        margin: 0;
-    }
+  @include util.gutter-reset;
+  box-sizing: border-box;
+  @include util.width-body;
+  height: 100vh;
+  max-height: 100%;
 
-    .container, .row, .col, .card {
-        width: 100%;
-        max-width: 100%;
-    }
+  .container, .offcanvas-header, .offcanvas-body, .row .col, .card, .card-body, .card-img-overlay, .list-group {
+    @include util.gutter-reset;
+  }
 
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .container, .row, .col, .card {
+    @include util.width-full;
+  }
 
-    .list-group-item, a, h4{
-        margin: 0;
-        padding: 0;
-    }
+  .container {
+    @include util.display-flex-center;
+  }
 
-    h2,.h1,.h2,.h3,.h4,.h5, p {
-        margin: 0;
-        text-align: center;
-    }
+  .list-group-item, a, h4 {
+    @include util.gutter-reset;
+  }
+
+  h2, .h1, .h2, .h3, .h4, .h5, p {
+    @include util.gutter-reset;
+    @include util.font-center;
+  }
 }

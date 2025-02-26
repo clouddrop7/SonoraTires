@@ -3,48 +3,35 @@
 @use '../variables/utils.scss' as util;
 
 .contact-container {
-  flex-direction: column;
+  @include util.display-grid-contact;
   background-color: colors.colorTheme(app-red);
-
   @media (min-width: 48rem) {
     padding: 2rem !important;
   }
 
-  @media (min-width: 62rem) {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-  }  
   .contact-title {
-    font-family: "Syne", serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: colors.colorTheme(app-yellow);
-    text-transform: uppercase;
+    @include util.font-contact-title;
+    @include util.color-yellow;
     padding: 1rem;
-
     @media (min-width: 62rem) {
-      font-size: 2.8rem;
       justify-self: start;
     }
-
     @media (min-width: 75rem) {
       justify-content: center;
       justify-self: center;
     }
-
   }
 
   .contact-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    @include util.display-flex-column;
+    @include util.width-full;
     gap: 1rem;
     padding: 1rem;
 
     .form-label {
-      font-family: "Libre Baskerville";
+      @include util.font-form-label;
       margin: 1rem 0;
-      color: colors.colorTheme(app-white);
+      @include util.color-white;
     }
 
     .form-control {
@@ -52,8 +39,8 @@
       border-radius: 0;
       border: none;
       border-bottom: 1px solid colors.colorTheme(app-white);
-      color: colors.colorTheme(app-white);
-      width: 100%; 
+      @include util.color-white;
+      width: 100%;
       &::placeholder {
         color: colors.colorTheme(app-white);
         padding: 1.25em;
@@ -62,21 +49,10 @@
     }
 
     .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      background-color: colors.colorTheme(app-yellow);
-      color: colors.colorTheme(app-white);
-      font-family: "Syne", serif;
-      padding: 1rem 2.25rem;
-      border: none;
-      border-radius: 0;
+      @include util.btn-contact;
+      @include util.font-contact-btn;
       margin-top: 1rem;
-      align-self: center; 
-      width: auto;
-      &:hover {
-        background-color: colors.colorTheme(app-black);
-        color: colors.colorTheme(app-yellow);
-      }
+      align-self: center;
     }
   }
 }

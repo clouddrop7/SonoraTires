@@ -3,114 +3,52 @@
 @use '../../variables/utils.scss' as util;
 
 .appt-container {
-    background-image: url('../../../app/assets/images/nicecar.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+  @include util.bg-appt-image;
+  @media (min-width: 62rem) {
+    height: 40vh;
+  }
+  @media (min-width: 75rem) {
+    height: 50vh;
+  }
+  @media (min-width: 90rem) {
+    height: 80vh;
+  }
 
-    @media (min-width: 48rem) {
-        background-position-y: 50%;
+  .appt-row {
+    @include util.display-grid-appt;
+    gap: 1.25rem;
+    padding: 1.5rem;
+
+    .appt-title, .appt-text {
+      padding: 1rem;
     }
 
-    @media (min-width: 62rem) {
-        background-position: 65%;
-        height: 40vh;
+    .appt-title {
+      @include util.font-appt-title;
+      @include util.color-white;
+      @media (min-width: 36rem) {
+        max-width: 24rem;
+      }
+      @media (min-width: 48rem) {
+        padding: 0;
+      }
+      @media (min-width: 75rem) {
+        max-width: 36rem;
+      }
     }
 
-    @media (min-width: 75rem) {
-        height: 50vh;
+    .appt-text {
+      @include util.font-appt-text;
+      @include util.color-white;
+      max-width: 32rem;
+      @media (min-width: 62rem) {
+        max-width: 24rem;
+      }
     }
 
-    @media (min-width: 90rem) {
-        background-position-y: 45%;
-        height: 80vh;
+    .appt-btn {
+      @include util.btn-appt;
+      @include util.font-appt-btn;
     }
-
-    .appt-row {
-        gap: 1.25rem; 
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem; 
-
-        @media (min-width: 48rem) {
-            display: grid;
-            grid-template-columns: repeat(2,minmax(min-content,max-content));
-        }
-
-        .appt-title, .appt-text {
-            padding: 1rem; 
-        }
-
-        .appt-title {
-            font-family: "Syne", serif;
-            font-weight: 700;
-            line-height: 1.1em;
-            letter-spacing: -0.02em; 
-            color: colors.colorTheme(app-white);
-            text-transform: uppercase;
-            font-size: 1.5rem; 
-            text-align: center;
-
-            @media (min-width: 36rem) {
-                font-size: 1.75rem;
-                max-width: 24rem;
-            }
-
-            @media (min-width: 48rem) {
-                padding: 0;
-            }
-
-            @media (min-width: 75rem) {
-                font-size: 2.8rem;
-                max-width: 36rem;
-            }
-        }
-
-        .appt-text {
-            font-family: 'Libre Baskerville', serif;
-            color: colors.colorTheme(app-white);
-            letter-spacing: 0.05em;
-            line-height: 1.6em; 
-            font-size: 0.95rem; 
-            font-weight: 500;
-            text-align: center; 
-            max-width: 32rem;
-            
-            @media (min-width: 36rem) {
-                font-size: 1rem;
-                text-align: start;
-            }
-
-            @media (min-width: 62rem) {
-                max-width: 24rem;
-            }
-        }
-
-        .appt-btn {
-            display: inline-flex;
-            width: auto;
-            padding: 0.875rem 1.75rem;
-            background-color: transparent;
-            color: colors.colorTheme(app-yellow);
-            border: 1px solid colors.colorTheme(app-yellow);
-            border-radius: 0;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 600; 
-            letter-spacing: 0.08em;
-            font-family: "Syne", serif;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, color 0.3s ease; 
-            &:hover {
-                background-color: colors.colorTheme(app-red);
-                color: colors.colorTheme(app-white);
-            }
-
-            @media (min-width: 48rem) {
-                justify-content: center;
-                max-width: 16rem;
-                align-self: start;
-                justify-self: center;
-            }
-        }
-    }
+  }
 }
