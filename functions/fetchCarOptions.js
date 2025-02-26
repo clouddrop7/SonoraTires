@@ -17,7 +17,7 @@ export const fetchCarOptions = functions.https.onRequest((req, res) => {
         return res.status(400).json({ success: false, error: 'Make parameter is required' });
       }
 
-      const url = `https://api.wheel-size.com/v2/search/by_model/?make=${make}&model=${model}&modification=${profile}&year=${year}&user_key=YOUR-API-KEY`;
+      const url = `https://api.wheel-size.com/v2/search/by_model/?make=${make}&model=${model}&modification=${profile}&year=${year}&user_key=3ee807b5af97fd58bf363faef19cb7fd`;
       const response = await fetch(url);
 
       if (!response.ok) {

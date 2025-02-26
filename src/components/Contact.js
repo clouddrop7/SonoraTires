@@ -106,17 +106,14 @@ const Contact = () => {
                                 {errors.message}
                             </Form.Control.Feedback>
                         </Form.Group>
-
-                        <Form.Group>
                             <Button
                                 className="contact-btn"
                                 type="submit"
-                                disabled={isSubmitting || !isValid} // Disable if submitting or invalid
+                                disabled={isSubmitting || !isValid}
                             >
                                 Send Message
                                 <FontAwesomeIcon icon={faPaperPlane} className="ms-2" />
                             </Button>
-                        </Form.Group>
                     </Form>
                 )}
             </Formik>

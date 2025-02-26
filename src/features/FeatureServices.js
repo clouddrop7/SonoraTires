@@ -1,4 +1,4 @@
-import { Container, Row, Col, Image, Button, Card} from 'react-bootstrap';
+import { Container, Row, Col, Button, Card} from 'react-bootstrap';
 import tireImage from '../app/assets/images/tire-small.png';
 import brakeImage from '../app/assets/images/brakesimage2.jpg';
 import '../styles/features/features.scss';
@@ -18,20 +18,10 @@ const FeatureServices = () => {
                 <Col className="feature-cards">
                     <Card className="tire-feature-card">
                         <Card.Img className="tire-image" src={tireImage} alt="firestone tire"/>
-                        <Card.ImgOverlay>
-                            <Card.Body className="tire-price">
-                                $25.99
-                            </Card.Body>
-                        </Card.ImgOverlay>
                             <p className="feature-name">tires</p>
                     </Card>
                     <Card className="brake-feature-card">
                         <Card.Img className="brake-image" src={brakeImage} alt="Audi brake pad"/>
-                        <Card.ImgOverlay >
-                            <Card.Body className="brake-price">
-                                $25.99
-                            </Card.Body>
-                        </Card.ImgOverlay>
                         <p className="feature-name">brakes</p>
                     </Card>
                 </Col>

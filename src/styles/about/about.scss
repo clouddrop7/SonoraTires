@@ -3,31 +3,28 @@
 @use '../variables/utils.scss' as util;
 
 .about-container {
-    display: grid;
     background-color: colors.colorTheme(app-red);
     color: colors.colorTheme(app-white);
-    width: 100%;
-    max-width: 100%;
     border-bottom: 6px solid colors.colorTheme(app-yellow);
-    @media (min-width: 75rem) {
-        height: 50vh;
-    }
 
     .about {
         gap: 1rem;
-        width: 100%;
-        padding: 1rem;
         align-items: center;
         justify-content: center;
-
+        padding: 1rem;
+        
         @media (min-width: 48rem) {
-            justify-content: start;
+            display: grid;
+            grid-template-columns: repeat(2,minmax(min-content,max-content));
+            padding: 2rem;
         }
 
-        @media (min-width: 62rem) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            padding: 3rem;
+        @media (min-width: 48rem) {
+            padding: 3.5rem;
+        }
+
+        .about-title, .about-statement {
+            padding: 0.75rem;
         }
 
         .about-title {
@@ -37,21 +34,13 @@
             letter-spacing: -0.02em;
             text-transform: uppercase;
             word-wrap: break-word;
-            font-size: 1.75rem;
-            padding: 1rem;
-            margin: 0;
+            font-size: 1.5rem;
 
-            @media (min-width: 48rem) {
-                text-align: start;
+            @media (min-width: 62rem) {
+                font-size: 2.25rem;
             }
 
             @media (min-width: 62rem) {
-                font-size: 2.5rem;
-                text-align: center;
-                padding: 0;
-            }
-
-            @media (min-width: 75rem) {
                 font-size: 2.8rem;
             }
         }
@@ -59,41 +48,37 @@
         .about-statement {
             font-family: "Libre Baskerville";
             font-weight: 500;
-            line-height: 1.5em;
-            letter-spacing: 0.1em;
+            line-height: 1.6em;
+            letter-spacing: 0.05em;
             text-align: center;
-            padding: 0;
-            font-size: 1rem;
-
-            @media (min-width: 36rem) {
-                max-width: 32rem;
-            }
-
-            @media (min-width: 48rem) {
-                max-width: 41rem;
-                padding: 1rem;
-            }
-
-            @media (min-width: 62rem) {
-                padding: 1.5rem;
-            }
-
-            
-
-
-            .learn-link {
-                margin-left: 1em;
-                font-family: "Libre Baskerville";
-                font-weight: 500;
-                line-height: 1.5em;
-                letter-spacing: 0.1em;
-                color: colors.colorTheme(app-yellow);
-                text-decoration-color: colors.colorTheme(app-white);
-                text-underline-offset: 6px;
-            }
+            font-size: 0.95rem;
+            max-width: 100%;
+            margin: 0 auto;
 
             @media (min-width: 48rem) {
                 text-align: start;
+                padding: 0;
+            }
+
+            @media (min-width: 62rem) {
+                text-align: start;
+                padding: 0.875rem;
+            }
+            
+            @media (min-width: 75rem) {
+                text-align: start;
+                padding: 0.875rem;
+                max-width: 26rem;
+            }
+            .learn-link {
+                margin-left: 0.75em;
+                font-family: "Libre Baskerville";
+                font-weight: 500;
+                line-height: 1.6em;
+                letter-spacing: 0.05em;
+                color: colors.colorTheme(app-yellow);
+                text-decoration-color: colors.colorTheme(app-white);
+                text-underline-offset: 6px;
             }
         }
     }

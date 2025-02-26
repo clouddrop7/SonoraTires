@@ -1,50 +1,48 @@
+// functions/customerPurchase.js
 import admin from './admin.js';
 import * as functions from 'firebase-functions';
+import cors from 'cors';
 
 const db = admin.firestore();
-export const postCustomerPurchase = functions.https.onCall(async (data, context) => {
-    try {
+
+export const postCustomerPurchase = functions.https.onRequest((req, res) => {
+    cors({ origin: true })(req, res, async () => {
+        if (req.method !== 'POST') {
+            return res.status(405).json({ success: false, message: 'Method Not Allowed' });
+        }
+
+        const data = req.body;
+
+        // Required fields for validation
         const requiredFields = [
             'firstName', 'lastName', 'email', 'phone', 'carMake', 'carModel',
             'carProfile', 'carYear', 'wheelSize', 'tireSelection', 'tireQuantity',
             'total', 'date', 'apptDate'
         ];
+
+        // Validate data
         for (const field of requiredFields) {
             if (!data[field]) {
-                throw new functions.https.HttpsError('invalid-argument', `Missing required field: ${field}`);
+                return res.status(400).json({ 
+                    success: false, 
+                    message: `Invalid data: Missing or empty field '${field}'`
+                });
             }
         }
-        console.log(data);
-        const purchaseData = {
-            firstName: data.firstName,
-            lastName: data.lastName,
-            email: data.email,
-            phone: data.phone,
-            carMake: data.carMake,
-            carModel: data.carModel,
-            carProfile: data.carProfile,
-            carYear: data.carYear,
-            wheelSize: data.wheelSize,
-            tireSelection: data.tireSelection,
-            tireQuantity: data.tireQuantity,
-            total: data.total,
-            date: data.date,
-            apptDate: data.apptDate, 
-            createdAt: admin.firestore.FieldValue.serverTimestamp(),
-        }
-        const purchaseRef = await db.collection('purchases').add(purchaseData);
 
-        console.log('Customer purchase saved with ID:', purchaseRef.id);
-        return {
-            success: true,
-            purchaseId: purchaseRef.id,
-            message: 'Purchase submitted successfully',
-        };
-    } catch (error) {
-        console.error('Error submitting customer purchase:', error);
-        if (error instanceof functions.https.HttpsError) {
-            throw error;
+        try {
+            const purchaseRef = await db.collection('purchases').add(data);
+            res.status(200).json({ 
+                success: true, 
+                message: 'Data is valid and submission was successful', 
+                purchaseId: purchaseRef.id 
+            });
+        } catch (error) {
+            res.status(500).json({ 
+                success: false, 
+                message: 'Failed to write valid data to database', 
+                error: error.message 
+            });
         }
-        throw new functions.https.HttpsError('internal', 'An error occurred while submitting the purchase', error.message);
-    }
+    });
 });

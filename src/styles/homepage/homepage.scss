@@ -3,58 +3,46 @@
 @use '../variables/utils.scss' as util;
 
 .homepage-container {
-  display: grid;
-  grid-template-rows: minmax(min-content, max-content);
-  width: 100vw;
-  max-width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  overflow: hidden;
-  
+
   .hero-card {
-    display: grid;
     background-image: url("../../app/assets/images/hero-image.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%; 
+    background-size: 100% 100%;
     background-position: center;
     border-radius: 0;
-    overflow: hidden;
     border-bottom: 6px solid colors.colorTheme(app-yellow);
 
     @media (min-width: 62rem) {
-      max-height: 80vh;
       height: 80vh;
     }
     
     .card-img-overlay {
       background-color: colors.colorTheme(app-black);
-      opacity: 45%;
+      opacity: 0.45;
       border-radius: 0;
     }
     
     .hero-body {
       z-index: 2;
-      display: grid;
-      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: 1rem;
-      grid-template-rows: repeat(3, minmax(min-content, max-content));
+      padding: 1rem;
 
       @media (min-width: 48rem) {
-        grid-template-columns: repeat(12, 1fr);
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(3,auto);
-        row-gap: 2rem;
-        column-gap: 0;
         padding: 2rem;
       }
 
       @media (min-width: 62rem) {
-        grid-template-columns: repeat(12,1fr);
-        gap: 2rem;
-        padding: 0;
-      }
-
-      @media (min-width: 90rem) {
-        grid-template-rows: repeat(6,1fr);
+        column-gap: 0;
       }
 
       .welcome {
@@ -76,26 +64,20 @@
         }
 
         @media (min-width: 48rem) {
-          grid-column: 2/8;
-          grid-row: 2;
+          grid-row: 1;
+          grid-column: 1;
+          justify-self: center;
+          align-self: center;
         }
 
         @media (min-width: 62rem) {
-          grid-row: 2;
-          grid-column: 2/7;
-          line-height: 100%;
-          align-self: start;
-          justify-self: start;
-          max-width: 30rem;
-        }
+          font-size: 3.25rem;
+          align-self: end;
+        } 
 
         @media (min-width: 75rem) {
           font-size: 4rem;
-        } 
-
-        @media (min-width: 90rem) {
-          grid-column: 3/7;
-          justify-self: center;
+          max-width: 28rem;
         }
       }
 
@@ -105,45 +87,31 @@
         font-weight: 500;
         line-height: 1.3em;
         letter-spacing: 0.12em;
-        text-align: center;
         font-size: 1.25rem;
         word-wrap: break-word;
-        padding: 0 1rem;
-        max-width: 16rem;
-        justify-self: center;
+        max-width: 14rem;
+
         @media (min-width: 48rem) {
-          padding: 0;
-          grid-row: 2;
-          grid-column: 8/11;
+          grid-row: 1/2;
+          grid-column: 2;
           align-self: end;
-          justify-self: start;
+          justify-self:start;
         }
 
         @media (min-width: 62rem) {
-          grid-row: 2;
-          grid-column: 7/11;
+          grid-column: 2;
           font-size: 1.75rem;
-          text-align: start;
-          align-self: center;
-        }
+          max-width: 20rem;
 
-        @media (min-width: 75rem) {
-          grid-column: 7/10;
-        }
-
-        @media (min-width: 90rem) {
-          align-self: center;
-          grid-row: 2/4;
-          max-width: 16rem;
         }
       }
 
       .call-action {
-        background-color: transparent;
-        border: 1px solid colors.colorTheme(app-yellow);
+        justify-self: center;
         border-radius: 0;
         padding: 1rem 3rem;
-        justify-self: center;
+        background-color: transparent;
+        border: 1px solid colors.colorTheme(app-yellow);
         color: colors.colorTheme(app-yellow);
         text-transform: uppercase;
         text-align: center;
@@ -154,30 +122,10 @@
         }
 
         @media (min-width: 48rem) {
-          grid-row: 3;
-          grid-column: 3/8;
-          justify-self: start;
-        }
-
-        @media (min-width: 62rem) {
           grid-row: 2;
-          grid-column: 2/7;
-          align-self: end;
+          grid-column: 1;
+          align-self: center;
           justify-self: center;
-        }
-
-        @media (min-width: 75rem) {
-          grid-column: 3/6;
-        }
-
-        @media (min-width: 90rem) {
-          grid-row: 3; 
-          grid-column: 3/7; 
-          align-self: start; 
-          justify-self: center; 
-          margin-left: 1.25em;
-          padding: 2rem 4rem;
-          margin: 0 auto;
         }
       }
     }

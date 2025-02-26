@@ -17,7 +17,7 @@ const Header = ({toggleForm, handleClose, handleShow, showNav}) => {
 
     return (
        <Container className="header-container">
-            <Row>
+            <Row className="nav-row">
                 <Col className="title-col">
                     <a className="header-title">sonora tires inc.</a>
                 </Col>

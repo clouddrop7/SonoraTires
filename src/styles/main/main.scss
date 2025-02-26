@@ -1,46 +1,40 @@
 @use '../variables/fonts.scss' as font;
 @use '../variables/colors.scss' as colors;
 @use '../variables/utils.scss' as util;
-@import '../reset/reset.scss';
+// @import '../reset/reset.scss';
 
 body {
-    font-family: font.$defaultFont;
-    // color: colors.$text-primary;
-    .container {
-    //   @include util.responsive-spacing(padding, -x, $gutter-map: util.$global-gutter-widths); // Apply horizontal padding
-    //   @include util.responsive-spacing(padding, -y, $gutter-map: util.$global-gutter-widths); // Apply vertical padding
-    //   max-width: 100%;
-    //   margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    height: 100vh;
+    max-height: 100%;
+    .container,.offcanvas-header, .offcanvas-body, .row .col,.card, .card-body, .card-img-overlay,.list-group {
+        padding: 0;
+        margin: 0;
     }
-}
 
-h1, h2, h3, h4, h5, h6 {
-    @include font.font-theme(title);
-    @include font.responsive-font-size(h1); // Adjust for each heading level
-}
+    .container, .row, .col, .card {
+        width: 100%;
+        max-width: 100%;
+    }
 
-p {
-    @include font.font-theme(default);
-    @include font.responsive-font-size(p);
-}
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-small {
-    @include font.font-theme(default);
-    @include font.responsive-font-size(small);
-}
+    .list-group-item, a, h4{
+        margin: 0;
+        padding: 0;
+    }
 
-button, .button {
-    @include font.font-theme(title);
-    @include font.responsive-font-size(button);
-    // Keep default alignment for buttons
-}
-
-a {
-    @include font.font-theme(default);
-    // Keep default alignment for links
-}
-
-.nav-link {
-  padding: 0;
-  margin: 0;
+    h2,.h1,.h2,.h3,.h4,.h5, p {
+        margin: 0;
+        text-align: center;
+    }
 }

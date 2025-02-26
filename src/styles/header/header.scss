@@ -3,31 +3,13 @@
 @use '../variables/utils.scss' as util;
 
 .header-container {
-  grid-row: 1;
-  width:  100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 6vw !important;
-
   @media (min-width: 62rem) {
-    padding: 2vw 4vw !important;
-    margin: 0;
     justify-content: space-between;
-    width: 100%;
-    max-width: 100%;
   }
-    .row {
-      width: 100%;
+    .nav-row {
       align-items: center;
       justify-content: space-between;
-      .col {
-        padding: 0;
-      }
-
-      .title-col {
-        flex: 1;
-      }
-
+      padding: 1rem;
       .cart-col {
         flex: 0 0 75px;
         display: flex;
@@ -44,7 +26,6 @@
     .nav-col {
       flex: 0;
       justify-self: end;
-
       .navbar-toggler {
         border: none;
         flex: 0 0 50px;
@@ -54,7 +35,6 @@
     }
 
   .header-title {
-    margin: 0;
     line-height: 1.2em;
     letter-spacing: -0.02em;
     text-transform: uppercase;
@@ -63,9 +43,8 @@
     font-weight: 700;
     text-decoration:none;
     color: colors.colorTheme(app-yellow);
-
-    @media (min-width: 62rem) {
-      font-size: 1.5rem;
+    @media (min-width: 48rem) {
+      font-size: 1.6rem;
     }
   }
 }
@@ -74,12 +53,11 @@
   box-sizing: border-box;
   justify-content: flex-start;
   .offcanvas-header {
-    padding: 6vw;
     align-items: center;
-    height: 6.5em;
+    justify-content: space-between;
     gap: 1rem;
+    padding: 1rem;
     .nav-title {
-      margin: 0;
       line-height: 1.2em;
       letter-spacing: -0.02em;
       text-transform: uppercase;
@@ -88,22 +66,22 @@
       font-weight: 700;
       text-decoration:none;
       color: colors.colorTheme(app-yellow);
+
+      @media (min-width: 48rem) {
+        font-size: 1.6rem;
+      }
     }
   }
 
   .offcanvas-body {
-    padding: 0;
+    padding: 1rem;
     .navbar {
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      width: 100%;
       gap: 1rem;
-      padding: 6vw;
-
       @media (min-width: 62rem) {
         flex-direction: row;
-        padding: 0;
         align-items: center;
       }
       .nav-link {

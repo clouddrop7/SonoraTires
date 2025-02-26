@@ -12,11 +12,11 @@ const Footer = () => {
             <h2 className="footer-title">Sonora Tires Inc.</h2>
             <ListGroup  className="explore" variant="flush">
                 <h4 className="footer-subtitle">Explore</h4>
-                <ListGroup.Item as="a"  href="#about" >About</ListGroup.Item>
-                <ListGroup.Item as="a"  href="#contact" >Contact</ListGroup.Item>
-                <ListGroup.Item as="a"  href="#shop" >Shop</ListGroup.Item>
-                <ListGroup.Item as="a"  href="#services" >Services</ListGroup.Item>
-                <ListGroup.Item as="a"  href="/sitemap.xml" >Site Map</ListGroup.Item>
+                <ListGroup.Item as="a" className="explore-links"  href="#about" >About</ListGroup.Item>
+                <ListGroup.Item as="a" className="explore-links"  href="#contact" >Contact</ListGroup.Item>
+                <ListGroup.Item as="a" className="explore-links"  href="#shop" >Shop</ListGroup.Item>
+                <ListGroup.Item as="a" className="explore-links"  href="#services" >Services</ListGroup.Item>
+                <ListGroup.Item as="a" className="explore-links"  href="/sitemap.xml" >Site Map</ListGroup.Item>
             </ListGroup>
             <ListGroup variant="flush" className="social-container">
                 <h4 className="footer-subtitle">Social</h4>

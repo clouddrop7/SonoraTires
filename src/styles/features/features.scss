@@ -2,63 +2,31 @@
 @use '../../styles/variables/fonts.scss' as font;
 @use '../variables/utils.scss' as util;
 
-
 $original-width: 15.9375rem; 
 $original-height: 31.6875rem; 
 
 .features-container {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
     border-bottom: 6px solid #333333;
-    overflow: hidden;
-
     .feature-row {
         flex-direction: column;
-        padding: 1rem;
+        justify-content: center;
+        align-items: center;
         gap: 1rem;
+        
         @media (min-width: 48rem) {
-            padding: 2rem;
-            gap: 2rem;
-        }
-        @media (min-width: 62rem) {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(2,minmax(min-content,max-content));
+            padding: 2rem;
         }
+
         .feature-col {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
             gap: 1rem;
-            padding: 0;
-            @media (min-width: 36rem) {
-                display: grid;
-                padding: 2rem;
-            }
-
-            @media (min-width: 48rem) {
-                grid-template-columns: repeat(2, minmax(min-content,max-content));
-                padding: 0;
-                gap: 2rem;
-            }
-
-            @media (min-width: 62rem) {
-                grid-template-rows: repeat(3, minmax(min-content,max-content));
-                align-self: center;
-            }             
-
-            @media (min-width: 90rem) {
-                grid-template-columns: repeat(4,1fr);
-            }
+            align-items: center;
+            justify-content: center;            
 
             .feature-title {
-                margin: 0;
                 font-family: "Syne", serif;
                 font-weight: 700;
                 line-height: 1.2em;
@@ -66,30 +34,21 @@ $original-height: 31.6875rem;
                 color: colors.colorTheme(app-yellow);
                 font-size: 2.25rem;
                 text-transform: uppercase;
-                text-align: center;
+                margin-top: 1rem;
 
                 @media (min-width: 48rem) {
                     font-size: 2.25rem;
-                    grid-row: 1;
-                    justify-self: start;
-                    padding: 0;
-                    text-align: start;
-                    max-width: 15rem;
+                    margin: 0;
                 }
 
                 @media (min-width: 62rem) {
                     font-size: 2.8rem;
-                    grid-column: 1;
                     text-align: start;
-                    max-width: unset;
                 }
 
                 @media (min-width: 75rem) {
-                    max-width: 18rem;
-                }
-
-                @media (min-width: 90rem) {
-                    grid-column: 2/4;
+                    max-width: 20rem;
+                    align-self: start;
                 }
 
             }
@@ -99,46 +58,42 @@ $original-height: 31.6875rem;
                 line-height: 1.5em;
                 letter-spacing: 0.1em;
                 font-size: 1rem;
-                text-align: center;
+                padding: 1rem;
+
+                @media (min-width: 36rem) {
+                    padding: 0 3rem;
+                }
+
                 @media (min-width: 48rem) {
+                    padding: 0 1rem;
                     text-align: start;
-                    grid-row: 1/ span 2;
-                    grid-column: 2;
                 }
 
                 @media (min-width: 62rem) {
-                    grid-row: 2;
-                    grid-column: 1 / span 2;
-                    justify-self: start;
+                    padding: 0;
+                }
+
+                @media (min-width: 75rem) {
                     max-width: 28rem;
                 }
 
-                @media (min-width: 90rem) {
-                    justify-self: center;
-                    max-width: 30rem;
-                    grid-column: 2/4;
-                }
+
             }
 
             .feature-btn {
                 background-color: transparent;
                 border: 1px solid colors.colorTheme(app-yellow);
                 border-radius: 0;
-                padding: 1rem 2rem; 
+                padding: 1rem 3rem; 
                 color: colors.colorTheme(app-yellow);
                 text-transform: uppercase;
-                justify-self: center;
                 &:hover {
                     background-color: colors.colorTheme(app-yellow);
                     color: colors.colorTheme(app-white);
                 }
 
-                @media (min-width: 48rem) {
-                    justify-self: start;
-                }
-
                 @media (min-width: 62rem) {
-                    grid-row: 3;
+                  align-self: start;
                 }
 
                 @media (min-width: 90rem) {
@@ -150,26 +105,20 @@ $original-height: 31.6875rem;
         }
 
         .feature-cards {
-            display: grid;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
             gap: 1rem;
-            padding: 0;
+
+            @media (min-width: 36rem) {
+                flex-direction: row;
+            }
             @media (min-width: 48rem) {
                 grid-template-columns: repeat(2, 1fr);
                 align-items: center;
                 justify-content: center;
-            }
-
-            @media (min-width: 62rem) {
-                align-items: flex-start;
-                justify-content: flex-start;
-                height: auto;
-            }
-
-            @media (min-width: 75rem) {
-                align-items: center;
-                justify-content: center;
-                justify-self: center;
-                align-self: center;
             }
 
             @media (min-width: 90rem) {
@@ -177,14 +126,22 @@ $original-height: 31.6875rem;
                 grid-template-columns: repeat(2,minmax(min-content,max-content));
             }
 
-            .card {
-                border: none;
+            .tire-feature-card, .brake-feature-card {
+                border: none ;
                 border-radius: 0;
+                gap: 1rem;
+
+                @media (min-width: 36rem) {
+                    max-width: 16rem;
+                    height: auto;
+                }
+
                 @media (min-width: 62rem) {
                     width: $original-width;
                     height: $original-height;
                 }
                 .tire-image, .brake-image {
+                    border: none;
                     border-radius: 0;
                     width: 100%;
                     height: 16rem;
@@ -198,18 +155,9 @@ $original-height: 31.6875rem;
                     font-size: 1.25rem;
                     font-weight: 700;
                     font-family: "Syne", serif;
-                    text-transform: uppercase;
-                    padding: 0.703125rem; 
+                    text-transform: uppercase; 
                     text-align: start;
                     color: colors.colorTheme(app-yellow);
-                    @media (min-width: 48rem) {
-                        text-align: center;
-                    }
-
-                    @media (min-width: 62rem) {
-                        text-align: start;
-                        padding-left: 0;
-                    }
                 }
             }
         }

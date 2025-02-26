@@ -59,7 +59,7 @@ const ServiceModal = ({ show, toggleForm }) => {
         date: '',
         apptDate: '',
     });
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
 
     const getCurrentDate = () => {
         const today = new Date();
@@ -225,8 +225,6 @@ const ServiceModal = ({ show, toggleForm }) => {
         const apptDate = date.year && date.month && date.day && date.time 
             ? `${date.year}-${date.month.padStart(2, '0')}-${date.day.padStart(2, '0')}T${date.time}:00`
             : currentDate.toISOString();
-
-        // Find the profile name from profiles array
         const profileName = profiles.find(p => p.slug === selectedProfile)?.name || 'Unknown';
 
         const purchaseData = {
@@ -236,7 +234,7 @@ const ServiceModal = ({ show, toggleForm }) => {
             phone: values.phone || '',
             carMake: selectedMake || 'Unknown',
             carModel: selectedModel || 'Unknown',
-            carProfile: profileName, // Use profile name instead of slug
+            carProfile: profileName, 
             carYear: selectedYear || 'Unknown',
             wheelSize: selectedWheel || 'Unknown',
             tireSelection: selectedTire ? selectedTire.name : 'None',
@@ -246,7 +244,6 @@ const ServiceModal = ({ show, toggleForm }) => {
             apptDate: apptDate,
         };
 
-        console.log('Purchase Data being sent:', purchaseData);
         setCustomerPurchase(purchaseData);
 
         try {
@@ -262,8 +259,7 @@ const ServiceModal = ({ show, toggleForm }) => {
                 throw new Error(result.message || 'Submission failed');
             }
 
-            console.log('Backend response:', result);
-            setShowModal(true); // Show modal on success
+            setShowModal(true); 
         } catch (error) {
             console.error('Error submitting purchase:', error);
             alert(error.message);

@@ -8,24 +8,24 @@ const Services = () => {
     return (
         <Container id="services" className="services-container">
             <Row className="services-row">
-                <Card className="services-col">
+                <Card className="services-cards">
                     <Card.Img className="service-image muffler" src={muffler} alt="muffler on red card"/>
-                    <Card.Body>
-                        <p className="service-name">mufflers</p>
+                    <Card.Body className="service">
+                        <Card.Text className="service-name">mufflers</Card.Text>
                     </Card.Body>
                     
                 </Card>
-                <Card className="services-col wheel">
+                <Card className="services-cards wheel">
                     <Card.Img className="service-image alignment" src={alignment} alt="wheel alignment brace on red car"/>
-                    <Card.Body>
-                        <p className="service-name">Wheel alignment</p>
+                    <Card.Body className="service">
+                        <Card.Text className="service-name">Wheel alignment</Card.Text>
                     </Card.Body>
                     
                 </Card>
-                <Card className="services-col">
+                <Card className="services-cards">
                     <Card.Img className="service-image catalytic" src={catalytic} alt="muffler on red card"/>
-                    <Card.Body>
-                        <p className="service-name">catalytic converters</p>
+                    <Card.Body className="service">
+                        <Card.Text className="service-name">catalytic converters</Card.Text>
                     </Card.Body>
                 </Card>
             </Row>

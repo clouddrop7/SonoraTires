@@ -2,95 +2,91 @@
 @use '../variables/colors.scss' as colors;
 @use '../variables/utils.scss' as util;
 
-$original-width: 19.125rem; 
-$original-height: 25.4375rem; 
+$original-width: 19.125rem;
+$original-height: 25.4375rem;
 $middle-height: 42.3125rem;
-$middle-width: 31.6875rem;
+$middle-width: 38rem; 
 
 .services-container {
-  display: flex;
-  background-color: #D3D3D3; 
-  width: 100%;
-  max-width: 100%;
-  padding: 1rem;
+  background-color: #D3D3D3;
+
   .services-row {
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
-    max-width: 100%;
-    width: 100%;
-    @media (min-width: 48rem) {
+
+    @media (min-width: 36rem) {
       flex-direction: row;
-      width: 100%;
-      max-width: 100%;
       justify-content: space-around;
-      padding: 2rem 0;
+      gap: 0;
     }
 
     @media (min-width: 75rem) {
-      justify-content: center;
-      gap: 3rem;
+      align-items: center;
+      padding: 3rem;
     }
 
-    .card {
+    @media (min-width: 90rem) {
+      justify-content: center;
+      gap: 4rem;
+    }
+
+    .services-cards {
       border-radius: 0;
       border: none;
       padding: 0;
       background-color: colors.colorTheme(app-red);
-      width: 100%; 
-      max-width: 100%; // Ensures it doesn't exceed screen width
+
+      @media (min-width: 36rem) {
+        max-width: 10rem;
+        height: auto;
+      }
+
       @media (min-width: 48rem) {
-        width: auto;
-        max-width: 14rem; // Reverts to fixed width at 48rem
+        max-width: 14rem;
       }
 
-      .card-img {
-        border-radius: 0;
+      @media (min-width: 62rem) {
+        max-width: 286px;
+        max-height: 388px;
+      }
+
+      &.wheel {
+        @media (min-width: 75rem) {
+          width: 484px;
+          height: 646px;
+          max-height: $middle-height;
+          max-width: $middle-width; 
+        }
+      }
+
+      .service-image {
         width: 100%;
-        height: 5rem;
+        height: 100%;
+        object-fit: cover;
       }
 
-      .muffler {
-        width: 100%; // Match other images by taking full card width
-        height: auto; // Maintain aspect ratio
-      }
-
-      .card-body {
+      .service {
         display: flex;
         justify-content: center;
         align-items: center;
-        p {
+        padding: 1rem;
+
+        .service-name {
           font-family: "Syne", serif;
-          font-size: 1.6rem;
+          font-size: 0.875rem;
           color: colors.colorTheme(app-yellow);
-          padding: 1rem;
-          text-transform: uppercase; 
+          text-transform: uppercase;
           text-align: center;
+
+          @media (min-width: 36rem) {
+            font-size: 1rem;
+          }
+
+          @media (min-width: 48rem) {
+            font-size: 1.6rem;
+          }
         }
-      }
-    }
-
-    .services-col {
-      max-height: auto;
-      @media (min-width: 62rem) {
-        max-width: $original-width;
-        max-height: $original-height;
-      }
-
-      .card-img {
-        width: 100%;
-        height: 16rem;
-        @media (min-width: 75rem) {
-          height: 100%;
-        }
-      }
-    }
-
-    .wheel {
-      @media (min-width: 75rem) {
-        max-width: $middle-width;
-        height: 37.9375rem;
-        max-height: 37.9375rem;
       }
     }
   }
