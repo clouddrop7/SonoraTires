@@ -72,6 +72,7 @@
 
       .appt-btn {
         @include util.btn-appt;
+        min-width: 12rem;
       }
     }
   }

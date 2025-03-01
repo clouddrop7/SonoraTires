@@ -4,7 +4,7 @@
 
 .contact-container {
   @include util.display-grid-contact;
-  background-color: colors.colorTheme(app-red);
+  background-color: colors.colorTheme(app-dark-grey);
   @media (min-width: 48rem) {
     padding: 2rem !important;
   }

@@ -37,6 +37,13 @@ $original-height: 31.6875rem;
       .feature-welcome {
         @include util.font-feature-welcome;
         padding: 1rem;
+        max-width: 100%; // Contain text width
+        overflow-wrap: break-word; // Break long words
+        @media (max-width: 375px) { // Scale below 375px to 320px
+          font-size: 0.9rem; // Slight reduction
+          line-height: 1.4em; // Tighter but readable
+          padding: 0.5rem; // Reduce padding
+        }
         @media (min-width: 36rem) {
           padding: 0 3rem;
         }

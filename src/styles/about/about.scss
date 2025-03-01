@@ -3,7 +3,7 @@
 @use '../variables/utils.scss' as util;
 
 .about-container {
-  background-color: colors.colorTheme(app-red);
+  background-color: colors.colorTheme(app-dark-grey);
   @include util.color-white;
   border-bottom: 6px solid colors.colorTheme(app-yellow);
 

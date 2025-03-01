@@ -11,21 +11,18 @@ import About from '../components/About';
 import Social from '../components/Social';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import { useContext } from 'react';
+import { TireContext } from '../providers/TireProvider';
 const HomePage = () => {
-  const [show, setShow] = useState(false);
+  const { show, toggleForm} = useContext(TireContext);
   const [showNav, setShowNav] = useState(false);
-
-  const toggleForm = () => {
-    setShow((prev) => !prev);
-  };
-
   const handleClose = () => setShowNav(false);
   const handleShow = () => setShowNav(true);
 
     return (
         <Container id="home" className='homepage-container'>
           {
-            show && <ServiceModal show={show} toggleForm={toggleForm}/>
+            show && <ServiceModal />
           }
           <Header  handleClose={handleClose} handleShow={handleShow} showNav={showNav} toggleForm={toggleForm}/>
             <Card className="hero-card">

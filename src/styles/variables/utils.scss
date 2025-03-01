@@ -116,7 +116,7 @@
 }
 
 @mixin color-red {
-  color: colors.colorTheme(app-red);
+  color: colors.colorTheme(app-dark-grey);
 }
 
 @mixin color-yellow {
@@ -139,7 +139,7 @@
 }
 
 @mixin btn-nav-link {
-  border: 1px solid colors.colorTheme(app-red);
+  border: 1px solid colors.colorTheme(app-yellow);
   padding: 0.5em;
   text-align: center;
   &:hover {
@@ -152,7 +152,7 @@
   border: 1px solid colors.colorTheme(app-yellow);
   color: colors.colorTheme(app-yellow);
   background-color: transparent;
-  padding: 1rem 1rem;
+  padding: 1rem 3rem;
   text-transform: uppercase;
   border-radius: 0;
   &:hover {
@@ -358,8 +358,9 @@
   display: inline-flex;
   width: auto;
   transition: background-color 0.3s ease, color 0.3s ease;
+  text-transform: uppercase;
   &:hover {
-    background-color: colors.colorTheme(app-red);
+    background-color: colors.colorTheme(app-yellow);
     color: colors.colorTheme(app-white);
   }
   @media (min-width: 48rem) {
@@ -662,4 +663,27 @@
     background-color: colors.colorTheme(app-yellow);
     color: colors.colorTheme(app-white);
   }
+}
+
+// Button Mixin for Quantity Buttons
+@mixin btn-quantity {
+  display: flex;
+  border-radius: 0;
+  align-items: center;
+  padding: 1rem;
+  background-color: colors.colorTheme(app-black);
+  border: none;
+  font-size: 1.125rem;
+}
+
+// Input Mixin for Quantity Input
+@mixin input-quantity {
+  display: flex;
+  border-radius: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  max-width: 60px;
+  min-width: 60px; // Ensures visibility at all sizes
+  text-align: center;
 }

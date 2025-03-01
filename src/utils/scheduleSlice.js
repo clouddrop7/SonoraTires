@@ -3,17 +3,16 @@ import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import firebaseConfig from '../firebase.config';
 
-// Initialize Firebase app
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Async thunk to schedule appointment
+
 export const setSchedule = createAsyncThunk(
   'serviceSchedule/setServiceSchedule',
   async (appointmentData, { rejectWithValue }) => {
     try {
       const docRef = await addDoc(collection(db, 'appointments'), appointmentData);
-      return { id: docRef.id, ...appointmentData }; // Return the doc ID and data
+      return { id: docRef.id, ...appointmentData };
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -34,16 +33,16 @@ const serviceScheduleSlice = createSlice({
     carProfile: '',
     time: '',
     date: '',
-    loading: false, // Tracks async operation status
-    error: null,    // Stores error messages
-    appointmentId: null // Stores the Firestore doc ID
+    loading: false, 
+    error: null,    
+    appointmentId: null 
   },
   reducers: {
     setService: (state, action) => {
-      state.service = action.payload; // Updates service type
+      state.service = action.payload; 
     },
     setCustomerInfo: (state, action) => {
-      // Updates multiple fields at once
+      
       const { firstName, lastName, email, phone, carMake, carModel, carYear, carProfile } = action.payload;
       state.firstName = firstName || state.firstName;
       state.lastName = lastName || state.lastName;
@@ -87,12 +86,12 @@ const serviceScheduleSlice = createSlice({
       .addCase(setSchedule.fulfilled, (state, action) => {
         state.loading = false;
         state.appointmentId = action.payload.id;
-        // Optionally update state with returned data if needed
+       
         Object.assign(state, action.payload);
       })
       .addCase(setSchedule.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload; // Error message from rejectWithValue
+        state.error = action.payload;
       });
   }
 });

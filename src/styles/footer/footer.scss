@@ -127,7 +127,7 @@
       border-bottom: none;
       @include util.gutter-reset;
       text-decoration: underline;
-      text-decoration-color: colors.colorTheme(app-red);
+      text-decoration-color: colors.colorTheme(app-dark-grey);
       text-underline-offset: 4px;
       cursor: pointer;
       &:hover {

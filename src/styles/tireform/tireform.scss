@@ -3,567 +3,549 @@
 @use '../variables/utils.scss' as util;
 
 .service-slider {
-    background-color: #f9f9f9; 
+  background-color: #f9f9f9;
+
+  @media (min-width: 62rem) {
+    width: 65% !important;
+    max-width: 100%;
+  }
+
+  @media (min-width: 75rem) {
+    width: 75% !important;
+    max-width: 100%;
+  }
+
+  @media (min-width: 90rem) {
+    width: 45% !important;
+    max-width: 100% !important;
+  }
+
+  .offcanvas-header {
+    border-bottom: 3px solid colors.colorTheme(app-black);
+    padding: 1rem;
+    background-color: #ffffff;
+    .tire-selection-title {
+      @include util.font-social-btn;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      line-height: 1.5em;
+      @include util.color-yellow;
+      font-weight: 600;
+    }
+  }
+
+  .offcanvas-body {
+    background-color: #ffffff;
 
     @media (min-width: 62rem) {
-        width: 65% !important;
-        max-width: 100%;
+      display: grid;
+      padding: 2rem;
+    }
+
+    .tire-form {
+      @include util.display-flex-column;
+      gap: 1.5rem;
+      font-family: "Libre Baskerville", serif;
+
+      @media (min-width: 62rem) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, minmax(min-content, max-content));
+      }
+
+      .car-info {
+        @include util.display-flex-column;
+        padding: 1.5rem;
+        gap: 0.75rem;
+        background-color: #f5f5f5;
+        border: 1px solid colors.colorTheme(app-yellow);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-label {
+          @include util.font-form-label;
+          font-size: 1rem;
+          font-weight: 500;
+          color: colors.colorTheme(app-black);
+          text-transform: capitalize;
+          @include util.gutter-reset;
+          padding: 0 0.5rem;
+          overflow-wrap: break-word; // Prevents label overflow
+          max-width: 100%; // Constrains width
+        }
+
+        .form-select {
+          border: none;
+          border-radius: 4px;
+          background-color: colors.colorTheme(app-white);
+          color: colors.colorTheme(app-red);
+          padding: 0.75rem;
+          @include util.font-form-label;
+          font-size: 1rem;
+          font-weight: 500;
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          min-width: 14rem;
+          max-width: 16rem;
+          overflow: hidden; // Prevents option text overflow
+          text-overflow: ellipsis; // Adds "..." for clipped text
+          @media (max-width: 480px) {
+            min-width: 10rem; // Adjusts for smaller screens
+            padding: 0.5rem; // Reduces padding for fit
+            font-size: 0.9rem; // Scales text
+          }
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.3);
+            border-color: colors.colorTheme(app-yellow);
+          }
+
+          option {
+            @include util.font-form-label;
+            font-size: 1rem;
+            font-weight: 500;
+            background-color: colors.colorTheme(app-white);
+            color: colors.colorTheme(app-black);
+            padding: 0.5rem;
+          }
+        }
+      }
+
+      .date {
+        @include util.display-flex-column;
+        padding: 1.5rem;
+        background-color: #f5f5f5;
+        border: 1px solid colors.colorTheme(app-yellow);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        gap: 1rem;
+        &:hover {
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-label {
+          @include util.font-form-label;
+          font-size: 1rem;
+          font-weight: 500;
+          color: colors.colorTheme(app-black);
+          text-transform: capitalize;
+          @include util.gutter-reset;
+          padding: 0 0.5rem;
+        }
+
+        .form-control {
+          border: none;
+          border-radius: 4px;
+          background-color: colors.colorTheme(app-white);
+          padding: 0.75rem;
+          @include util.font-form-label;
+          font-size: 1rem;
+          color: colors.colorTheme(app-red);
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.3);
+            border-color: colors.colorTheme(app-yellow);
+          }
+        }
+      }
+    }
+  }
+
+  .tire-list-container {
+    @include util.display-flex-column;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 2rem;
+
+    @media (min-width: 62rem) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0;
     }
 
     @media (min-width: 75rem) {
-        width: 75% !important;
-        max-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    @media (min-width: 90rem) {
-        width: 45% !important;
-        max-width: 100% !important;
-    }
+    .tire-cards {
+      gap: 1rem;
+      padding: 1rem;
+      @include util.font-center;
+      border: 1px solid #333333;
+      border-radius: 0;
+      @include util.display-flex-column-center;
 
-    .offcanvas-header {
-        border-bottom: 3px solid colors.colorTheme(app-black);
-        padding: 1rem;
-        background-color: #ffffff; 
-        .tire-selection-title {
-            font-family: "Syne", serif;
-            font-size: 1.6rem;
-            letter-spacing: 0.1em;
-            line-height: 1.5em;
-            color: colors.colorTheme(app-yellow);
-            font-weight: 600; 
-            text-transform: uppercase;
+      .brand {
+        @include util.font-list-group-item;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        line-height: 1.5rem;
+      }
+
+      .tire-container {
+        position: relative;
+        width: 100%;
+        height: 70px;
+        overflow: hidden;
+        .tire-image {
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          top: 0;
+          left: 35%;
+          object-fit: cover;
+
+          @media (min-width: 62rem) {
+            left: 30%;
+          }
+
+          @media (min-width: 75rem) {
+            left: 25%;
+          }
+
+          @media (min-width: 90rem) {
+            left: 40%;
+          }
+
+          @media (min-width: 100rem) {
+            left: 43%;
+          }
         }
+      }
+
+      .tire {
+        @include util.display-flex-column;
+        gap: 0.5rem;
+        @include util.width-full;
+        .tire-info {
+          @include util.font-list-group-item;
+          font-size: 1rem;
+          letter-spacing: 0.1em;
+          line-height: 1.5rem;
+          overflow-wrap: break-word;
+          max-width: 100%;
+          @media (max-width: 375px) {
+            font-size: 0.9rem;
+            line-height: 1.3rem;
+          }
+        }
+      }
+
+      .tire-select-btn {
+        background-color: colors.colorTheme(app-black);
+        @include util.color-yellow;
+        @include util.font-social-btn;
+        padding: 1rem 2.25rem;
+        border: 1px solid colors.colorTheme(app-yellow);
+        border-radius: 0;
+        &:hover {
+          background-color: colors.colorTheme(app-yellow);
+          @include util.color-white;
+        }
+      }
+    }
+  }
+
+  .install-confirmation {
+    @include util.display-flex-column;
+    padding: 1rem;
+    gap: 1rem;
+
+    @media (min-width: 62rem) {
+      padding: 0;
+      @include util.width-full;
     }
 
-    .offcanvas-body {
-        background-color: #ffffff;
+    .customer-tire-form {
+      @media (min-width: 62rem) {
+        @include util.display-grid-appt;
+        padding: 0;
+      }
+
+      @media (min-width: 75rem) {
+        @include util.display-flex-start;
+      }
+
+      .contact-title {
+        @include util.font-list-group-item;
+        font-size: 1.125rem;
+        letter-spacing: 0.1em;
+        line-height: 1.5em;
+        font-weight: 600;
+        padding: 0.5rem 0;
+        color: colors.colorTheme(app-black);
 
         @media (min-width: 62rem) {
-            display: grid;
-            padding: 2rem;
+          padding: 0;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .customer-info {
+        @include util.display-flex-column;
+
+        @media (min-width: 62rem) {
+          max-width: 12rem;
+          justify-self: start;
         }
 
-        .tire-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem; 
-            font-family: "Libre Baskerville", serif; 
+        .form-label {
+          @include util.font-form-label;
+          letter-spacing: 0.1em;
+          margin: 1rem 0;
+          @include util.color-yellow;
+        }
+
+        .form-control {
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid colors.colorTheme(app-red);
+          @include util.font-form-label;
+          font-size: 1rem;
+          letter-spacing: 0.1em;
+          padding: 0.5rem 0;
+        }
+      }
+
+      .date {
+        @include util.display-flex-column;
+        padding: 1rem 0;
+
+        @media (min-width: 62rem) {
+          max-width: 14rem;
+        }
+        .form-label {
+          @include util.font-form-label;
+          font-size: 1rem;
+          letter-spacing: 0.1em;
+          padding: 0.5rem 0;
+        }
+
+        .form-control {
+          border-radius: 0;
+          border: 1px solid colors.colorTheme(app-yellow);
+          cursor: pointer;
+        }
+      }
+
+      .time {
+        @include util.display-flex-column;
+        @media (min-width: 62rem) {
+          min-width: 8rem;
+          max-width: 8rem;
+        }
+        .form-label {
+          @include util.font-form-label;
+          font-size: 1rem;
+          letter-spacing: 0.1em;
+          padding: 0.5rem 0;
+        }
+
+        .form-control {
+          border-radius: 0;
+          border: 1px solid colors.colorTheme(app-yellow);
+          cursor: pointer;
+          @include util.font-center;
+        }
+      }
+    }
+
+    .install-card {
+      display: flex;
+      gap: 1rem;
+      border: 1px solid black;
+      border-radius: 0;
+      margin-top: 1rem;
+      @include util.width-full;
+      @media (min-width: 62rem) {
+        grid-column: 1 / span 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      @media (min-width: 75rem) {
+        grid-template-columns: repeat(3, minmax(min-content, max-content));
+        align-items: start;
+      }
+
+      .vehicle-info-body {
+        @include util.display-flex-column;
+        padding: 1rem;
+        gap: 1rem;
+        @include util.width-full;
+        @media (min-width: 62rem) {
+          padding: 0;
+        }
+
+        .vehicle-type {
+          @include util.font-list-group-item;
+          font-size: 1rem;
+          letter-spacing: 0.1em;
+          line-height: 1.5em;
+          font-weight: 600;
+        }
+
+        .vehicle-info {
+          .list-group-item {
+            border: none;
+            @include util.font-list-group-item;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            @media (min-width: 62rem) {
+              padding: 1rem 0;
+            }
+          }
+        }
+      }
+
+      .tire-detail-body {
+        padding: 1rem;
+
+        @media (min-width: 62rem) {
+          padding: 0;
+        }
+        .selected-tire {
+          @include util.font-list-group-item;
+          font-size: 1rem;
+          letter-spacing: 0.1em;
+          line-height: 1.5em;
+          font-weight: 600;
+        }
+
+        .tire-type {
+          .list-group-item {
+            border: none;
+            @include util.font-list-group-item;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            font-weight: 500;
 
             @media (min-width: 62rem) {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, minmax(min-content,max-content));
+              padding: 1rem 0;
             }
+          }
 
-            .car-info {
-                display: flex;
-                flex-direction: column;
-                padding: 1.5rem; 
-                gap: 0.75rem; 
-                background-color: #f5f5f5; 
-                border: 1px solid colors.colorTheme(app-yellow);  
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-                transition: box-shadow 0.3s ease; 
+          .tire-image-div {
+            position: relative;
+            width: 100%;
+            height: 70px;
+            overflow: hidden;
+            margin: 1rem 0;
 
-                &:hover {
-                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
-                }
-
-                .form-label {
-                    margin: 0;
-                    padding: 0 0.5rem;
-                    font-family: "Libre Baskerville", serif;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    color: colors.colorTheme(app-black);
-                    text-transform: capitalize; 
-                }
-
-                .form-select {
-                    border: none;
-                    border-radius: 4px; 
-                    background-color: colors.colorTheme(app-white);
-                    color: colors.colorTheme(app-red);
-                    padding: 0.75rem; 
-                    font-family: "Libre Baskerville", serif;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
-                    width: 100%;
-                    min-width: 14rem;
-                    max-width: 16rem;
-                    &:focus {
-                        outline: none;
-                        box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.3);
-                        border-color: colors.colorTheme(app-yellow);
-                    }
-
-                    option {
-                        font-family: "Libre Baskerville", serif;
-                        font-size: 1rem;
-                        font-weight: 500;
-                        background-color: colors.colorTheme(app-white);
-                        color: colors.colorTheme(app-black);
-                        padding: 0.5rem; 
-                    }
-                }
+            .tire-image {
+              width: 100px;
+              height: 100px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              object-fit: cover;
             }
-
-            .date {
-                display: flex;
-                flex-direction: column;
-                padding: 1.5rem;
-                background-color: #f5f5f5; 
-                border: 1px solid colors.colorTheme(app-yellow);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-                transition: box-shadow 0.3s ease;
-                gap: 1rem;
-                &:hover {
-                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-                }
-
-                .form-label {
-                    font-family: "Libre Baskerville", serif;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    color: colors.colorTheme(app-black);
-                    text-transform: capitalize;
-                    margin: 0;
-                    padding: 0 0.5rem;
-                }
-
-                .form-control {
-                    border: none;
-                    border-radius: 4px;
-                    background-color: colors.colorTheme(app-white);
-                    padding: 0.75rem;
-                    font-family: "Libre Baskerville", serif;
-                    font-size: 1rem;
-                    color: colors.colorTheme(app-red);
-                    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-
-                    &:focus {
-                        outline: none;
-                        box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.3);
-                        border-color: colors.colorTheme(app-yellow);
-                    }
-                }
-            }
+          }
         }
-    }
+      }
 
-    .tire-list-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+      .quantity-select {
         padding: 1rem;
-        margin-top: 2rem;
 
         @media (min-width: 62rem) {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            margin: 0;
+          grid-column: 1 / span 2;
+          justify-self: start;
+          align-self: center;
+          padding: 0;
         }
 
         @media (min-width: 75rem) {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
+          grid-column: 3;
+          align-self: start;
+          padding: 0;
         }
 
-        .tire-cards {
-            gap: 1rem;
-            padding: 1rem;
-            text-align: center;
-            border: 1px solid #333333;
-            border-radius: 0;
-            justify-content: center;
-            align-items: center;
+        .quantity {
+          @include util.display-flex-space-between;
+          gap: 0.5rem;
+          align-items: center;
+          .quantity-control {
+            @include util.display-flex-space-between;
+            gap: 0.5rem;
+            min-width: 100px;
+          }
 
-            .brand {
-                font-family: "Libre Baskerville";
-                font-size: 1rem;
-                letter-spacing: 0.1em;
-                line-height: 1.5rem;
+          .form-label {
+            @include util.font-list-group-item;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            @include util.gutter-reset;
+          }
+
+          .number-btn {
+            @include util.btn-quantity;
+          }
+
+          .form-control {
+            @include util.input-quantity;
+            @media (max-width: 375px) {
+              min-width: 40px;
+              font-size: 0.9rem;
+              padding: 0.25rem;
             }
-
-            .tire-container {
-                position: relative;
-                width: 100%;
-                height: 70px;
-                overflow: hidden;
-                .tire-image {
-                    width: 100px;
-                    height: 100px;
-                    position: absolute;
-                    top: 0;
-                    left: 35%;
-                    object-fit: cover;
-
-                    @media (min-width: 62rem) {
-                        left: 30%;
-                    }
-
-                    @media (min-width: 75rem) {
-                        left: 25%;
-                    }
-
-                    @media (min-width: 90rem) {
-                        left: 40%;
-                    }
-
-                    @media (min-width: 100rem) {
-                        left: 43%;
-                    }
-                }
-            }
-
-            .tire {
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                width: 100%;
-                .tire-info {
-                    font-family: "Libre Baskerville";
-                    font-size: 1rem;
-                    letter-spacing: 0.1em;
-                    line-height: 1.5rem;
-                }
-            }
-
-            .tire-select-btn {
-                background-color: colors.colorTheme(app-black);
-                color: colors.colorTheme(app-yellow);
-                font-family: "Syne", serif;
-                padding: 1rem 2.25rem;
-                border:1px solid colors.colorTheme(app-yellow);
-                border-radius: 0;
-                &:hover {
-                    background-color: colors.colorTheme(app-yellow);
-                    color: colors.colorTheme(app-white);
-                }
-            }
+          }
         }
-    }
-    .install-confirmation {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
+      }
 
+      .cost-container {
         @media (min-width: 62rem) {
+          grid-column: 1 / span 2;
+        }
+
+        .cost-details {
+          @include util.display-flex-column;
+          padding: 1rem;
+
+          @media (min-width: 62rem) {
+            display: grid;
+            grid-template-rows: repeat(6, minmax(min-content, max-content));
+            grid-template-columns: minmax(min-content, max-content);
             padding: 0;
-            width: 100%;
-            max-width: 100%;
-        }
-        .customer-tire-form {
+          }
+          .list-group-item {
+            border: none;
+            @include util.font-list-group-item;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+
             @media (min-width: 62rem) {
-                display: grid;
-                grid-template-columns: repeat(2,minmax(min-content,max-content));
-                justify-content: center;
-                align-items: center;
-                padding: 0;
+              padding: 0.5rem 0;
             }
-
-            @media (min-width: 75rem) {
-                justify-content: start;
-            }
-
-            .contact-title {
-                font-family: "Libre Baskerville", serif;
-                font-size: 1.125rem;
-                letter-spacing: 0.1em;
-                line-height: 1.5em;
-                font-weight: 600;
-                padding: 0.5rem 0;
-                color: colors.colorTheme(app-black);
-
-                @media (min-width:62rem) {
-                    padding: 0;
-                    grid-column: 1/ span 2;
-                }
-            }
-
-            .customer-info {
-                display: flex;
-                flex-direction: column;
-
-                @media (min-width: 62rem) {
-                    max-width: 12rem;
-                    justify-self: start;
-                }
-
-                .form-label {
-                    font-family: "Libre Baskerville", serif;
-                    letter-spacing: 0.1em;
-                    margin: 1rem 0;
-                    color: colors.colorTheme(app-yellow);
-                }
-
-                .form-control {
-                    border: none;
-                    border-radius: 0;
-                    border-bottom: 1px solid colors.colorTheme(app-red);
-                    font-family: "Libre Baskerville", serif;
-                    font-size: 1rem;
-                    letter-spacing: 0.1em;
-                    padding: 0.5rem 0;
-                }
-            }
-
-            .date {
-                display: flex;
-                flex-direction: column;
-                padding: 1rem 0;
-
-                @media (min-width: 62rem) {
-                    max-width: 14rem;
-                }
-                .form-label {
-                    font-family: "Libre Baskerville", serif;
-                    font-size: 1rem;
-                    letter-spacing: 0.1em;
-                    padding: 0.5rem 0;
-                }
-
-                .form-control {
-                    border-radius: 0;
-                    border: 1px solid colors.colorTheme(app-yellow);
-                    cursor: pointer;
-                }
-            }
-
-            .time {
-                display: flex;
-                flex-direction: column;
-                @media (min-width: 62rem) {
-                    min-width: 8rem;
-                    max-width: 8rem;
-                }
-                .form-label {
-                    font-family: "Libre Baskerville", serif;
-                    font-size: 1rem;
-                    letter-spacing: 0.1em;
-                    padding: 0.5rem 0;
-                }
-
-                .form-control {
-                    border-radius: 0;
-                    border: 1px solid colors.colorTheme(app-yellow);
-                    cursor: pointer;
-                    text-align: center;
-                }
-            }
+          }
         }
-
-        .install-card {
-            display: flex;
-            gap: 1rem;
-            border: 1px solid black;
-            border-radius: 0;
-            margin-top: 1rem;
-            width: 100%;
-            max-width: 100%;
-            @media (min-width: 62rem) {
-                grid-column: 1/ span 2;
-                display: grid;
-                grid-template-columns: repeat(2,1fr);
-                gap: 2rem;
-                padding: 2rem;
-            }
-
-            @media (min-width: 75rem) {
-                grid-template-columns: repeat(3,minmax(min-content,max-content));
-                align-items: start;
-            }
-
-            .vehicle-info-body {
-                display: flex;
-                flex-direction: column;
-                padding: 1rem;
-                gap: 1rem;
-                width: 100%;
-                @media (min-width: 62rem) {
-                    padding: 0;
-                }
-
-                .vehicle-type {
-                    font-family: "Libre Baskerville";
-                    font-size: 1rem;
-                    letter-spacing: 0.1em;
-                    line-height: 1.5em;
-                    font-weight: 600;
-                }
-
-                .vehicle-info {
-                    .list-group-item {
-                        border: none;
-                        font-family: "Libre Baskerville";
-                        font-size: 1rem;
-                        letter-spacing: 0.1em;
-                        font-weight: 500;
-                        @media (min-width: 62rem) {
-                            padding: 1rem 0;
-                        }
-                    }
-                }
-            }
-
-            .tire-detail-body {
-                padding: 1rem;
-
-                @media (min-width: 62rem) {
-                    padding: 0;
-                }
-                .selected-tire {
-                    font-family: "Libre Baskerville";
-                    font-size: 1rem;
-                    letter-spacing: 0.1em;
-                    line-height: 1.5em;
-                    font-weight: 600;
-                }
-
-                .tire-type {
-                    .list-group-item {
-                        border: none;
-                        font-family: "Libre Baskerville";
-                        font-size: 1rem;
-                        letter-spacing: 0.1em;
-                        font-weight: 500;
-
-                        @media (min-width: 62rem) {
-                            padding: 1rem 0;
-                        }
-                    }
-
-                    .tire-image-div {
-                        position: relative;
-                        width: 100%;
-                        height: 70px;
-                        overflow: hidden;
-                        margin: 1rem 0;
-
-                        .tire-image {
-                            width: 100px;
-                            height: 100px;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            object-fit: cover;
-                        }
-                    }
-                }
-            }
-
-            .quantity-select {
-                padding: 1rem;
-
-                @media (min-width: 62rem) {
-                    grid-column: 1/ span 2;
-                    justify-self: start;
-                    align-self: center;
-                    padding: 0;
-                }
-
-                @media (min-width: 75rem) {
-                    grid-column: 3;
-                    align-self: start;
-                    padding: 0;
-                }
-
-                .quantity {
-                    display: flex;
-                    justify-content: space-around;
-                    gap: 0.5rem;
-                    align-items: center;
-                   .quantity-control {
-                    display: flex;
-                    gap: 1rem;
-                   }
-
-                   .form-label {
-                        font-family: "Libre Baskerville";
-                        font-size: 1rem;
-                        letter-spacing: 0.1em;
-                        font-weight: 500;
-                        margin: 0;
-                   }
-
-                   .number-btn {
-                    display: flex;
-                    border-radius: 0;
-                    align-items: center;
-                    padding: 1rem;
-                    background-color: colors.colorTheme(app-black);
-                    border: none;
-                    font-size: 1.125rem;
-                   }
-
-                   .form-control {
-                    display: flex;
-                    border-radius: 0;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 0.5rem;
-                    max-width: 60px;
-                    text-align: center;
-                   }
-                }
-            }
-
-            .cost-container {
-                @media (min-width: 62rem) {
-                    grid-column: 1/ span 2;
-                }
-
-                .cost-details {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 1rem;
-
-                    @media (min-width: 62rem) {
-                        display: grid;
-                        grid-template-rows: repeat(6,minmax(min-content,max-content));
-                        grid-template-columns: minmax(min-content,max-content);
-                        padding: 0;
-                    }
-                    .list-group-item {
-                        border: none;
-                        font-family: "Libre Baskerville", serif;
-                        font-size: 1rem;
-                        letter-spacing: 0.1em;
-
-                        @media (min-width: 62rem) {
-                            padding: 0.5rem 0;
-                        }
-                    }
-                }
-            }
-        }
-
-        .purchase-div {
-            grid-column: 1 / span 2;
-            display: flex;
-            padding: 1rem;
-            align-items: center;
-            justify-content: center;
-            .submit-btn {
-                font-family: "Syne", serif;
-                font-size: 1rem;
-                letter-spacing: 0.01em;
-                line-height: 1.5em;
-                border: 1px solid colors.colorTheme(app-yellow);
-                border-radius: 0;
-                padding: 0.5rem 1.5rem;
-                text-transform: uppercase;
-                color:colors.colorTheme(app-white);
-                text-decoration: none;
-                text-align: center;
-                background-color: colors.colorTheme(app-yellow);
-                &:hover {
-                    background-color: colors.colorTheme(app-black);
-                    color: colors.colorTheme(app-white);
-                }
-            }
-        }
+      }
     }
+
+    .purchase-div {
+      grid-column: 1 / span 2;
+      @include util.display-flex-center;
+      padding: 1rem;
+      .submit-btn {
+        @include util.btn-social;
+        padding: 0.5rem 1.5rem;
+        @include util.color-white;
+        background-color: colors.colorTheme(app-yellow);
+        &:hover {
+          background-color: colors.colorTheme(app-black);
+          @include util.color-white;
+        }
+      }
+    }
+  }
 }
