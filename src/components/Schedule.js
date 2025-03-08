@@ -85,7 +85,6 @@ const Schedule = ({ show, toggleForm }) => {
             }));
 
             const result = await dispatch(setSchedule(appointmentData)).unwrap();
-            console.log('Appointment scheduled successfully with ID:', appointmentId);
             alert(`Appointment scheduled! Your appointment ID is: ${appointmentId}`);
         } catch (error) {
             console.error('Failed to schedule appointment:', error);

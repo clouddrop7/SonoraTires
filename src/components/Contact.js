@@ -23,8 +23,7 @@ const Contact = () => {
     });
 
     const handleSubmit = (values, { setSubmitting, resetForm }) => {
-        // Simulate form submission (e.g., API call)
-        console.log("Form submitted with:", values);
+    
         setTimeout(() => {
             setSubmitting(false); // Reset submitting state
             resetForm(); // Clear form after submission

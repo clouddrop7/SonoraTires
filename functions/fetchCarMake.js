@@ -14,7 +14,6 @@ export const fetchCarMake = functions.https.onRequest(async (req, res) => {
       }
 
       const carMakeData = await response.json();
-      console.log('Car Make Data:', carMakeData);
 
       res.status(200).json({ success: true, data: carMakeData });
     } catch (error) {

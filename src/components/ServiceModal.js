@@ -13,7 +13,7 @@ const ServiceModal = () => {
     const [placement, setPlacement] = useState("end");
     const [view, setView] = useState("form");
     const [showModal, setShowModal] = useState(false);
-    console.log(show);
+
     useEffect(() => {
         const handleResize = () => {
             setPlacement(window.innerWidth < 992 ? "start" : "end");

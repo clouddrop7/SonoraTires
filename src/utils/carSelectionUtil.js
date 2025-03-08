@@ -9,7 +9,6 @@ const useCarSelection = () => {
   const dispatch = useDispatch();
   const { make, models, years, profiles, wheels, tires, selectedMake, selectedModel, selectedYear, selectedProfile, selectedWheel, loading, error } =
   useSelector((state) => state.carDetails);
-  console.log(make);
   const handleMakeChange = (e) => { 
     const newMake = e.target.value;
     dispatch(setMake(newMake));

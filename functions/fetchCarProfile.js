@@ -25,7 +25,6 @@ export const fetchCarProfile = functions.https.onRequest((req, res) => {
       }
 
       const carProfileData = await response.json();
-      console.log(carProfileData);
       res.status(200).json({ success: true, data: carProfileData });
     } catch (error) {
       console.error('Error fetching car model data:', error);

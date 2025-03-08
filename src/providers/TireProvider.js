@@ -3,10 +3,11 @@ import useFormDateValidation from "../utils/formDateValidation";
 import { validationSchema } from "../utils/formValidation";
 import usePriceUtil from "../utils/tirePriceUtil";
 import useCarSelection from "../utils/carSelectionUtil";
-
+import { useDispatch } from 'react-redux';
 export const TireContext = createContext(null);
 
 const TireProvider = ({ children }) => {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const toggleForm = () => {
     setShow((prev) => !prev);
@@ -37,7 +38,7 @@ const TireProvider = ({ children }) => {
   useEffect(() => {
     const cachedMakes = localStorage.getItem("carMakes");
     if (show && make.length === 0 && !cachedMakes) {
-      fetchCarDetails();
+      dispatch(fetchCarDetails());
     } else if (show && make.length === 0 && cachedMakes) {
       setMakesFromCache(JSON.parse(cachedMakes));
     }
@@ -105,7 +106,6 @@ const TireProvider = ({ children }) => {
   };
 
   const sortedTires = [...tires].sort((a, b) => a.brand.localeCompare(b.brand));
-  console.log(show);
 
   return (
     <TireContext.Provider value={{
